@@ -20,8 +20,46 @@ $timing-long:	350ms;
 
 @import 'window';
 @import 'toolbar';
+@import 'desktop';
 
 
 body {
 	background-image: url('../img/wallpaper.jpg');
+}
+
+// Dropdown
+.x-menu {
+	@extend .elevation-low;
+	@include border-radius(2px);
+
+	.x-menu-body {
+		border: 0;
+		background-color: #fff;
+		padding: 3px 0;
+
+		.x-menu-icon-separator {
+			display: none;
+		}
+
+		.x-menu-item {
+			border-color: transparent;
+			transition-property: background;
+			transition-duration: $timing-short;
+			@include border-radius(0);
+
+			.x-menu-item-link {
+				.x-menu-item-text {
+					font-family: $roboto;
+				}
+			}
+
+			&.x-menu-item-active {
+				background: $hover-light;
+
+				.x-menu-item-link {
+					background: transparent !important;
+				}
+			}
+		}
+	}
 }

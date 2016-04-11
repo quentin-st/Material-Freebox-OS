@@ -5,6 +5,9 @@
 
 	// Main button
 	.btn-start {
+		color: rgba(#fff, 0.9);
+		transition-property: color;
+		transition-duration: $timing-short;
 		width: 46px;
 		padding: 8px;
 		font-size: 31px;
@@ -13,7 +16,9 @@
 		&:before {
 			content: "\F03B";
 		}
-
+		&:hover {
+			color: #fff;
+		}
 		&, &:hover {
 			background: none!important;
 		}
@@ -82,9 +87,9 @@
 					background-image: none;
 					font-size: 20px!important;
 					color: #333;
-					@extend .mdi;
 					top: 12px;
 					right: 10px;
+					@extend .mdi;
 
 					&:before {
 						content: "\F142";
@@ -93,8 +98,10 @@
 			}
 
 			&.x-menu-item-active {
+				background: $hover-dark !important;
+
 				.x-menu-item-link {
-					background: rgba(0, 0, 0, 0.8) !important;
+					background: transparent;
 
 					.x-menu-item-arrow {
 						right: 10px;

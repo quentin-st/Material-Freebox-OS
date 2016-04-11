@@ -1,0 +1,38 @@
+// Logo
+.fbxos-logo {
+	text-align: center;
+
+	&:before {
+		content: "Freebox OS";
+		font-family: $roboto;
+		font-size: 60px;
+		color: rgba(#fff, 0.95);
+		text-shadow: 2px 2px 1px rgba(#000, 0.3);
+	}
+
+	#logo_freeboxos {
+		display: none;
+	}
+}
+
+// Icons
+.desktop-icon-outer {
+	.desktop-icon {
+		margin: 5px auto;
+	}
+
+	&.desktop-selected {
+		padding: 5px;
+		border: 0;
+		background-color: $active-dark;
+		@extend .elevation-medium;
+		@include border-radius(2px!important);
+		@include transition-duration($timing-short);
+	}
+
+	span[aria-label] {
+		font-family: $roboto;
+		line-height: 15px;
+		text-shadow: 1px 1px 1px rgba(#000, 0.8);
+	}
+}
