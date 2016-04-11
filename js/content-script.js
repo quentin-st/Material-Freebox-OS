@@ -1,5 +1,5 @@
-// TODO check if page matches Freebox OS
-if (true) {
+// TODO tighten test
+if (document.title == 'Freebox OS') {
 	// Inject script
 	injectScript(chrome.extension.getURL('js/script.js'));
 
