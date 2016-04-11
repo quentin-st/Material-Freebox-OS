@@ -5,6 +5,7 @@ if (true) {
 
 	// Inject stylesheets
 	injectStyle(chrome.extension.getURL('css/style.css'));
+	injectStyle(chrome.extension.getURL('3d/css/materialdesignicons.min.css'));
 	injectStyle('https://fonts.googleapis.com/css?family=Roboto:400,300');
 
 	function injectScript(src) {
@@ -26,6 +27,6 @@ if (true) {
 	}
 
 	function log(msg) {
-		console.info('Material-Freebox-OS', msg);
+		console.info('Material-Freebox-OS:', msg);
 	}
 }

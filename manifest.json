@@ -25,13 +25,20 @@
 				"js/script.js"
 			],
 			"css" : [
-				"css/style.css"
+				"css/style.css",
+				"3d/css/materialdesignicons.min.css"
 			]
 		}
 	],
 	"web_accessible_resources": [
 		"js/content-script.js",
 		"js/script.js",
-		"css/style.css"
+
+		"img/wallpaper.jpg",
+
+		"css/style.css",
+
+		"3d/css/materialdesignicons.min.css",
+		"3d/fonts/*"
 	]
 }
