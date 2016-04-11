@@ -1,8 +1,11 @@
 // TODO check if page matches Freebox OS
 if (true) {
-	// Inject script & stylesheet
+	// Inject script
 	injectScript(chrome.extension.getURL('js/script.js'));
+
+	// Inject stylesheets
 	injectStyle(chrome.extension.getURL('css/style.css'));
+	injectStyle('https://fonts.googleapis.com/css?family=Roboto:400,300');
 
 	function injectScript(src) {
 		log('Injecting script ' + src);

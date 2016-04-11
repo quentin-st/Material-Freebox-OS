@@ -1,0 +1,12 @@
+.x-window {
+	padding: 0!important;
+	@include box-shadow(none);
+	@include border-radius(2px!important);
+
+	.x-window-header {
+		border: 0;
+		@include border-radius(2px 2px 0 0);
+		@include box-shadow(inset 0 0px 1px rgba(255, 255, 255, 0.3));
+
+	}
+}
