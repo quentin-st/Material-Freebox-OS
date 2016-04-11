@@ -49,3 +49,9 @@
 	-webkit-transform: rotate($param);
 	transform: rotate($param);
 }
+@mixin material-icon($icon) {
+	@extend .mdi;
+	&:before {
+		content: $icon;
+	}
+}

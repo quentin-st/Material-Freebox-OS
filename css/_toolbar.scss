@@ -1,6 +1,7 @@
 // Toolbar
 .freeboxos-southbar.x-toolbar {
 	border: 0!important;
+	padding: 0;
 	background: transparent!important;
 
 	// Main button
@@ -11,11 +12,9 @@
 		width: 46px;
 		padding: 8px;
 		font-size: 31px;
-		@extend .mdi;
 
-		&:before {
-			content: "\F03B";
-		}
+		@include material-icon("\F03B");
+
 		&:hover {
 			color: #fff;
 		}
@@ -37,10 +36,27 @@
 				font-family: $roboto;
 				font-size: 13px;
 			}
+			.x-btn-icon-el {
+				background-color: $color-primary-dark;
+				padding-left: 4px;
+				font-size: 24px;
+				line-height: 32px;
+				color: #fff;
+				@include border-radius(50%);
+				@extend .elevation-low;
+			}
 		}
 
 		&.x-pressed {
 			border-color: rgba(#fff, 0.9)!important;
+		}
+	}
+
+	// Right icons
+	.x-icon {
+		.x-btn-icon-el {
+			margin-top: 5px;
+			color: rgba(#fff, 0.9);
 		}
 	}
 
@@ -89,11 +105,8 @@
 					color: #333;
 					top: 12px;
 					right: 10px;
-					@extend .mdi;
 
-					&:before {
-						content: "\F142";
-					}
+					@include material-icon("\F142");
 				}
 			}
 
@@ -102,6 +115,10 @@
 
 				.x-menu-item-link {
 					background: transparent;
+
+					.x-menu-item-icon {
+						color: #fff;
+					}
 
 					.x-menu-item-arrow {
 						right: 10px;

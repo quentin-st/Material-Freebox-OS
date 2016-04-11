@@ -21,10 +21,13 @@ $timing-long:	350ms;
 @import 'window';
 @import 'toolbar';
 @import 'desktop';
+@import 'icons';
 
 
 body {
 	background-image: url('../img/wallpaper.jpg');
+	background-position: center;
+	@include background-size(cover);
 }
 
 // Dropdown

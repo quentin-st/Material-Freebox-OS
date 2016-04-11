@@ -24,8 +24,7 @@
 
 			// Icon
 			.x-window-header-icon {
-				margin-top: $window-header-padding-top;
-				margin-bottom: $window-header-padding-bottom;
+				display: none;
 			}
 
 			// Text
@@ -43,21 +42,17 @@
 				font-size: 15px;
 				color: rgba(#fff, 0.9);
 
-				&[aria-label="Fermer"]:before {
-					content: "\F156";
-					@extend .mdi;
+				&[aria-label="Fermer"] {
+					@include material-icon("\F156");
 				}
-				&[aria-label="Maximiser"]:before {
-					content: "\F5AF";
-					@extend .mdi;
+				&[aria-label="Maximiser"] {
+					@include material-icon("\F5AF");
 				}
-				&[aria-label="Minimiser"]:before {
-					content: "\F5B0";
-					@extend .mdi;
+				&[aria-label="Minimiser"] {
+					@include material-icon("\F5B0");
 				}
-				&[aria-label="Aide de l'application"]:before {
-					content: "\F2D6";
-					@extend .mdi;
+				&[aria-label="Aide de l'application"] {
+					@include material-icon("\F2D6");
 				}
 
 				.x-tool-close, .x-tool-restore, .x-tool-maximize, .x-tool-minimize, .x-tool-help {
