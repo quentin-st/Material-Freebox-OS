@@ -3,6 +3,12 @@
 	border: 0!important;
 	padding: 0;
 	background: transparent!important;
+	transition-property: background;
+	transition-duration: $timing-short;
+
+	&.solid-background {
+		background: $color-dark!important;
+	}
 
 	// Main button
 	.btn-start {
@@ -35,6 +41,9 @@
 			.x-btn-inner {
 				font-family: $roboto;
 				font-size: 13px;
+				padding-left: 40px;
+				padding-right: 10px;
+				text-overflow: ellipsis;
 			}
 			.x-btn-icon-el {
 				background-color: $color-primary-dark;
@@ -69,8 +78,8 @@
 			background-color: rgba(0, 0, 0, 0.4);
 			font-family: $roboto;
 			font-size: 14px;
-			color: rgba(#fff, 0.8)!important;
-			font-weight: 400;
+			color: #ffffff!important;
+			font-weight: 600;
 		}
 	}
 }

@@ -151,3 +151,15 @@
 		}
 	}
 }
+
+// Tip
+.x-tip-default {
+	border: 0;
+	background-color: $color-dark;
+	@extend .elevation-lowest;
+
+	.x-tip-body {
+		color: #fff;
+		font-family: $roboto;
+	}
+}
