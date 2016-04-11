@@ -1,12 +1,76 @@
+.x-css-shadow {
+	@include box-shadow(none!important);
+}
+
 .x-window {
 	padding: 0!important;
-	@include box-shadow(none);
+	border: 1px solid rgba(0, 0, 0, 0.25) !important;
+	background-color: rgba(255, 255, 255, 0.2)!important;
 	@include border-radius(2px!important);
+	@extend .elevation-medium;
 
 	.x-window-header {
-		border: 0;
-		@include border-radius(2px 2px 0 0);
-		@include box-shadow(inset 0 0px 1px rgba(255, 255, 255, 0.3));
+		$window-header-padding-top: 8px;
+		$window-header-padding-bottom: 4px;
 
+		padding: 0 6px 0 10px;
+		border: 0;
+		background-color: transparent!important;
+		@include border-radius(2px 2px 0 0);
+		@include box-shadow(inset 0px 1px 0 rgba(255, 255, 255, 0.4));
+
+		.x-window-header-body {
+			background: transparent;
+
+			// Icon
+			.x-window-header-icon {
+				margin-top: $window-header-padding-top;
+				margin-bottom: $window-header-padding-bottom;
+			}
+
+			// Text
+			.x-window-header-text-container {
+				font-family: $roboto;
+				font-weight: 500;
+				color: rgba(255, 255, 255, 0.9);
+				text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+				margin-top: $window-header-padding-top;
+				margin-bottom: $window-header-padding-bottom;
+			}
+
+			// Buttons
+			.x-box-item.x-tool-after-title {
+				font-size: 16px;
+				color: rgba(#000, 0.7);
+
+				&[aria-label="Fermer"]:before {
+					content: "\F156";
+					@extend .mdi;
+				}
+				&[aria-label="Maximiser"]:before {
+					content: "\F5AF";
+					@extend .mdi;
+				}
+				&[aria-label="Minimiser"]:before {
+					content: "\F5B0";
+					@extend .mdi;
+				}
+				&[aria-label="Aide de l'application"]:before {
+					content: "\F2D6";
+					@extend .mdi;
+				}
+
+				.x-tool-close, .x-tool-restore, .x-tool-maximize, .x-tool-minimize, .x-tool-help {
+					display: block;
+					width: 0;
+					height: 0;
+					overflow: hidden;
+
+					&:before {
+						@extend .mdi;
+					}
+				}
+			}
+		}
 	}
 }

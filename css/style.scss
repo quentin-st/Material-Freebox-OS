@@ -1,2 +1,17 @@
+/**
+ * Material-Freebox-OS
+ */
+
+// Define vars
+$roboto: Roboto, sans-serif;
+
+
+// Import part files
 @import 'mixins';
+@import 'material';
 @import 'window';
+
+
+body {
+	background-image: url('../img/wallpaper.jpg');
+}
