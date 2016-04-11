@@ -1,0 +1,107 @@
+// Toolbar
+.freeboxos-southbar.x-toolbar {
+	border: 0!important;
+	background: transparent!important;
+
+	// Main button
+	.btn-start {
+		width: 46px;
+		padding: 8px;
+		font-size: 31px;
+		@extend .mdi;
+
+		&:before {
+			content: "\F03B";
+		}
+
+		&, &:hover {
+			background: none!important;
+		}
+	}
+
+	// Windows list
+	.x-btn.fbx-taskbar {
+		background: none!important;
+		border: none!important;
+		border-bottom: 2px solid transparent!important;
+		@include border-radius(0);
+		@include transition-duration($timing-short);
+
+		.x-btn-wrap {
+			.x-btn-inner {
+				font-family: $roboto;
+				font-size: 13px;
+			}
+		}
+
+		&.x-pressed {
+			border-color: rgba(#fff, 0.9)!important;
+		}
+	}
+
+	// Clock
+	.clock-display-field {
+		.x-form-display-field {
+			padding: 4px 1px;
+			margin: 14px 6px;
+			@include border-radius(2px);
+			background-color: rgba(0, 0, 0, 0.4);
+			font-family: $roboto;
+			font-size: 14px;
+			color: rgba(#fff, 0.8)!important;
+			font-weight: 400;
+		}
+	}
+}
+
+// Apps list (start menu)
+.fbx-start-menu {
+	border-color: transparent;
+	@include border-radius(2px);
+	@extend .elevation-medium;
+
+	.x-menu-body {
+		border: 0;
+		background: #fff;
+		background-image: none!important;
+
+		.x-menu-item {
+			@include border-radius(0);
+
+			.x-menu-item-link {
+				transition-property: background;
+				transition-duration: $timing-short;
+
+				.x-menu-item-text {
+					font-size: 14px;
+					font-family: $roboto;
+					line-height: 34px;
+				}
+
+				.x-menu-item-arrow {
+					background-image: none;
+					font-size: 20px!important;
+					color: #333;
+					@extend .mdi;
+					top: 12px;
+					right: 10px;
+
+					&:before {
+						content: "\F142";
+					}
+				}
+			}
+
+			&.x-menu-item-active {
+				.x-menu-item-link {
+					background: rgba(0, 0, 0, 0.8) !important;
+
+					.x-menu-item-arrow {
+						right: 10px;
+						color: #eee!important;
+					}
+				}
+			}
+		}
+	}
+}

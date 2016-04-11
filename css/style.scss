@@ -3,13 +3,23 @@
  */
 
 // Define vars
-$roboto: Roboto, sans-serif;
+$roboto: 			Roboto, sans-serif;
+
+$color-primary: 	#00A6F6;
+$color-primary-dark: #0285D3;
+
+$timing-short:	150ms;
+$timing-medium: 250ms;
+$timing-long:	350ms;
 
 
 // Import part files
 @import 'mixins';
 @import 'material';
+@import 'components';
+
 @import 'window';
+@import 'toolbar';
 
 
 body {

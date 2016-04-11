@@ -1,0 +1,91 @@
+// Tabs
+.x-tab {
+	padding: 10px 16px 8px 16px;
+	background: transparent;
+	border: 0!important;
+	border-bottom: 3px solid transparent!important;
+	text-transform: uppercase;
+	@include transition-duration(150ms);
+	@include border-radius(0);
+
+	.x-tab-inner {
+		color: #fff!important;
+		font-family: $roboto;
+		font-weight: 500;
+	}
+
+	&.x-tab-top-active {
+		background: transparent!important;
+		border-bottom-color: rgba(#000, 0.4)!important;
+	}
+
+	&.x-tab-top-disabled {
+		background: none!important;
+		@include opacity(0.5);
+	}
+
+	&:hover {
+		background-color: rgba(#000, 0.1);
+	}
+}
+
+// Buttons
+.material-button {
+	border: 0;
+	padding: 5px 10px;
+	margin: 3px 1px;
+	transition-property: background;
+	transition-duration: $timing-short;
+	@include border-radius(2px);
+	@include box-shadow(none);
+
+	.x-btn-inner {
+		color: #333;
+		font-family: $roboto;
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 12px;
+		white-space: nowrap;
+	}
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	i {
+		font-size: 15px;
+		vertical-align: baseline;
+		margin-right: 7px;
+	}
+}
+
+.material-button--flat {
+	@extend .material-button;
+
+	background: transparent;
+
+	&:hover {
+		background: rgba(#000, 0.1);
+	}
+	&:active {
+		background: rgba(#000, 0.15);
+	}
+}
+
+.material-button--elevated {
+	@extend .material-button;
+
+	background-color: rgba(0, 0, 0, 0.05);
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	@include transition-duration($timing-short);
+
+	&:hover {
+		background: rgba(#000, 0.08);
+		@include box-shadow(0px 1px 4px -1px rgba(0, 0, 0, 0.2));
+	}
+
+	&:active, &:focus {
+		background: rgba(#000, 0.3);
+		@include box-shadow(inset 0px 1px 2px -1px rgba(0, 0, 0, 0.2));
+	}
+}

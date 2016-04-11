@@ -4,20 +4,20 @@
 
 .x-window {
 	padding: 0!important;
-	border: 1px solid rgba(0, 0, 0, 0.25) !important;
+	border: 0!important;
 	background-color: rgba(255, 255, 255, 0.2)!important;
 	@include border-radius(2px!important);
 	@extend .elevation-medium;
 
 	.x-window-header {
-		$window-header-padding-top: 8px;
-		$window-header-padding-bottom: 4px;
+		$window-header-padding-top: 12px;
+		$window-header-padding-bottom: 7px;
 
 		padding: 0 6px 0 10px;
 		border: 0;
-		background-color: transparent!important;
+		background-color: $color-primary-dark!important;
 		@include border-radius(2px 2px 0 0);
-		@include box-shadow(inset 0px 1px 0 rgba(255, 255, 255, 0.4));
+		@include box-shadow($slight-border-left, $slight-border-top, $slight-border-right);
 
 		.x-window-header-body {
 			background: transparent;
@@ -33,15 +33,15 @@
 				font-family: $roboto;
 				font-weight: 500;
 				color: rgba(255, 255, 255, 0.9);
-				text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+				text-shadow: none;
 				margin-top: $window-header-padding-top;
 				margin-bottom: $window-header-padding-bottom;
 			}
 
 			// Buttons
 			.x-box-item.x-tool-after-title {
-				font-size: 16px;
-				color: rgba(#000, 0.7);
+				font-size: 15px;
+				color: rgba(#fff, 0.9);
 
 				&[aria-label="Fermer"]:before {
 					content: "\F156";
@@ -71,6 +71,69 @@
 					}
 				}
 			}
+		}
+	}
+
+	.x-window-body {
+		background: $color-primary;
+
+		&, .x-header .x-tab-bar-body, .x-toolbar {
+			padding: 0;
+			background: $color-primary!important;
+			@include box-shadow($slight-border-left, $slight-border-right, 0 1px 3px 0 rgba(0, 0, 0, 0.2));
+		}
+
+		.x-header {
+			.x-tab-bar-strip {
+				height: 0;
+				border: 0;
+			}
+		}
+
+		.x-toolbar {
+			.x-btn {
+				border: 0!important;
+				padding: 8px;
+				@include border-radius(0);
+				@include transition-duration($timing-short);
+
+				.x-btn-inner {
+					font-family: $roboto;
+					font-size: 12px;
+					font-weight: 500;
+				}
+
+				&:hover {
+					border: 0!important;
+					background: rgba(#000, 0.08)!important;
+
+					.x-btn-inner {
+						color: #fff;
+					}
+				}
+			}
+		}
+
+		.x-panel-body {
+			@include box-shadow($slight-border-right, $slight-border-bottom, $slight-border-left);
+		}
+	}
+}
+
+// Messagebox
+.x-message-box {
+	.x-window-body, .x-toolbar-footer {
+		background: #fff!important;
+	}
+
+	.x-window-body {
+		@include box-shadow(none);
+	}
+	.x-toolbar-footer {
+		margin-top: 0;
+
+		.x-btn {
+			@extend .material-button--flat;
 		}
 	}
 }
