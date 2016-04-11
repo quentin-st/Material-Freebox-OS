@@ -1,0 +1,37 @@
+{
+	"manifest_version": 2,
+
+	"name": "Material-Freebox-OS",
+	"description": "",
+	"version": "1.0",
+
+	"browser_action": {
+		//"default_icon": "icon.png",
+		"default_popup": "popup.html"
+	},
+	"permissions": [
+		"activeTab"
+		//, "*"
+	],
+	"content_scripts": [
+		{
+			"matches": [
+				"http://mafreebox.freebox.fr/*",
+				"http://*/",
+				"https://*/"
+			],
+			"js": [
+				"js/content-script.js",
+				"js/script.js"
+			],
+			"css" : [
+				"css/style.css"
+			]
+		}
+	],
+	"web_accessible_resources": [
+		"js/content-script.js",
+		"js/script.js",
+		"css/style.css"
+	]
+}
