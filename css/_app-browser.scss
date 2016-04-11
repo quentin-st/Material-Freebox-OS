@@ -1,0 +1,29 @@
+.fs-mount-point {
+	border: 0;
+	@extend .elevation-lowest;
+	@include border-radius(1px);
+	transition-property: box-shadow;
+	transition-duration: $timing-short;
+
+	.fs-mount-icon {
+		color: rgba(#000, 0.2);
+	}
+
+	&.x-item-selected {
+		text-shadow: none;
+		background-color: $color-accent;
+		@extend .elevation-low;
+
+		.fs-mount-icon div {
+			color: #fff;
+		}
+	}
+
+	.x-progress-wrap {
+		background-color: lighten($color-accent, 10);
+
+		.x-progress-bar {
+			background-color: darken($color-accent, 5);
+		}
+	}
+}

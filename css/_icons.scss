@@ -24,7 +24,8 @@ $icons-32: (
 	wifi-toggle-off: "\F5A9",
 	wifi-toggle-on: "\F5AA",
 	pub-toggle-off: "\F2D8",
-	pub-toggle-on:  "\F2D9"
+	pub-toggle-on:  "\F2D9",
+	harddisk:		"\F2CA"
 );
 // Add $icons-80 to $icons-32
 $icons-32: map_merge($icons-32, $icons-80);

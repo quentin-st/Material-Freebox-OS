@@ -5,11 +5,11 @@ $elevation-3: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 $elevation-4: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 $elevation-5: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 
-.elevation-1 { @include box-shadow($elevation-1); }
-.elevation-2, .elevation-low { @include box-shadow($elevation-2); }
+.elevation-1, .elevation-lowest { @include box-shadow($elevation-1); }
+.elevation-2, .elevation-low 	{ @include box-shadow($elevation-2); }
 .elevation-3, .elevation-medium { @include box-shadow($elevation-3); }
-.elevation-4, .elevation-high { @include box-shadow($elevation-4); }
-.elevation-5 { @include box-shadow($elevation-5); }
+.elevation-4, .elevation-high 	{ @include box-shadow($elevation-4); }
+.elevation-5, .elevation-highest { @include box-shadow($elevation-5); }
 
 // Slight border
 $slight-border-top: 	inset 0 1px 0 0px rgba(0, 0, 0, 0.2);

@@ -7,6 +7,7 @@ $roboto: 			Roboto, sans-serif;
 
 $color-primary: 	#00A6F6;
 $color-primary-dark: #0285D3;
+$color-accent:		#4285F4;
 
 $timing-short:	150ms;
 $timing-medium: 250ms;
@@ -22,6 +23,8 @@ $timing-long:	350ms;
 @import 'toolbar';
 @import 'desktop';
 @import 'icons';
+
+@import 'app-browser';
 
 
 body {
