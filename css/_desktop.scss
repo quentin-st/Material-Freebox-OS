@@ -7,7 +7,7 @@
 		font-family: $roboto;
 		font-size: 60px;
 		color: rgba(#fff, 0.95);
-		text-shadow: 2px 2px 1px rgba(#000, 0.3);
+		text-shadow: 0 0 4px rgba(#000, 0.5);
 	}
 
 	#logo_freeboxos {
@@ -22,6 +22,8 @@
 	.desktop-icon {
 		height: auto;
 		margin: 5px auto;
+		text-shadow: none;
+		color: rgba(#fff, 0.95);
 	}
 
 	&.desktop-selected {

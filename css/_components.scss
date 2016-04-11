@@ -36,7 +36,7 @@
 	margin: 3px 1px;
 	transition-property: background;
 	transition-duration: $timing-short;
-	@include border-radius(2px);
+	@include border-radius(2px!important);
 	@include box-shadow(none);
 
 	.x-btn-inner {
@@ -75,18 +75,30 @@
 .material-button--elevated {
 	@extend .material-button;
 
-	background-color: rgba(0, 0, 0, 0.05);
-	border: 1px solid rgba(0, 0, 0, 0.15);
+	background: rgba(0, 0, 0, 0.05)!important;
+	border: 1px solid rgba(0, 0, 0, 0.15)!important;
 	@include transition-duration($timing-short);
 
 	&:hover {
-		background: $hover-light;
+		background: $hover-light!important;
 		@include box-shadow(0px 1px 4px -1px rgba(0, 0, 0, 0.2));
 	}
 
 	&:active, &:focus {
-		background: $active-light;
+		background: $active-light!important;
 		@include box-shadow(inset 0px 1px 2px -1px rgba(0, 0, 0, 0.2));
+	}
+
+	&.primary {
+		background: $color-primary!important;
+
+		&:hover {
+			background: lighten($color-primary, 5)!important;
+		}
+
+		&:active, &:focus {
+			background: darken($color-primary, 5)!important;
+		}
 	}
 }
 
@@ -98,6 +110,43 @@
 
 			.x-column-header-text {
 				font-family: $roboto;
+			}
+		}
+	}
+}
+
+// Dropdown
+.x-menu {
+	@extend .elevation-low;
+	@include border-radius(2px);
+
+	.x-menu-body {
+		border: 0;
+		background-color: #fff;
+		padding: 3px 0;
+
+		.x-menu-icon-separator {
+			display: none;
+		}
+
+		.x-menu-item {
+			border-color: transparent;
+			transition-property: background;
+			transition-duration: $timing-short;
+			@include border-radius(0);
+
+			.x-menu-item-link {
+				.x-menu-item-text {
+					font-family: $roboto;
+				}
+			}
+
+			&.x-menu-item-active {
+				background: $hover-light;
+
+				.x-menu-item-link {
+					background: transparent !important;
+				}
 			}
 		}
 	}

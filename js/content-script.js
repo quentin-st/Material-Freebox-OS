@@ -1,5 +1,5 @@
 // TODO tighten test
-if (document.title == 'Freebox OS') {
+if (document.title.indexOf('Freebox OS') == 0) {
 	// Inject script
 	injectScript(chrome.extension.getURL('js/script.js'));
 
