@@ -38,6 +38,13 @@
 	-o-transition-duration: $duration;
 	transition-duration: $duration;
 }
+@mixin transition-property($param) {
+	-webkit-transition-property: $param;
+	-moz-transition-property: $param;
+	-ms-transition-property: $param;
+	-o-transition-property: $param;
+	transition-property: $param;
+}
 @mixin background-size($param) {
 	-webkit-background-size: $param;
 	-moz-background-size: $param;

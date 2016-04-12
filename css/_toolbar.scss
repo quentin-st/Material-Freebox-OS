@@ -3,18 +3,19 @@
 	border: 0!important;
 	padding: 0;
 	background: transparent!important;
-	transition-property: background;
-	transition-duration: $timing-short;
+	@include transition-property(background);
+	@include transition-duration($timing-short);
 
 	&.solid-background {
 		background: $color-dark!important;
+		@include box-shadow(0 0 8px -1px rgba(#000, 0.8));
 	}
 
 	// Main button
 	.btn-start {
 		color: rgba(#fff, 0.9);
-		transition-property: color;
-		transition-duration: $timing-short;
+		@include transition-property(color);
+		@include transition-duration($timing-short);
 		width: 46px;
 		padding: 8px;
 		font-size: 31px;
@@ -99,8 +100,8 @@
 			@include border-radius(0);
 
 			.x-menu-item-link {
-				transition-property: background;
-				transition-duration: $timing-short;
+				@include transition-property(background);
+				@include transition-duration($timing-short);
 
 				.x-menu-item-text {
 					font-size: 14px;

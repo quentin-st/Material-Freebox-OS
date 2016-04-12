@@ -28,6 +28,34 @@
 
 			return result;
 		};
+
+
+		// Listen for window focus change
+		var sortByZIndex = function(a, b) {
+			var aZindex = $(a).css('z-index');
+			var bZindex = $(b).css('z-index');
+
+			return ((aZindex < bZindex) ? -1 : ((aZindex > bZindex) ? 1 : 0));
+		};
+
+		var bringToFront = Ext.ZIndexManager.prototype.bringToFront;
+		Ext.ZIndexManager.prototype.bringToFront = function() {
+			var result = bringToFront.apply(this, arguments);
+			var windows = $('.x-window:not(.x-hide-offsets)').slice();
+
+			// Set blurred class on all windows
+			windows.toggleClass('x-window-focus-blurred', true);
+
+			// Find focused window
+			windows.sort(sortByZIndex);
+
+			// Set focuses class on active window
+			$(windows[windows.length-1])
+				.toggleClass('x-window-focus-focused', true)
+				.toggleClass('x-window-focus-blurred', false);
+
+			return result;
+		};
 	};
 
 	// Wait for desktop to be loaded

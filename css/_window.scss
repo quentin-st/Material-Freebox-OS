@@ -6,8 +6,20 @@
 	padding: 0!important;
 	border: 0!important;
 	background-color: rgba(#fff, 0.2)!important;
+	@include transition-property(box-shadow);
+	@include transition-duration($timing-short);
 	@include border-radius(2px!important);
 	@extend .elevation-medium;
+
+	// Blur / focus states
+	&.x-window-focus-blurred {
+		@extend .elevation-low;
+
+		.x-window-header .x-window-header-body {
+			@include opacity(0.5);
+		}
+	}
+	&.x-window-focus-focused { }
 
 	.x-window-header {
 		$window-header-padding-top: 12px;
