@@ -1,4 +1,7 @@
-// ICONS DEFINITIONS
+/**
+ * Icons replacements
+ * We define materialdesignicons replacement icons for "each" Freebox OS png icon
+ */
 
 // Desktop icons (size: 80)
 $icons-80: (
@@ -25,7 +28,37 @@ $icons-32: (
 	wifi-toggle-on: $mdi-wifi-off,
 	pub-toggle-off: $mdi-hexagon,
 	pub-toggle-on:  $mdi-hexagon-outline,
-	harddisk:		$mdi-harddisk
+	harddisk:		$mdi-harddisk,
+	settings-connectionconfig: 		$mdi-settings-box,
+	settings-connectionipv6config: 	$mdi-web,
+	settings-connectiondyndns: 		$mdi-dns,
+	settings-vpnserver: 	$mdi-vpn,
+	settings-vpnclient: 	$mdi-vpn,
+	settings-ports-portredir: 	$mdi-power-socket,
+	settings-domains-domains: 	$mdi-web,
+	settings-phonefxsstatus:	$mdi-deskphone,
+	settings-phonedectstatus: 	$mdi-cellphone-basic,
+	settings-wizarddect:		$mdi-cellphone-basic,
+	settings-networkmode: 	$mdi-server-network,
+	settings-wifi-wifi: $mdi-access-point-network,
+	settings-wizardwifi: $mdi-access-point-network,
+	settings-dhcp: 		$mdi-lan,
+	settings-switch:	$mdi-switch,
+	settings-freeplugs: $mdi-ethernet-cable,
+	settings-upnpigd: 	$mdi-server-network,
+	settings-storage: 	$mdi-harddisk,
+	settings-ftp: 		$mdi-folder-move,
+	settings-sharesamba: $mdi-windows,
+	settings-shareafp:	$mdi-laptop-mac,
+	settings-airmedia: 	$mdi-speaker,
+	settings-upnpav:	$mdi-television-guide,
+	settings-lcd:		$mdi-television,
+	settings-license:	$mdi-message-text,
+	settings-speedtest:	$mdi-speedometer,
+	settings-tnt:		$mdi-radar,
+	settings-accounts:	$mdi-lock,
+	settings-adblockconfig: $mdi-hexagon,
+	settings-reset:		$mdi-reload
 );
 // Add $icons-80 to $icons-32
 $icons-32: map_merge($icons-32, $icons-80);
@@ -47,7 +80,16 @@ $icons-16: (
 	bullet-white:	$mdi-checkbox-blank-circle,
 	delete:			$mdi-delete,
 	setting-tools:	$mdi-settings,
-	vcard-add:		$mdi-account-multiple-plus
+	vcard-add:		$mdi-account-multiple-plus,
+	export-excel:	$mdi-file-export,
+	add:			$mdi-plus-circle,
+	group-add:		$mdi-account-multiple-plus,
+	cancel:			$mdi-undo,
+	save:			$mdi-content-save,
+	epg:			$mdi-newspaper,
+	help:			$mdi-help-circle,
+	accept:			$mdi-check-circle,
+	filter-add:		$mdi-filter
 );
 
 
@@ -109,10 +151,19 @@ $icons-16: (
 
 // Toolbar icons (16)
 @each $icon in $icons-16 {
-	.x-btn-icon-text-right, .x-btn-icon-text-left {
-		.btn-#{nth($icon, 1)} {
-			@extend .app-icons-16;
-			@include material-icon(nth($icon, 2));
-		}
+	.btn-#{nth($icon, 1)},
+	.x-btn-icon-text-right .btn-#{nth($icon, 1)},
+	.x-btn-icon-text-left .btn-#{nth($icon, 1)} {
+		@extend .app-icons-16;
+		@include material-icon(nth($icon, 2));
 	}
+}
+
+
+// Separate icons
+.x-message-box-question {
+	font-size: 35px;
+	color: $color-text-dark;
+	background-image: none;
+	@include material-icon($mdi-comment-question-outline);
 }
