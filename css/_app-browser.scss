@@ -1,9 +1,44 @@
+// Treeview
+.x-tree-view {
+	.x-grid-row {
+		&.x-grid-tree-node-expanded {
+
+		}
+
+		.x-grid-cell {
+			@include transition-property(background-color);
+			@include transition-duration($timing-short);
+
+			.x-grid-cell-inner {
+				padding: 5px 6px 6px 0;
+
+				.x-tree-icon {
+					margin-left: 6px;
+				}
+				.x-tree-node-text {
+					font-family: $roboto;
+					color: $color-text-dark;
+					font-size: 12px;
+					margin-left: 5px;
+					display: inline-block;
+				}
+			}
+		}
+
+		&.x-grid-row-selected .x-grid-cell {
+			border-color: transparent;
+			background-color: $hover-light;
+		}
+	}
+}
+
+// Mount point
 .fs-mount-point {
 	border: 0;
 	@extend .elevation-lowest;
 	@include border-radius(1px);
-	transition-property: box-shadow;
-	transition-duration: $timing-short;
+	@include transition-property(box-shadow);
+	@include transition-duration($timing-short);
 
 	.fs-mount-icon {
 		color: rgba(#000, 0.2);

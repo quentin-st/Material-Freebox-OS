@@ -104,12 +104,39 @@
 
 // Table header
 .x-grid-header-ct {
+	@include box-shadow(0 1px 4px rgba(0, 0, 0, 0.3));
+
 	.x-column-header {
+		background: $color-background-light none;
+
 		.x-column-header-inner {
-			padding: 7px 9px 8px;
+			padding: 9px 9px 8px;
 
 			.x-column-header-text {
 				font-family: $roboto;
+				font-weight: $typography-label-font-weight;
+				font-size: $typography-label-font-size;
+				color: $typography-label-color;
+			}
+
+			.x-column-header-trigger {
+				visibility: hidden;
+				right: 2px;
+				background: none;
+				@include material-icon("\F140");
+
+				&:before {
+					font-size: 15px;
+					line-height: 30px;
+				}
+			}
+
+			&.x-column-header-over {
+				background: $hover-light none;
+
+				.x-column-header-trigger {
+					visibility: visible;
+				}
 			}
 		}
 	}
@@ -161,5 +188,21 @@
 	.x-tip-body {
 		color: #fff;
 		font-family: $roboto;
+	}
+}
+
+// Table
+.x-grid-table {
+	.x-grid-data-row {
+		.x-grid-cell {
+			padding: 3px 0;
+			border-width: 0;
+
+			.x-grid-cell-inner {
+				padding: 6px 8px 6px;
+				font-family: $roboto;
+				font-size: 12px;
+			}
+		}
 	}
 }

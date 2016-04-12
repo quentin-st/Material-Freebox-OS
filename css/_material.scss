@@ -1,12 +1,16 @@
 // Colors
-$color-primary: 	#00A6F6;
-$color-primary-dark: #0285D3;
-$color-accent:		#4285F4;
-$color-dark: 		#303030;
+$color-primary: 		#00A6F6;
+$color-primary-dark: 	#0285D3;
+$color-accent:			#4285F4;
+$color-dark: 			#303030;
 
-$color-text-dark:   rgba(#000, 0.87);
+$color-text-dark:   	rgba(#000, 0.87);
 
 $color-background-light: #FAFAFA;
+
+$typography-label-font-weight: 	600;
+$typography-label-color: 		rgba(#000, 0.7);
+$typography-label-font-size: 	12px;
 
 // Elevation
 $elevation-1: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
