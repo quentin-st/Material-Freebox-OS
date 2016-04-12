@@ -29,7 +29,6 @@ body {
 	background-color: #fff;
 	@include border-radius(2px);
 	@extend .elevation-medium;
-	@include box-shadow(none);
 
 	.submit-btn {
 		border: 0!important;

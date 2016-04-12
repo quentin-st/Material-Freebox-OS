@@ -5,7 +5,13 @@
 	/**
 	 * This function is called once the desktop is fully loaded
 	 */
-	var desktopLoaded = function () {
+	var desktopLoaded = function() {
+		log('Desktop\'s ready, let\'s go');
+
+		// We're on login page, no need to go further
+		if (window.FbxConf === undefined)
+			return;
+
 		var ui = {
 			toolbar: $('.freeboxos-southbar.x-toolbar')
 		};
@@ -58,16 +64,22 @@
 		};
 	};
 
-	// Wait for desktop to be loaded
-	var i = setInterval(function() {
-		if (!!document.getElementsByClassName('fbxos-version').length) {
-			log('Desktop seems loaded');
-			clearInterval(i);
-			desktopLoaded();
-		}
-	}, 200);
+	// Wait for jQuery & desktop to be loaded
+	waitFor(function() {
+		return !!window.jQuery && !!$('.fbxos-version').length;
+	}, desktopLoaded);
+
 
 	function log(msg) {
 		console.info('Material-Freebox-OS(script.js):', msg);
+	}
+
+	function waitFor(something, onceReady) {
+		var i = setInterval(function() {
+			if (something()) {
+				clearInterval(i);
+				onceReady();
+			}
+		}, 200);
 	}
 })();

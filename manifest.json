@@ -17,8 +17,8 @@
 		{
 			"matches": [
 				"http://mafreebox.freebox.fr/*",
-				"http://*/",
-				"https://*/"
+				"http://*/*",
+				"https://*/*"
 			],
 			"js": [
 				"js/content-script.js",
