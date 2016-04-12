@@ -89,7 +89,8 @@ $icons-16: (
 	epg:			$mdi-newspaper,
 	help:			$mdi-help-circle,
 	accept:			$mdi-check-circle,
-	filter-add:		$mdi-filter
+	filter-add:		$mdi-filter,
+	edit:			$mdi-pencil
 );
 
 
@@ -133,7 +134,9 @@ $icons-16: (
 
 // UI icons (32)
 @each $icon in $icons-32 {
-	.btn-32-#{nth($icon, 1)}, .app-icons-32-#{nth($icon, 1)} {
+	$selector-suffix: "32-#{nth($icon, 1)}:not(img)";
+
+	.btn-#{$selector-suffix}, .app-icons-#{$selector-suffix} {
 		@extend .app-icons-32;
 		@include material-icon(nth($icon, 2));
 	}
@@ -141,9 +144,11 @@ $icons-16: (
 
 // Toolbar icons (24)
 @each $icon in $icons-24 {
-	.btn-24-#{nth($icon, 1)},
-	.x-btn-icon-text-right .btn-24-#{nth($icon, 1)},
-	.x-btn-icon-text-left .btn-24-#{nth($icon, 1)} {
+	$selector: ".btn-24-#{nth($icon, 1)}:not(img)";
+
+	#{$selector},
+	.x-btn-icon-text-right #{$selector},
+	.x-btn-icon-text-left #{$selector} {
 		@extend .app-icons-24;
 		@include material-icon(nth($icon, 2));
 	}
@@ -151,9 +156,11 @@ $icons-16: (
 
 // Toolbar icons (16)
 @each $icon in $icons-16 {
-	.btn-#{nth($icon, 1)},
-	.x-btn-icon-text-right .btn-#{nth($icon, 1)},
-	.x-btn-icon-text-left .btn-#{nth($icon, 1)} {
+	$selector: ".btn-#{nth($icon, 1)}:not(img)";
+
+	#{$selector},
+	.x-btn-icon-text-right #{$selector},
+	.x-btn-icon-text-left #{$selector} {
 		@extend .app-icons-16;
 		@include material-icon(nth($icon, 2));
 	}

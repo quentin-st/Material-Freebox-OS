@@ -38,7 +38,9 @@
 	-o-transition-duration: $duration;
 	transition-duration: $duration;
 }
-@mixin transition-property($param) {
+@mixin transition-property($param1, $param2:false) {
+	$param: $param1;
+	@if $param2 { $param: $param1, $param2; }
 	-webkit-transition-property: $param;
 	-moz-transition-property: $param;
 	-ms-transition-property: $param;
