@@ -54,6 +54,14 @@
 				color: #fff;
 				@include border-radius(50%);
 				@extend .elevation-low;
+
+
+				// Set colors
+				@each $color in $icons-colors-80-32 {
+					&.app-icons-32-#{nth($color, 1)} {
+						background-color: nth($color, 2);
+					}
+				}
 			}
 		}
 
