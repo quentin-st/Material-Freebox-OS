@@ -3,6 +3,23 @@
  * We define materialdesignicons replacement icons for "each" Freebox OS png icon
  */
 
+// Icons colors
+// Each color should be assigned in its context
+$icons-colors-80-32: (
+	settings-connectionstatus:	$color-amber,
+	tv: 			$color-red,
+	downloader: 	$color-purple,
+	explorer: 		$color-deep-purple,
+	settings-parentalfilterconfig: $color-indigo,
+	lanbrowser: 	$color-blue,
+	calls: 			$color-teal,
+	pvr: 			$color-green,
+	epg: 			$color-light-green,
+	contacts: 		$color-orange,
+	settings: 		$color-deep-orange,
+	help:			$color-brown
+);
+
 // Desktop icons (size: 80)
 $icons-80: (
 	settings-connectionstatus: $mdi-heart-pulse, // Etat de la Freebox

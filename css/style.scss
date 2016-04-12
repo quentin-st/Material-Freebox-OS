@@ -9,13 +9,14 @@ $roboto: 			Roboto, sans-serif;
 @import 'mixins';
 @import 'materialdesignicons';
 @import 'materialdesignicons-vars';
-@import 'material';
-@import 'components';
 
+@import 'material';
+@import 'icons';
+
+@import 'components';
 @import 'window';
 @import 'toolbar';
 @import 'desktop';
-@import 'icons';
 
 @import 'app-browser';
 @import 'app-settings';

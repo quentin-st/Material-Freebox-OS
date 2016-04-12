@@ -43,21 +43,7 @@
 		@extend .elevation-low;
 
 		// Set colors
-		$colors: (
-			settings-connectionstatus:	$color-amber,
-			tv: 			$color-red,
-			downloader: 	$color-purple,
-			explorer: 		$color-deep-purple,
-			settings-parentalfilterconfig: $color-indigo,
-			lanbrowser: 	$color-blue,
-			calls: 			$color-teal,
-			pvr: 			$color-green,
-			epg: 			$color-light-green,
-			contacts: 		$color-orange,
-			settings: 		$color-deep-orange,
-			help:			$color-brown
-		);
-		@each $color in $colors {
+		@each $color in $icons-colors-80-32 {
 			&.app-icons-80-#{nth($color, 1)} {
 				background-color: nth($color, 2);
 			}

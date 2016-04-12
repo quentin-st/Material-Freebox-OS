@@ -109,6 +109,15 @@
 					line-height: 34px;
 				}
 
+				.x-menu-item-icon {
+					// Set colors
+					@each $color in $icons-colors-80-32 {
+						&.app-icons-32-#{nth($color, 1)} {
+							color: nth($color, 2);
+						}
+					}
+				}
+
 				.x-menu-item-arrow {
 					background-image: none;
 					font-size: 20px!important;
