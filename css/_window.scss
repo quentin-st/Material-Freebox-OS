@@ -42,17 +42,18 @@
 				font-size: 15px;
 				color: rgba(#fff, 0.9);
 
-				&[aria-label="Fermer"] {
-					@include material-icon("\F156");
-				}
-				&[aria-label="Maximiser"] {
-					@include material-icon("\F5AF");
-				}
-				&[aria-label="Minimiser"] {
-					@include material-icon("\F5B0");
-				}
-				&[aria-label="Aide de l'application"] {
-					@include material-icon("\F2D6");
+				$window-icons: (
+					"Fermer": "\F156",
+					"Maximiser": "\F5AF",
+					"restorer": "\F5B2",
+					"Minimiser": "\F5B0",
+					"Aide de l'application": "\F2D6"
+				);
+
+				@each $icon in $window-icons {
+					&[aria-label="#{nth($icon, 1)}"] {
+						@include material-icon(nth($icon, 2));
+					}
 				}
 
 				.x-tool-close, .x-tool-restore, .x-tool-maximize, .x-tool-minimize, .x-tool-help {

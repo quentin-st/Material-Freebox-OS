@@ -6,6 +6,10 @@
 	 * This function is called once the desktop is fully loaded
 	 */
 	var desktopLoaded = function () {
+		var ui = {
+			toolbar: $('.freeboxos-southbar.x-toolbar')
+		};
+
 		// DESKTOP
 		// Write Freebox OS version next to the huge title
 		$('<div />')
@@ -14,15 +18,24 @@
 			.appendTo($('.fbxos-version'));
 
 
-		// TODO detect full-size windows, add .solid-background to .freeboxos-southbar if necessary
+		// Listen for window size change events
+		var syncMonitorWindowResize = Ext.window.Window.prototype.syncMonitorWindowResize;
+		Ext.window.Window.prototype.syncMonitorWindowResize = function() {
+			var result = syncMonitorWindowResize.apply(this, arguments);
+
+			// If any of the visible windows is fullscreen
+			ui.toolbar.toggleClass('solid-background', $('.x-window-maximized:not(.x-hide-offsets)').length > 0);
+
+			return result;
+		};
 	};
 
 	// Wait for desktop to be loaded
 	var i = setInterval(function() {
-		if (!!$('.fbxos-version').length) {
+		if (!!document.getElementsByClassName('fbxos-version').length) {
 			log('Desktop seems loaded');
-			desktopLoaded();
 			clearInterval(i);
+			desktopLoaded();
 		}
 	}, 200);
 
