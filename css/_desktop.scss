@@ -31,10 +31,46 @@
 	height: 120px;
 
 	.desktop-icon {
-		height: auto;
-		margin: 5px auto;
-		text-shadow: none;
+		width: 60px;
+		height: 60px;
+		margin: 5px auto 10px auto;
+		background-color: $color-dark;
 		color: rgba(#fff, 0.95);
+		font-size: 42px!important;
+		line-height: 60px;
+		text-shadow: 1px 1px 1px rgba(#000, 0.1);
+		@include border-radius(50%);
+		@extend .elevation-low;
+
+		// Set colors
+		$colors: (
+			settings-connectionstatus:	$color-amber,
+			tv: 			$color-red,
+			downloader: 	$color-purple,
+			explorer: 		$color-deep-purple,
+			settings-parentalfilterconfig: $color-indigo,
+			lanbrowser: 	$color-blue,
+			calls: 			$color-teal,
+			pvr: 			$color-green,
+			epg: 			$color-light-green,
+			contacts: 		$color-orange,
+			settings: 		$color-deep-orange,
+			help:			$color-brown
+		);
+		@each $color in $colors {
+			&.app-icons-80-#{nth($color, 1)} {
+				background-color: nth($color, 2);
+			}
+		}
+
+		// Exceptions
+		&.app-icons-80-pvr {
+			font-size: 60px!important;
+		}
+		&.app-icons-80-calls {
+			padding-right: 5px;
+			padding-top: 2px;
+		}
 	}
 
 	&.desktop-selected {
@@ -47,8 +83,10 @@
 	}
 
 	span[aria-label] {
+		color: rgba(#fff, 0.95);
 		font-family: $roboto;
 		line-height: 15px;
-		text-shadow: 1px 1px 1px rgba(#000, 0.8);
+		text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+		font-weight: 600;
 	}
 }

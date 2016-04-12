@@ -12,7 +12,7 @@
 		@include transition-property(background);
 		@include transition-duration($timing-short);
 
-		&:hover {
+		&.setting-app-over {
 			border-color: transparent;
 			background: $hover-light;
 		}
