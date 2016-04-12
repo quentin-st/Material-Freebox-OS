@@ -122,7 +122,7 @@
 				visibility: hidden;
 				right: 2px;
 				background: none;
-				@include material-icon("\F140");
+				@include material-icon($mdi-chevron-down);
 
 				&:before {
 					font-size: 15px;

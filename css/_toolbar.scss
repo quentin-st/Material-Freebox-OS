@@ -20,7 +20,7 @@
 		padding: 8px;
 		font-size: 31px;
 
-		@include material-icon("\F03B");
+		@include material-icon($mdi-apps);
 
 		&:hover {
 			color: #fff;
@@ -116,7 +116,7 @@
 					top: 12px;
 					right: 10px;
 
-					@include material-icon("\F142");
+					@include material-icon($mdi-chevron-right);
 				}
 			}
 

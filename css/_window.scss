@@ -54,11 +54,11 @@
 				color: rgba(#fff, 0.9);
 
 				$window-icons: (
-					"Fermer": "\F156",
-					"Maximiser": "\F5AF",
-					"restorer": "\F5B2",
-					"Minimiser": "\F5B0",
-					"Aide de l'application": "\F2D6"
+					"Fermer": $mdi-close,
+					"Maximiser": $mdi-window-maximize,
+					"restorer": $mdi-window-restore,
+					"Minimiser": $mdi-window-minimize,
+					"Aide de l'application": $mdi-help
 				);
 
 				@each $icon in $window-icons {
@@ -123,6 +123,10 @@
 				&.x-btn-menu-active {
 					background: $active-light!important;
 				}
+			}
+
+			.x-toolbar-separator-horizontal {
+				border: 0;
 			}
 		}
 	}
