@@ -25,9 +25,15 @@
 			}
 		}
 
+		// Selected row
 		&.x-grid-row-selected .x-grid-cell {
 			border-color: transparent;
-			background-color: $hover-light;
+			background-color: transparent!important;
+
+			.x-tree-node-text {
+				font-weight: 600;
+				color: $color-accent;
+			}
 		}
 	}
 }

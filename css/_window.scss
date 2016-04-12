@@ -29,7 +29,6 @@
 		border: 0;
 		background-color: $color-primary-dark!important;
 		@include border-radius(2px 2px 0 0);
-		@include box-shadow($slight-border-left, $slight-border-top, $slight-border-right);
 
 		.x-window-header-body {
 			background: transparent;
@@ -88,7 +87,7 @@
 		&, .x-header .x-tab-bar-body, .x-toolbar {
 			padding: 0;
 			background: $color-primary!important;
-			@include box-shadow($slight-border-left, $slight-border-right, 0 1px 3px 0 rgba(0, 0, 0, 0.2));
+			@include box-shadow(0 1px 3px 0 rgba(#000, 0.2));
 		}
 
 		.x-header {
@@ -101,8 +100,9 @@
 		.x-toolbar {
 			.x-btn {
 				border: 0!important;
-				padding: 8px;
+				padding: 14px 10px;
 				@include border-radius(0);
+				@include transition-property(background);
 				@include transition-duration($timing-short);
 
 				.x-btn-inner {

@@ -77,7 +77,6 @@
 
 	background: rgba(0, 0, 0, 0.05)!important;
 	border: 1px solid rgba(0, 0, 0, 0.15)!important;
-	@include transition-duration($timing-short);
 
 	&:hover {
 		background: $hover-light!important;
