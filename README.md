@@ -29,5 +29,12 @@ Quite straight-forward actually: the [`content-script.js`](js/content-script.js)
 
 That's it!
 
-## Sidenotes
+## How to contribute
+Do not hesitate to create pull requests against the master branch or open issues!
+The main project is based on SCSS to build CSS files. You'll need an appropriate compiler alongside with some Chrome extensions notions.
+
+### Sidenotes
 I'm really sorry for all these `!important` in the stylesheets. As you may know, Freebox OS use a lot of these so I had no choice.
+
+## Licensing
+Material-Freebox-OS is distributed under the GNU GPL version 2.
