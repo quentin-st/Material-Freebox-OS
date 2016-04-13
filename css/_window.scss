@@ -16,7 +16,7 @@
 		@extend .elevation-low;
 
 		.x-window-header .x-window-header-body {
-			@include opacity(0.5);
+			@include opacity(0.3);
 		}
 	}
 	&.x-window-focus-focused { }
@@ -25,15 +25,17 @@
 		$window-header-padding-top: 12px;
 		$window-header-padding-bottom: 7px;
 
-		padding: 0 6px 0 10px;
+		padding: 0 0 0 10px;
 		border: 0;
 		background-color: $color-primary-dark!important;
 		@include border-radius(2px 2px 0 0);
 
 		.x-window-header-body {
 			background: transparent;
+			@include transition-property(opacity);
+			@include transition-duration($timing-short);
 
-			// Icon
+			// Hide window icon
 			.x-window-header-icon {
 				display: none;
 			}
@@ -42,6 +44,7 @@
 			.x-window-header-text-container {
 				font-family: $roboto;
 				font-weight: 500;
+				font-size: 14px;
 				color: rgba(255, 255, 255, 0.9);
 				text-shadow: none;
 				margin-top: $window-header-padding-top;
@@ -50,12 +53,12 @@
 
 			// Buttons
 			.x-box-item.x-tool-after-title {
-				font-size: 15px;
+				font-size: 18px!important;
 				color: rgba(#fff, 0.9);
 
 				$window-icons: (
 					"Fermer": $mdi-close,
-					"Maximiser": $mdi-window-maximize,
+					"Maximiser": $mdi-crop-square,//$mdi-window-maximize,
 					"restorer": $mdi-window-restore,
 					"Minimiser": $mdi-window-minimize,
 					"Aide de l'application": $mdi-help
@@ -63,19 +66,20 @@
 
 				@each $icon in $window-icons {
 					&[aria-label="#{nth($icon, 1)}"] {
+						padding-top: 10px;
+						text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+						text-align: center;
 						@include material-icon(nth($icon, 2));
 					}
 				}
 
-				.x-tool-close, .x-tool-restore, .x-tool-maximize, .x-tool-minimize, .x-tool-help {
-					display: block;
-					width: 0;
-					height: 0;
-					overflow: hidden;
+				// Special cases
+				&[aria-label="Minimiser"] { padding-top: 14px; font-size: 15px!important; }
+				&[aria-label="Aide de l'application"] { font-size: 16px!important; }
 
-					&:before {
-						@extend .mdi;
-					}
+
+				.x-tool-close, .x-tool-restore, .x-tool-maximize, .x-tool-minimize, .x-tool-help {
+					display: none;
 				}
 			}
 		}

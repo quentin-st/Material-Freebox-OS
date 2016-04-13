@@ -24,6 +24,11 @@
 			.appendTo($('.fbxos-version'));
 
 
+		// Override windows buttons size
+		Ext.panel.Tool.prototype.width = 35;
+		Ext.panel.Tool.prototype.height = 35;
+
+
 		// Listen for window size change events
 		var syncMonitorWindowResize = Ext.window.Window.prototype.syncMonitorWindowResize;
 		Ext.window.Window.prototype.syncMonitorWindowResize = function() {
