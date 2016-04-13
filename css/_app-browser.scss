@@ -40,21 +40,19 @@
 
 // Mount point
 .fs-mount-point {
+	height: auto;
 	margin: 7px 8px;
-	border: 0;
-	background-color: $color-background-light;
-	@include border-radius(1px);
-	@include transition-property(box-shadow);
-	@include transition-duration($timing-short);
-	@extend .elevation-lowest;
+	padding: 5px 8px 5px 5px;
+	@extend .selectable-item;
 
 	.fs-mount-icon {
 		color: rgba(#000, 0.2);
+		height: 40px;
 	}
 
 	&.x-item-selected {
 		text-shadow: none;
-		background-color: $color-accent;
+		@extend .selectable-item.selected;
 
 		.fs-mount-icon div {
 			color: #fff;
@@ -62,6 +60,7 @@
 	}
 
 	.x-progress-wrap {
+		margin: 3px 0;
 		background-color: lighten($color-accent, 15);
 
 		.x-progress-bar {

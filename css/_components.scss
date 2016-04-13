@@ -28,94 +28,6 @@
 	}
 }
 
-// Buttons
-.material-button {
-	background-color: $color-primary;
-	border: 0;
-	padding: 5px 10px;
-	margin: 3px 1px;
-	@include transition-property(background, box-shadow);
-	@include transition-duration($timing-short);
-	@include border-radius(2px!important);
-	@include box-shadow(none);
-
-	.x-btn-inner {
-		color: #333;
-		font-family: $roboto;
-		text-transform: uppercase;
-		font-size: 12px;
-		white-space: nowrap;
-		font-weight: 600;
-	}
-
-	&:hover {
-		text-decoration: none;
-	}
-
-	i.mdi {
-		font-size: 15px;
-		vertical-align: baseline;
-		margin-right: 7px;
-	}
-
-	&.primary {
-		background: $color-primary;
-
-		&:hover {
-			background: $color-primary-dark!important;
-		}
-
-		.x-btn-inner {
-			color: #fff;
-		}
-		&.x-btn-pressed {
-			background-color: $color-primary-darker!important;
-
-			.x-btn-icon-el {
-				color: #fff;
-			}
-		}
-	}
-}
-
-.material-button--flat {
-	@extend .material-button;
-
-	background: transparent;
-
-	&:hover {
-		background: $hover-light;
-	}
-	&:active {
-		background: $active-light;
-	}
-}
-
-.material-button--elevated {
-	@extend .material-button;
-
-	background: rgba(0, 0, 0, 0.05)!important;
-	border: 1px solid rgba(0, 0, 0, 0.15)!important;
-
-	.x-btn-inner {
-		color: #000;
-	}
-
-	&:hover {
-		background: $hover-light!important;
-		@extend .elevation-lowest;
-	}
-
-	&.x-btn-pressed {
-		background-color: $active-light!important;
-		@extend .elevation-negative;
-
-		.x-btn-icon-el {
-			color: #000;
-		}
-	}
-}
-
 // Panel header
 .x-panel-header {
 	@include border-radius(2px 2px 0 0);
@@ -247,5 +159,18 @@
 				font-size: 12px;
 			}
 		}
+	}
+}
+
+.selectable-item {
+	border: 0;
+	background-color: $color-background-light;
+	@include border-radius(1px);
+	@include transition-property(box-shadow);
+	@include transition-duration($timing-short);
+	@extend .elevation-lowest;
+
+	&.selected {
+		background-color: $color-accent;
 	}
 }

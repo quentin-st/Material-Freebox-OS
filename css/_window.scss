@@ -5,7 +5,7 @@
 .x-window {
 	padding: 0!important;
 	border: 0!important;
-	background-color: rgba(#fff, 0.2)!important;
+	background-color: $color-primary!important;
 	@include transition-property(box-shadow);
 	@include transition-duration($timing-short);
 	@include border-radius(2px!important);
@@ -130,22 +130,20 @@
 				border: 0;
 			}
 		}
+	}
 
-		// Bottom toolbar
-		.x-toolbar-docked-bottom {
-			margin-right: 0;
-			padding-bottom: 4px;
+	// Bottom toolbar
+	.x-toolbar-docked-bottom {
+		margin-right: 0;
+		padding-right: 4px;
+		padding-bottom: 4px;
 
-			&.x-toolbar-default {
-				background: $color-primary-dark!important;
-			}
+		&.x-toolbar-default {
+			background: $color-primary-dark!important;
+		}
 
-			.x-btn {
-				@extend .material-button--flat;
-			}
-			&.x-toolbar-default .x-btn .x-btn-inner {
-				color: #fff;
-			}
+		.x-btn {
+			@extend .material-button--flat;
 		}
 	}
 

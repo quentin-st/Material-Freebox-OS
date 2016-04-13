@@ -1,0 +1,96 @@
+/**
+ * Material buttons
+ * Since we bind these styles to existing buttons, mixins are way more convenient
+ */
+
+// Buttons
+.material-button {
+	font-family: $roboto;
+	background: $color-primary!important;
+	border: 0;
+	padding: 5px 10px;
+	margin: 3px 1px;
+	@include transition-property(background, box-shadow);
+	@include transition-duration($timing-short);
+	@include border-radius(2px!important);
+	@include box-shadow(none);
+
+	.x-btn-inner {
+		color: #333;
+		font-family: $roboto;
+		text-transform: uppercase;
+		font-size: 12px;
+		white-space: nowrap;
+		font-weight: 600;
+	}
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.material-button--flat {
+	@extend .material-button;
+
+	background: transparent!important;
+
+	.x-btn-inner, .x-btn-icon-el {
+		color: #fff;
+		font-weight: 500;
+	}
+
+	&:hover {
+		background: $hover-light!important;
+	}
+	&:active, &.x-btn-pressed {
+		background: $active-light!important;
+
+		color: #fff;
+	}
+}
+
+.material-button--elevated {
+	@extend .material-button;
+
+	background: rgba(0, 0, 0, 0.05) !important;
+	border: 1px solid rgba(0, 0, 0, 0.15) !important;
+
+	.x-btn-inner {
+		color: #000;
+	}
+
+	&:hover {
+		background: $hover-light !important;
+		@include box-shadow($elevation-1);
+	}
+
+	&:active, &.x-btn-pressed {
+		background: $active-light !important;
+		@include box-shadow($elevation-negative);
+
+		.x-btn-icon-el {
+			color: #000;
+		}
+	}
+}
+
+.material-button--elevated--primary {
+	@extend .material-button--elevated;
+
+	background: $color-primary!important;
+
+	&:hover {
+		background: $color-primary-dark!important;
+	}
+
+	.x-btn-inner {
+		color: #fff;
+	}
+	&:active, &.x-btn-pressed {
+		background: $color-primary-darker!important;
+
+		.x-btn-icon-el {
+			color: #fff;
+		}
+	}
+}
