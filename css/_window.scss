@@ -169,7 +169,7 @@
 		margin-top: 0;
 
 		.x-btn {
-			@extend .material-button--flat;
+			@extend .material-button--flat--primary;
 		}
 	}
 }

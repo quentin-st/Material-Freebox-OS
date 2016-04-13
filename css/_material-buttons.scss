@@ -74,9 +74,11 @@
 	}
 }
 
-.material-button--elevated--primary {
-	@extend .material-button--elevated;
+.material-button--flat--primary 	{ @extend .material-button--flat; }
+.material-button--elevated--primary { @extend .material-button--elevated; }
 
+.material-button--flat--primary,
+.material-button--elevated--primary {
 	background: $color-primary!important;
 
 	&:hover {
