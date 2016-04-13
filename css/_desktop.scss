@@ -76,3 +76,20 @@
 		font-weight: 600;
 	}
 }
+
+// MobileInfo
+#mobileInfo {
+	border: 0;
+	background-color: $color-dark;
+	@include border-radius(2px);
+	@extend .elevation-low;
+
+	h3 {
+		font-family: $roboto;
+		margin-top: 0;
+	}
+
+	.btn-cancel {
+		color: #fff;
+	}
+}
