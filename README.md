@@ -12,14 +12,16 @@ magic to set these minimize/maximize/close buttons padding.
 
 This project is still a draft for now. Once it'll be considered stable, I'll create a Google Chrome extension.
 
-![Material-Freebox-OS](doc/screenshot.png)
+| ![Material-Freebox-OS](doc/screenshot1.png)  | ![Material-Freebox-OS](doc/screenshot2.png) |
+|:--------------------------------------------:|:-------------------------------------------:|
 
-## 3d party libraries
+## 3d party
 This project ships & relies on the following projects:
 
 * jQuery
 * [Material Design Icons](materialdesignicons.com)
 * Roboto font
+* Wallpaper from [TheUltraLinx.com](http://theultralinx.com/2015/09/19-beautiful-low-poly-wallpapers/)
 
 ## How does it work?
 Quite straight-forward actually: the [`content-script.js`](js/content-script.js) file is injected by Chrome inside the tab.
