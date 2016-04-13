@@ -11,6 +11,7 @@ $roboto: 			Roboto, sans-serif;
 @import 'materialdesignicons-vars';
 
 @import 'material';
+@import 'material-buttons';
 @import 'icons';
 
 @import 'components';
@@ -21,25 +22,4 @@ $roboto: 			Roboto, sans-serif;
 
 @import 'app-browser';
 @import 'app-settings';
-
-
-body {
-	background-image: url('../img/wallpaper.jpg');
-	background-position: center;
-	@include background-size(cover);
-}
-
-// Login form
-#login-form #formContent {
-	background-color: #fff;
-	@include border-radius(2px);
-	@extend .elevation-medium;
-
-	.submit-btn {
-		border: 0!important;
-		width: auto;
-		margin: auto;
-		background: transparent;
-		@extend .material-button--elevated;
-	}
-}
+@import 'app-lanbrowser';
