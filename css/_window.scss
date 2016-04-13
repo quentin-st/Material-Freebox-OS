@@ -132,38 +132,19 @@
 		}
 
 		// Bottom toolbar
-		.x-toolbar-footer {
+		.x-toolbar-docked-bottom {
+			margin-right: 0;
 			padding-bottom: 4px;
 
+			&.x-toolbar-default {
+				background: $color-primary-dark!important;
+			}
+
 			.x-btn {
-				background-color: $color-primary;
-				border: 0;
-				padding-top: 4px;
-				padding-bottom: 4px;
-				margin-bottom: 2px;
-				@include transition-duration($timing-short);
-				@include transition-property(background-color, box-shadow);
-				@include border-radius(2px);
-
-				.x-btn-inner {
-					font-family: $roboto;
-					font-size: 12px;
-					color: #fff;
-					font-weight: 600;
-				}
-
-				&:hover {
-					background-color: $color-primary-dark;
-					@extend .elevation-lowest;
-				}
-				&.x-btn-default-small-pressed {
-					background-color: $color-primary-darker!important;
-					@extend .elevation-negative;
-
-					.x-btn-icon-el {
-						color: #fff;
-					}
-				}
+				@extend .material-button--flat;
+			}
+			&.x-toolbar-default .x-btn .x-btn-inner {
+				color: #fff;
 			}
 		}
 	}
@@ -189,4 +170,8 @@
 			@extend .material-button--flat;
 		}
 	}
+}
+
+.x-panel-body {
+	border: 0;
 }
