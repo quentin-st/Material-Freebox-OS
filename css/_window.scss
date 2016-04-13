@@ -84,7 +84,7 @@
 	.x-window-body {
 		background: $color-primary;
 
-		&, .x-header .x-tab-bar-body, .x-toolbar {
+		&, .x-header .x-tab-bar-body, .x-toolbar-docked-top {
 			padding: 0;
 			background: $color-primary!important;
 			@include box-shadow(0 1px 3px 0 rgba(#000, 0.2));
@@ -97,7 +97,8 @@
 			}
 		}
 
-		.x-toolbar {
+		// Top toolbar
+		.x-toolbar-docked-top {
 			.x-btn {
 				border: 0!important;
 				padding: 14px 10px;
@@ -127,6 +128,42 @@
 
 			.x-toolbar-separator-horizontal {
 				border: 0;
+			}
+		}
+
+		// Bottom toolbar
+		.x-toolbar-footer {
+			padding-bottom: 4px;
+
+			.x-btn {
+				background-color: $color-primary;
+				border: 0;
+				padding-top: 4px;
+				padding-bottom: 4px;
+				margin-bottom: 2px;
+				@include transition-duration($timing-short);
+				@include transition-property(background-color, box-shadow);
+				@include border-radius(2px);
+
+				.x-btn-inner {
+					font-family: $roboto;
+					font-size: 12px;
+					color: #fff;
+					font-weight: 600;
+				}
+
+				&:hover {
+					background-color: $color-primary-dark;
+					@extend .elevation-lowest;
+				}
+				&.x-btn-default-small-pressed {
+					background-color: $color-primary-darker!important;
+					@extend .elevation-negative;
+
+					.x-btn-icon-el {
+						color: #fff;
+					}
+				}
 			}
 		}
 	}

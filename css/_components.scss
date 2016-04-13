@@ -122,7 +122,7 @@
 				visibility: hidden;
 				right: 2px;
 				background: none;
-				@include material-icon($mdi-chevron-down);
+				@include material-icon($mdi-dots-vertical);
 
 				&:before {
 					font-size: 15px;
@@ -137,6 +137,25 @@
 					visibility: visible;
 				}
 			}
+		}
+
+		// ASC / DESC icon
+		&.x-column-header-sort-ASC,
+		&.x-column-header-sort-DESC {
+			.x-column-header-text {
+				background-image: none;
+
+				&:before {
+					margin-left: 5px;
+					float: right;
+				}
+			}
+		}
+		&.x-column-header-sort-ASC .x-column-header-text {
+			@include material-icon($mdi-chevron-up);
+		}
+		&.x-column-header-sort-DESC .x-column-header-text {
+			@include material-icon($mdi-chevron-down);
 		}
 	}
 }
