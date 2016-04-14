@@ -97,7 +97,7 @@
 	}
 }
 
-// Dropdown
+// Dropdown, contextual menu
 .x-menu {
 	@extend .elevation-low;
 	@include border-radius(2px);
@@ -118,7 +118,11 @@
 			@include border-radius(0);
 
 			.x-menu-item-link {
+				.x-menu-item-icon {
+					color: $color-icon-dark;
+				}
 				.x-menu-item-text {
+					font-size: 12px;
 					font-family: $roboto;
 				}
 			}

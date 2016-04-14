@@ -134,7 +134,7 @@ $icons-16: (
 .app-icons-32 {
 	@extend .app-icons;
 
-	color: #444;
+	color: $color-icon-dark;
 	font-size: 28px;
 }
 .app-icons-80 {
