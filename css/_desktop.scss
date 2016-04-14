@@ -108,6 +108,28 @@ body {
     }
 }
 
+// Wallpaper credits
+.desktop-wallpaper-credits {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px 0;
+    color: #000;
+    font-family: $roboto;
+    font-size: 12px;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px rgba(#000, 0.3);
+    @include opacity(0.2);
+    @include rotate(-90deg);
+    @include transform-origin(right bottom);
+    @include transition-duration($timing-short);
+    @include transition-property(opacity);
+
+    &:hover {
+        @include opacity(0.4);
+    }
+}
+
 // Login form
 #login-form #formContent {
     background-color: #fff;

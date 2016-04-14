@@ -56,5 +56,14 @@
 @mixin rotate($param) {
     -ms-transform: rotate($param);
     -webkit-transform: rotate($param);
+    -moz-transform: rotate($param);
+    -o-transform: rotate($param);
     transform: rotate($param);
+}
+@mixin transform-origin($param) {
+    -webkit-transform-origin: $param;
+    -moz-transform-origin: $param;
+    -ms-transform-origin: $param;
+    -o-transform-origin: $param;
+    transform-origin: $param;
 }

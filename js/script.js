@@ -24,6 +24,15 @@
             .text('v' + FbxConf.firmwareVersionMajor + '.' + FbxConf.firmwareVersionMinor)
             .appendTo($('.fbxos-version'));
 
+        
+        // Add wallpaper credits
+        $('<a />')
+            .addClass('desktop-wallpaper-credits')
+            .attr('href', 'https://www.behance.net/michiel_vandenberg')
+            .attr('target', '_blank')
+            .text('Fond d\'écran : Michiel van den Berg')
+            .appendTo($('.desktop-main-elem'));
+
 
         // Override windows buttons size
         Ext.panel.Tool.prototype.width = 35;
