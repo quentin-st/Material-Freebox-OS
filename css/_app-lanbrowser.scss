@@ -1,16 +1,16 @@
 .lan-host {
-	@extend .selectable-item;
+    @extend .selectable-item;
 
-	.lan-host-name {
-		font-weight: 600;
-	}
+    .lan-host-name {
+        font-weight: 600;
+    }
 
-	&.lan-host-selected {
-		border: 1px solid transparent;
-		@extend .selectable-item.selected;
+    &.lan-host-selected {
+        border: 1px solid transparent;
+        @extend .selectable-item.selected;
 
-		.lan-host-name {
-			text-shadow: none;
-		}
-	}
+        .lan-host-name {
+            text-shadow: none;
+        }
+    }
 }

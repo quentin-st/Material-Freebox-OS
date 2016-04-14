@@ -1,33 +1,33 @@
 .setting-list-app {
-	h3 {
-		border-bottom: 0;
-		font-family: $roboto;
-		margin: 10px 5px 5px 5px;
-		border-bottom: 1px solid #ddd;
-		padding-bottom: 6px;
-	}
+    h3 {
+        border-bottom: 0;
+        font-family: $roboto;
+        margin: 10px 5px 5px 5px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 6px;
+    }
 
-	.setting-app {
-		@include border-radius(2px);
-		@include transition-property(background);
-		@include transition-duration($timing-short);
+    .setting-app {
+        @include border-radius(2px);
+        @include transition-property(background);
+        @include transition-duration($timing-short);
 
-		&.setting-app-over {
-			border-color: transparent;
-			background: $hover-light;
-		}
+        &.setting-app-over {
+            border-color: transparent;
+            background: $hover-light;
+        }
 
-		span[role="presentation"] {
-			font-family: $roboto;
-		}
+        span[role="presentation"] {
+            font-family: $roboto;
+        }
 
-		&.setting-app-selected {
-			border-color: transparent;
-			background-color: $color-accent;
+        &.setting-app-selected {
+            border-color: transparent;
+            background-color: $color-accent;
 
-			.thumb .setting-app-img {
-				color: #fff;
-			}
-		}
-	}
+            .thumb .setting-app-img {
+                color: #fff;
+            }
+        }
+    }
 }

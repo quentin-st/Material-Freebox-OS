@@ -1,180 +1,180 @@
 // Tabs
 .x-tab {
-	padding: 10px 16px 8px 16px;
-	background: transparent;
-	border: 0!important;
-	border-bottom: 3px solid transparent!important;
-	@include transition-duration(150ms);
-	@include border-radius(0);
+    padding: 10px 16px 8px 16px;
+    background: transparent;
+    border: 0!important;
+    border-bottom: 3px solid transparent!important;
+    @include transition-duration(150ms);
+    @include border-radius(0);
 
-	.x-tab-inner {
-		color: #fff!important;
-		font-family: $roboto;
-		font-weight: 500;
-	}
+    .x-tab-inner {
+        color: #fff!important;
+        font-family: $roboto;
+        font-weight: 500;
+    }
 
-	&.x-tab-top-active {
-		background: transparent!important;
-		border-bottom-color: rgba(#000, 0.4)!important;
-	}
+    &.x-tab-top-active {
+        background: transparent!important;
+        border-bottom-color: rgba(#000, 0.4)!important;
+    }
 
-	&.x-tab-top-disabled {
-		background: none!important;
-		@include opacity(0.5);
-	}
+    &.x-tab-top-disabled {
+        background: none!important;
+        @include opacity(0.5);
+    }
 
-	&:hover {
-		background-color: $hover-light;
-	}
+    &:hover {
+        background-color: $hover-light;
+    }
 }
 
 // Panel header
 .x-panel-header {
-	@include border-radius(2px 2px 0 0);
+    @include border-radius(2px 2px 0 0);
 
-	.x-panel-header-text-default {
-		font-family: $roboto;
-		font-weight: 500;
-	}
+    .x-panel-header-text-default {
+        font-family: $roboto;
+        font-weight: 500;
+    }
 }
 
 // Table header
 .x-grid-header-ct {
-	@include box-shadow(0 1px 4px rgba(0, 0, 0, 0.3));
+    @include box-shadow(0 1px 4px rgba(0, 0, 0, 0.3));
 
-	.x-column-header {
-		background: $color-background-light none;
+    .x-column-header {
+        background: $color-background-light none;
 
-		.x-column-header-inner {
-			padding: 9px 9px 8px;
+        .x-column-header-inner {
+            padding: 9px 9px 8px;
 
-			.x-column-header-text {
-				font-family: $roboto;
-				font-weight: $typography-label-font-weight;
-				font-size: $typography-label-font-size;
-				color: $typography-label-color;
-			}
+            .x-column-header-text {
+                font-family: $roboto;
+                font-weight: $typography-label-font-weight;
+                font-size: $typography-label-font-size;
+                color: $typography-label-color;
+            }
 
-			.x-column-header-trigger {
-				visibility: hidden;
-				right: 2px;
-				background: none;
-				@include material-icon($mdi-dots-vertical);
+            .x-column-header-trigger {
+                visibility: hidden;
+                right: 2px;
+                background: none;
+                @include material-icon($mdi-dots-vertical);
 
-				&:before {
-					font-size: 15px;
-					line-height: 30px;
-				}
-			}
+                &:before {
+                    font-size: 15px;
+                    line-height: 30px;
+                }
+            }
 
-			&.x-column-header-over {
-				background: $hover-light none;
+            &.x-column-header-over {
+                background: $hover-light none;
 
-				.x-column-header-trigger {
-					visibility: visible;
-				}
-			}
-		}
+                .x-column-header-trigger {
+                    visibility: visible;
+                }
+            }
+        }
 
-		// ASC / DESC icon
-		&.x-column-header-sort-ASC,
-		&.x-column-header-sort-DESC {
-			.x-column-header-text {
-				background-image: none;
+        // ASC / DESC icon
+        &.x-column-header-sort-ASC,
+        &.x-column-header-sort-DESC {
+            .x-column-header-text {
+                background-image: none;
 
-				&:before {
-					margin-left: 5px;
-					float: right;
-				}
-			}
-		}
-		&.x-column-header-sort-ASC .x-column-header-text {
-			@include material-icon($mdi-chevron-up);
-		}
-		&.x-column-header-sort-DESC .x-column-header-text {
-			@include material-icon($mdi-chevron-down);
-		}
-	}
+                &:before {
+                    margin-left: 5px;
+                    float: right;
+                }
+            }
+        }
+        &.x-column-header-sort-ASC .x-column-header-text {
+            @include material-icon($mdi-chevron-up);
+        }
+        &.x-column-header-sort-DESC .x-column-header-text {
+            @include material-icon($mdi-chevron-down);
+        }
+    }
 }
 
 // Dropdown, contextual menu
 .x-menu {
-	@extend .elevation-low;
-	@include border-radius(2px);
+    @extend .elevation-low;
+    @include border-radius(2px);
 
-	.x-menu-body {
-		border: 0;
-		background-color: #fff;
-		padding: 3px 0;
+    .x-menu-body {
+        border: 0;
+        background-color: #fff;
+        padding: 3px 0;
 
-		.x-menu-icon-separator {
-			display: none;
-		}
+        .x-menu-icon-separator {
+            display: none;
+        }
 
-		.x-menu-item {
-			border-color: transparent;
-			@include transition-property(background);
-			@include transition-duration($timing-short);
-			@include border-radius(0);
+        .x-menu-item {
+            border-color: transparent;
+            @include transition-property(background);
+            @include transition-duration($timing-short);
+            @include border-radius(0);
 
-			.x-menu-item-link {
-				.x-menu-item-icon {
-					color: $color-icon-dark;
-				}
-				.x-menu-item-text {
-					font-size: 12px;
-					font-family: $roboto;
-				}
-			}
+            .x-menu-item-link {
+                .x-menu-item-icon {
+                    color: $color-icon-dark;
+                }
+                .x-menu-item-text {
+                    font-size: 12px;
+                    font-family: $roboto;
+                }
+            }
 
-			&.x-menu-item-active {
-				background: $hover-light;
+            &.x-menu-item-active {
+                background: $hover-light;
 
-				.x-menu-item-link {
-					background: transparent !important;
-				}
-			}
-		}
-	}
+                .x-menu-item-link {
+                    background: transparent !important;
+                }
+            }
+        }
+    }
 }
 
 // Tip
 .x-tip-default {
-	border: 0;
-	background-color: $color-dark;
-	@extend .elevation-lowest;
+    border: 0;
+    background-color: $color-dark;
+    @extend .elevation-lowest;
 
-	.x-tip-body {
-		color: #fff;
-		font-family: $roboto;
-	}
+    .x-tip-body {
+        color: #fff;
+        font-family: $roboto;
+    }
 }
 
 // Table
 .x-grid-table {
-	.x-grid-data-row {
-		.x-grid-cell {
-			padding: 3px 0;
-			border-width: 0;
+    .x-grid-data-row {
+        .x-grid-cell {
+            padding: 3px 0;
+            border-width: 0;
 
-			.x-grid-cell-inner {
-				padding: 6px 8px 6px;
-				font-family: $roboto;
-				font-size: 12px;
-			}
-		}
-	}
+            .x-grid-cell-inner {
+                padding: 6px 8px 6px;
+                font-family: $roboto;
+                font-size: 12px;
+            }
+        }
+    }
 }
 
 .selectable-item {
-	border: 0;
-	background-color: $color-background-light;
-	@include border-radius(1px);
-	@include transition-property(box-shadow);
-	@include transition-duration($timing-short);
-	@extend .elevation-lowest;
+    border: 0;
+    background-color: $color-background-light;
+    @include border-radius(1px);
+    @include transition-property(box-shadow);
+    @include transition-duration($timing-short);
+    @extend .elevation-lowest;
 
-	&.selected {
-		background-color: $color-accent;
-	}
+    &.selected {
+        background-color: $color-accent;
+    }
 }
