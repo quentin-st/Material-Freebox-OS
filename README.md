@@ -22,14 +22,19 @@ This project ships & relies on the following projects:
 * Wallpaper from [TheUltraLinx.com](http://theultralinx.com/2015/09/19-beautiful-low-poly-wallpapers/)
 
 ## How does it work?
-Quite straight-forward actually: the [`content-script.js`](js/content-script.js) file is injected by Chrome inside the tab.
- His aim is to inject the necessary resources (`style.css`, `script.js`, MaterialDesignIcons stylesheet, Roboto font).
+Quite straight-forward actually: the [`injecter.js`](js/injecter.js) file is injected by Chrome inside the tab.
+ His aim is to inject the necessary resources - `style.css`, `script.js`, MaterialDesignIcons stylesheet and Roboto font.
 
 That's it!
 
+### How about security?
+That's a legitimate question: you can browse both Javascript files ([`injecter.js`](js/injecter.js) and [`script.js`](js/script.js))
+- in this repo or directly from Chrome's debugger tools - to see that their sole purpose is to manipulate the DOM to apply
+ some styling that couldn't be set in CSS.
+
 ## How to contribute
-Do not hesitate to create pull requests against the master branch or open issues!
-The main project is based on SCSS to build CSS files. You'll need an appropriate compiler alongside with some Chrome extensions notions.
+Do not hesitate to open issues or to create pull requests against the master branch !
+The main project is based on SCSS to build CSS files: you'll need an appropriate compiler alongside with some Chrome extensions notions.
 
 ### Sidenotes
 I'm really sorry for all these `!important` in the stylesheets. As you may know, Freebox OS use a lot of these so I had no choice.
