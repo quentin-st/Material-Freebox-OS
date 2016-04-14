@@ -15,17 +15,15 @@ magic to set these minimize/maximize/close buttons padding.
 | ![Material-Freebox-OS](doc/screenshot1.png)  | ![Material-Freebox-OS](doc/screenshot2.png) |
 |:--------------------------------------------:|:-------------------------------------------:|
 
-## 3d party
 This project ships & relies on the following projects:
 
-* jQuery
-* [Material Design Icons](materialdesignicons.com)
-* Roboto font
+* [Material Design Icons](https://materialdesignicons.com)
+* [Roboto font](https://www.google.com/fonts/specimen/Roboto)
 * Wallpaper from [TheUltraLinx.com](http://theultralinx.com/2015/09/19-beautiful-low-poly-wallpapers/)
 
 ## How does it work?
 Quite straight-forward actually: the [`content-script.js`](js/content-script.js) file is injected by Chrome inside the tab.
- His aim is to inject the necessary resources (`style.css`, `script.js`, jQuery, MaterialDesignIcons stylesheet, Roboto font).
+ His aim is to inject the necessary resources (`style.css`, `script.js`, MaterialDesignIcons stylesheet, Roboto font).
 
 That's it!
 
