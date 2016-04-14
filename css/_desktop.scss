@@ -113,6 +113,21 @@ body {
 	@include border-radius(2px);
 	@extend .elevation-medium;
 
+	h3 {
+		font-family: $roboto;
+		font-size: 18px;
+		text-transform: none;
+	}
+
+	h5 {
+		font-family: $roboto;
+		font-weight: 500;
+		font-size: 13px;
+		border: 0;
+		text-shadow: none;
+		box-shadow: none;
+	}
+
 	.submit-btn {
 		width: auto;
 		margin-left: auto;
