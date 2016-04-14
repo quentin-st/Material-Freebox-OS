@@ -36,6 +36,8 @@ That's a legitimate question: you can browse both Javascript files ([`injecter.j
 Do not hesitate to open issues or to create pull requests against the master branch !
 The main project is based on SCSS to build CSS files: you'll need an appropriate compiler alongside with some Chrome extensions notions.
 
+> Note: we're using the EditorConfig standard to supply coding rules for this project, learn more about it [here](http://editorconfig.org/).
+
 ### Sidenotes
 I'm really sorry for all these `!important` in the stylesheets. As you may know, Freebox OS use a lot of these so I had no choice.
 
