@@ -1,32 +1,32 @@
 // Fieldset
 fieldset.x-fieldset {
-	position: relative;
-	padding-top: 22px!important;
-	padding-left: 14px!important;
-	border-color: $color-border;
-	border-width: 0 0 0 1px;
-	margin: 10px 0 20px 0;
+    position: relative;
+    padding-top: 22px!important;
+    padding-left: 14px!important;
+    border-color: $color-border;
+    border-width: 0 0 0 1px;
+    margin: 10px 0 20px 0;
 
-	legend.x-fieldset-header {
-		position: absolute;
-		top: 2px;
-		padding: 0;
+    legend.x-fieldset-header {
+        position: absolute;
+        top: 2px;
+        padding: 0;
 
-		.x-fieldset-header-text {
-			font-family: $roboto;
-			font-weight: 600;
-			font-size: 14px;
-			color: $color-accent-dark;
-		}
-	}
+        .x-fieldset-header-text {
+            font-family: $roboto;
+            font-weight: 600;
+            font-size: 14px;
+            color: $color-accent-dark;
+        }
+    }
 }
 
 // Label
 .x-form-item-label {
-	font-family: $roboto;
+    font-family: $roboto;
 }
 
 .x-form-text {
-	background-image: none;
-	@include border-radius(2px);
+    background-image: none;
+    @include border-radius(2px);
 }

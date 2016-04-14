@@ -1,181 +1,181 @@
 // Toolbar
 .freeboxos-southbar.x-toolbar {
-	border: 0!important;
-	padding: 0;
-	background: transparent!important;
-	@include transition-property(background);
-	@include transition-duration($timing-short);
+    border: 0!important;
+    padding: 0;
+    background: transparent!important;
+    @include transition-property(background);
+    @include transition-duration($timing-short);
 
-	&.solid-background {
-		background: $color-dark!important;
-		@include box-shadow(0 0 8px -1px rgba(#000, 0.8));
-	}
+    &.solid-background {
+        background: $color-dark!important;
+        @include box-shadow(0 0 8px -1px rgba(#000, 0.8));
+    }
 
-	// Main button
-	.btn-start {
-		color: rgba(#fff, 0.9);
-		@include transition-property(color);
-		@include transition-duration($timing-short);
-		width: 46px;
-		padding: 8px;
-		font-size: 31px;
+    // Main button
+    .btn-start {
+        color: rgba(#fff, 0.9);
+        @include transition-property(color);
+        @include transition-duration($timing-short);
+        width: 46px;
+        padding: 8px;
+        font-size: 31px;
 
-		@include material-icon($mdi-apps);
+        @include material-icon($mdi-apps);
 
-		&:hover {
-			color: #fff;
-		}
-		&, &:hover {
-			background: none!important;
-		}
-	}
+        &:hover {
+            color: #fff;
+        }
+        &, &:hover {
+            background: none!important;
+        }
+    }
 
-	// Windows list
-	.x-btn.fbx-taskbar {
-		background: none!important;
-		border: none!important;
-		border-bottom: 2px solid transparent!important;
-		@include border-radius(0);
-		@include transition-duration($timing-short);
+    // Windows list
+    .x-btn.fbx-taskbar {
+        background: none!important;
+        border: none!important;
+        border-bottom: 2px solid transparent!important;
+        @include border-radius(0);
+        @include transition-duration($timing-short);
 
-		.x-btn-wrap {
-			.x-btn-inner {
-				font-family: $roboto;
-				font-size: 13px;
-				padding-left: 40px;
-				padding-right: 10px;
-				text-overflow: ellipsis;
-				text-shadow: 1px 1px 1px rgba(#000, 0.3);
-			}
-			.x-btn-icon-el {
-				background-color: $color-primary-dark;
-				padding-left: 4px;
-				font-size: 24px;
-				line-height: 32px;
-				color: #fff;
-				text-shadow: 1px 1px 1px rgba(#000, 0.3);
-				@include border-radius(50%);
-				@extend .elevation-low;
+        .x-btn-wrap {
+            .x-btn-inner {
+                font-family: $roboto;
+                font-size: 13px;
+                padding-left: 40px;
+                padding-right: 10px;
+                text-overflow: ellipsis;
+                text-shadow: 1px 1px 1px rgba(#000, 0.3);
+            }
+            .x-btn-icon-el {
+                background-color: $color-primary-dark;
+                padding-left: 4px;
+                font-size: 24px;
+                line-height: 32px;
+                color: #fff;
+                text-shadow: 1px 1px 1px rgba(#000, 0.3);
+                @include border-radius(50%);
+                @extend .elevation-low;
 
 
-				// Set colors
-				@each $color in $icons-colors-80-32 {
-					&.app-icons-32-#{nth($color, 1)} {
-						background-color: nth($color, 2);
-					}
-				}
-			}
-		}
+                // Set colors
+                @each $color in $icons-colors-80-32 {
+                    &.app-icons-32-#{nth($color, 1)} {
+                        background-color: nth($color, 2);
+                    }
+                }
+            }
+        }
 
-		&.x-pressed {
-			border-color: rgba(#fff, 0.9)!important;
-		}
-	}
+        &.x-pressed {
+            border-color: rgba(#fff, 0.9)!important;
+        }
+    }
 
-	// Right icons
-	// Loading indicator
-	.taskbar-activity-btn {
-		background-color: transparent;
-		border-width: 0;
+    // Right icons
+    // Loading indicator
+    .taskbar-activity-btn {
+        background-color: transparent;
+        border-width: 0;
 
-		.x-btn-icon-el {
-			font-size: 28px;
-			margin-top: 8px;
-			color: rgba(#fff, 0.9);
-			background-image: none!important;
-			@include material-icon($mdi-cached);
-		}
-	}
-	// Standard icon (wifi, adblock)
-	.x-icon .x-btn-icon-el {
-		margin-top: 5px;
-		color: rgba(#fff, 0.9);
-	}
+        .x-btn-icon-el {
+            font-size: 28px;
+            margin-top: 8px;
+            color: rgba(#fff, 0.9);
+            background-image: none!important;
+            @include material-icon($mdi-cached);
+        }
+    }
+    // Standard icon (wifi, adblock)
+    .x-icon .x-btn-icon-el {
+        margin-top: 5px;
+        color: rgba(#fff, 0.9);
+    }
 
-	// Clock
-	.clock-display-field {
-		.x-form-display-field {
-			padding: 4px 1px;
-			margin: 14px 6px;
-			@include border-radius(2px);
-			background-color: rgba(0, 0, 0, 0.4);
-			font-family: $roboto;
-			font-size: 14px;
-			color: #ffffff!important;
-			font-weight: 600;
-		}
-	}
+    // Clock
+    .clock-display-field {
+        .x-form-display-field {
+            padding: 4px 1px;
+            margin: 14px 6px;
+            @include border-radius(2px);
+            background-color: rgba(0, 0, 0, 0.4);
+            font-family: $roboto;
+            font-size: 14px;
+            color: #ffffff!important;
+            font-weight: 600;
+        }
+    }
 }
 
 // Apps list (start menu)
 .fbx-start-menu {
-	border-color: transparent;
-	@include border-radius(2px);
-	@extend .elevation-medium;
+    border-color: transparent;
+    @include border-radius(2px);
+    @extend .elevation-medium;
 
-	.x-menu-body {
-		border: 0;
-		background: #fff;
-		background-image: none!important;
+    .x-menu-body {
+        border: 0;
+        background: #fff;
+        background-image: none!important;
 
-		.x-menu-item {
-			@include border-radius(0);
+        .x-menu-item {
+            @include border-radius(0);
 
-			.x-menu-item-link {
-				@include transition-property(background);
-				@include transition-duration($timing-short);
+            .x-menu-item-link {
+                @include transition-property(background);
+                @include transition-duration($timing-short);
 
-				.x-menu-item-text {
-					font-size: 14px;
-					font-family: $roboto;
-					line-height: 34px;
-				}
+                .x-menu-item-text {
+                    font-size: 14px;
+                    font-family: $roboto;
+                    line-height: 34px;
+                }
 
-				.x-menu-item-icon {
-					// Set colors
-					@each $color in $icons-colors-80-32 {
-						&.app-icons-32-#{nth($color, 1)} {
-							color: nth($color, 2);
-						}
-					}
-				}
+                .x-menu-item-icon {
+                    // Set colors
+                    @each $color in $icons-colors-80-32 {
+                        &.app-icons-32-#{nth($color, 1)} {
+                            color: nth($color, 2);
+                        }
+                    }
+                }
 
-				.x-menu-item-arrow {
-					background-image: none;
-					font-size: 20px!important;
-					color: #333;
-					top: 12px;
-					right: 10px;
+                .x-menu-item-arrow {
+                    background-image: none;
+                    font-size: 20px!important;
+                    color: #333;
+                    top: 12px;
+                    right: 10px;
 
-					@include material-icon($mdi-chevron-right);
-				}
-			}
+                    @include material-icon($mdi-chevron-right);
+                }
+            }
 
-			&.x-menu-item-active {
-				background: $hover-dark !important;
+            &.x-menu-item-active {
+                background: $hover-dark !important;
 
-				.x-menu-item-link {
-					background: transparent;
+                .x-menu-item-link {
+                    background: transparent;
 
-					.x-menu-item-icon {
-						color: #fff;
-					}
+                    .x-menu-item-icon {
+                        color: #fff;
+                    }
 
-					.x-menu-item-arrow {
-						right: 10px;
-						color: #eee!important;
-					}
-				}
-			}
+                    .x-menu-item-arrow {
+                        right: 10px;
+                        color: #eee!important;
+                    }
+                }
+            }
 
-			&.grayscale {
-				@include opacity(0.5);
+            &.grayscale {
+                @include opacity(0.5);
 
 
-				a, a .x-menu-item-text {
-					cursor: default;
-				}
-			}
-		}
-	}
+                a, a .x-menu-item-text {
+                    cursor: default;
+                }
+            }
+        }
+    }
 }

@@ -1,186 +1,186 @@
 .x-css-shadow {
-	@include box-shadow(none!important);
+    @include box-shadow(none!important);
 }
 
 .x-window {
-	padding: 0!important;
-	border: 0!important;
-	background-color: $color-primary!important;
-	@include transition-property(box-shadow);
-	@include transition-duration($timing-short);
-	@include border-radius(2px!important);
-	@extend .elevation-medium;
+    padding: 0!important;
+    border: 0!important;
+    background-color: $color-primary!important;
+    @include transition-property(box-shadow);
+    @include transition-duration($timing-short);
+    @include border-radius(2px!important);
+    @extend .elevation-medium;
 
-	// Blur / focus states
-	&.x-window-focus-blurred {
-		@extend .elevation-low;
+    // Blur / focus states
+    &.x-window-focus-blurred {
+        @extend .elevation-low;
 
-		.x-window-header .x-window-header-body {
-			@include opacity(0.3);
-		}
-	}
-	&.x-window-focus-focused { }
+        .x-window-header .x-window-header-body {
+            @include opacity(0.3);
+        }
+    }
+    &.x-window-focus-focused { }
 
-	.x-window-header {
-		$window-header-padding-top: 12px;
-		$window-header-padding-bottom: 7px;
+    .x-window-header {
+        $window-header-padding-top: 12px;
+        $window-header-padding-bottom: 7px;
 
-		padding: 0 0 0 10px;
-		border: 0;
-		background-color: $color-primary-dark!important;
-		@include border-radius(2px 2px 0 0);
+        padding: 0 0 0 10px;
+        border: 0;
+        background-color: $color-primary-dark!important;
+        @include border-radius(2px 2px 0 0);
 
-		.x-window-header-body {
-			background: transparent;
-			@include transition-property(opacity);
-			@include transition-duration($timing-short);
+        .x-window-header-body {
+            background: transparent;
+            @include transition-property(opacity);
+            @include transition-duration($timing-short);
 
-			// Hide window icon
-			.x-window-header-icon {
-				display: none;
-			}
+            // Hide window icon
+            .x-window-header-icon {
+                display: none;
+            }
 
-			// Text
-			.x-window-header-text-container {
-				font-family: $roboto;
-				font-weight: 500;
-				font-size: 14px;
-				color: rgba(255, 255, 255, 0.9);
-				text-shadow: none;
-				margin-top: $window-header-padding-top;
-				margin-bottom: $window-header-padding-bottom;
-			}
+            // Text
+            .x-window-header-text-container {
+                font-family: $roboto;
+                font-weight: 500;
+                font-size: 14px;
+                color: rgba(255, 255, 255, 0.9);
+                text-shadow: none;
+                margin-top: $window-header-padding-top;
+                margin-bottom: $window-header-padding-bottom;
+            }
 
-			// Buttons
-			.x-box-item.x-tool-after-title {
-				font-size: 18px!important;
-				color: rgba(#fff, 0.9);
+            // Buttons
+            .x-box-item.x-tool-after-title {
+                font-size: 18px!important;
+                color: rgba(#fff, 0.9);
 
-				$window-icons: (
-					"Fermer": $mdi-close,
-					"Maximiser": $mdi-crop-square,//$mdi-window-maximize,
-					"restorer": $mdi-window-restore,
-					"Minimiser": $mdi-window-minimize,
-					"Aide de l'application": $mdi-help
-				);
+                $window-icons: (
+                    "Fermer": $mdi-close,
+                    "Maximiser": $mdi-crop-square,//$mdi-window-maximize,
+                    "restorer": $mdi-window-restore,
+                    "Minimiser": $mdi-window-minimize,
+                    "Aide de l'application": $mdi-help
+                );
 
-				@each $icon in $window-icons {
-					&[aria-label="#{nth($icon, 1)}"] {
-						padding-top: 10px;
-						text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
-						text-align: center;
-						@include material-icon(nth($icon, 2));
-					}
-				}
+                @each $icon in $window-icons {
+                    &[aria-label="#{nth($icon, 1)}"] {
+                        padding-top: 10px;
+                        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+                        text-align: center;
+                        @include material-icon(nth($icon, 2));
+                    }
+                }
 
-				// Special cases
-				&[aria-label="Minimiser"] { padding-top: 14px; font-size: 15px!important; }
-				&[aria-label="Aide de l'application"] { font-size: 16px!important; }
+                // Special cases
+                &[aria-label="Minimiser"] { padding-top: 14px; font-size: 15px!important; }
+                &[aria-label="Aide de l'application"] { font-size: 16px!important; }
 
 
-				.x-tool-close, .x-tool-restore, .x-tool-maximize, .x-tool-minimize, .x-tool-help {
-					display: none;
-				}
-			}
-		}
-	}
+                .x-tool-close, .x-tool-restore, .x-tool-maximize, .x-tool-minimize, .x-tool-help {
+                    display: none;
+                }
+            }
+        }
+    }
 
-	.x-window-body {
-		background: $color-primary;
+    .x-window-body {
+        background: $color-primary;
 
-		&, .x-header .x-tab-bar-body, .x-toolbar-docked-top {
-			padding: 0;
-			background: $color-primary!important;
-			@include box-shadow(0 1px 3px 0 rgba(#000, 0.2));
-		}
+        &, .x-header .x-tab-bar-body, .x-toolbar-docked-top {
+            padding: 0;
+            background: $color-primary!important;
+            @include box-shadow(0 1px 3px 0 rgba(#000, 0.2));
+        }
 
-		.x-header {
-			.x-tab-bar-strip {
-				height: 0;
-				border: 0;
-			}
-		}
+        .x-header {
+            .x-tab-bar-strip {
+                height: 0;
+                border: 0;
+            }
+        }
 
-		// Top toolbar
-		.x-toolbar-docked-top {
-			.x-btn {
-				border: 0!important;
-				padding: 14px 10px;
-				@include border-radius(0);
-				@include transition-property(background);
-				@include transition-duration($timing-short);
+        // Top toolbar
+        .x-toolbar-docked-top {
+            .x-btn {
+                border: 0!important;
+                padding: 14px 10px;
+                @include border-radius(0);
+                @include transition-property(background);
+                @include transition-duration($timing-short);
 
-				.x-btn-inner {
-					font-family: $roboto;
-					font-size: 12px;
-					font-weight: 500;
-				}
+                .x-btn-inner {
+                    font-family: $roboto;
+                    font-size: 12px;
+                    font-weight: 500;
+                }
 
-				&:hover {
-					border: 0!important;
-					background: $hover-light!important;
+                &:hover {
+                    border: 0!important;
+                    background: $hover-light!important;
 
-					.x-btn-inner {
-						color: #fff;
-					}
-				}
+                    .x-btn-inner {
+                        color: #fff;
+                    }
+                }
 
-				&.x-btn-menu-active {
-					background: $active-light!important;
-				}
-			}
+                &.x-btn-menu-active {
+                    background: $active-light!important;
+                }
+            }
 
-			.x-toolbar-separator-horizontal {
-				border: 0;
-			}
-		}
-	}
+            .x-toolbar-separator-horizontal {
+                border: 0;
+            }
+        }
+    }
 
-	// Bottom toolbar
-	.x-toolbar-docked-bottom {
-		margin-right: 0;
-		padding-right: 4px;
-		padding-bottom: 4px;
+    // Bottom toolbar
+    .x-toolbar-docked-bottom {
+        margin-right: 0;
+        padding-right: 4px;
+        padding-bottom: 4px;
 
-		&.x-toolbar-default {
-			background: $color-primary-dark!important;
-		}
+        &.x-toolbar-default {
+            background: $color-primary-dark!important;
+        }
 
-		.x-btn {
-			@extend .material-button--flat;
-		}
-	}
+        .x-btn {
+            @extend .material-button--flat;
+        }
+    }
 
-	// Bottom toolbar on white background
-	.x-panel .x-toolbar-docked-bottom {
-		.x-btn {
-			@extend .material-button--flat--primary;
-		}
-	}
+    // Bottom toolbar on white background
+    .x-panel .x-toolbar-docked-bottom {
+        .x-btn {
+            @extend .material-button--flat--primary;
+        }
+    }
 
-	.x-splitter {
-		background-color: rgba(#fff, 0.3);
-	}
+    .x-splitter {
+        background-color: rgba(#fff, 0.3);
+    }
 }
 
 // Messagebox
 .x-message-box {
-	.x-window-body, .x-toolbar-footer {
-		background: #fff!important;
-	}
+    .x-window-body, .x-toolbar-footer {
+        background: #fff!important;
+    }
 
-	.x-window-body {
-		@include box-shadow(none);
-	}
-	.x-toolbar-footer {
-		margin-top: 0;
+    .x-window-body {
+        @include box-shadow(none);
+    }
+    .x-toolbar-footer {
+        margin-top: 0;
 
-		.x-btn {
-			@extend .material-button--flat--primary;
-		}
-	}
+        .x-btn {
+            @extend .material-button--flat--primary;
+        }
+    }
 }
 
 .x-panel-body {
-	border: 0;
+    border: 0;
 }

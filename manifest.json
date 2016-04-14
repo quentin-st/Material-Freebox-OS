@@ -1,40 +1,40 @@
 {
-	"manifest_version": 2,
+    "manifest_version": 2,
 
-	"name": "Material Freebox OS",
-	"description": "Redesign de l'interface de Freebox OS",
-	"version": "1.2",
-	"icons": {
-		"16": "img/icon-16x16.png",
-		"48": "img/icon-48x48.png",
-		"128": "img/icon-128x128.png"
-	},
-	"author": "Quentin S.",
+    "name": "Material Freebox OS",
+    "description": "Redesign de l'interface de Freebox OS",
+    "version": "1.2",
+    "icons": {
+        "16": "img/icon-16x16.png",
+        "48": "img/icon-48x48.png",
+        "128": "img/icon-128x128.png"
+    },
+    "author": "Quentin S.",
 
-	"permissions": [
-		"activeTab"
-	],
-	"content_scripts": [
-		{
-			"matches": [
-				"http://mafreebox.freebox.fr/*",
-				"http://*/*",
-				"https://*/*"
-			],
-			"js": [
-				"js/injecter.js"
-			]
-		}
-	],
-	"web_accessible_resources": [
-		"js/content-script.js",
-		"js/script.js",
+    "permissions": [
+        "activeTab"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "http://mafreebox.freebox.fr/*",
+                "http://*/*",
+                "https://*/*"
+            ],
+            "js": [
+                "js/injecter.js"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        "js/content-script.js",
+        "js/script.js",
 
-		"img/wallpaper.jpg",
+        "img/wallpaper.jpg",
 
-		"css/style.css",
+        "css/style.css",
 
-		"3d/css/materialdesignicons.min.css",
-		"3d/fonts/*"
-	]
+        "3d/css/materialdesignicons.min.css",
+        "3d/fonts/*"
+    ]
 }

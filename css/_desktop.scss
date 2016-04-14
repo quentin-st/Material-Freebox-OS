@@ -1,139 +1,139 @@
 html, body {
-	min-height: 100%;
+    min-height: 100%;
 }
 
 body {
-	background-image: url('../img/wallpaper.jpg');
-	background-position: center;
-	@include background-size(cover);
+    background-image: url('../img/wallpaper.jpg');
+    background-position: center;
+    @include background-size(cover);
 }
 
 // Logo
 .fbxos-logo {
-	text-align: center;
+    text-align: center;
 
-	&:before {
-		content: "Freebox OS";
-		font-family: $roboto;
-		font-size: 60px;
-		color: rgba(#fff, 0.95);
-		text-shadow: 0 0 4px rgba(#000, 0.5);
-	}
+    &:before {
+        content: "Freebox OS";
+        font-family: $roboto;
+        font-size: 60px;
+        color: rgba(#fff, 0.95);
+        text-shadow: 0 0 4px rgba(#000, 0.5);
+    }
 
-	#logo_freeboxos {
-		display: none;
-	}
+    #logo_freeboxos {
+        display: none;
+    }
 
-	.fbxos-version {
-		right: 20px;
-		bottom: 15px;
+    .fbxos-version {
+        right: 20px;
+        bottom: 15px;
 
-		.fbxos-version-sprite {
-			display: none;
-		}
-		.fbxos-version-text {
-			font-size: 21px;
-			color: rgba(#fff, 0.95);
-			text-shadow: 0 0 4px rgba(#000, 0.5);
-		}
-	}
+        .fbxos-version-sprite {
+            display: none;
+        }
+        .fbxos-version-text {
+            font-size: 21px;
+            color: rgba(#fff, 0.95);
+            text-shadow: 0 0 4px rgba(#000, 0.5);
+        }
+    }
 }
 
 // Icons
 .desktop-icon-outer {
-	height: 120px;
-	cursor: default;
+    height: 120px;
+    cursor: default;
 
-	.desktop-icon {
-		width: 60px;
-		height: 60px;
-		margin: 5px auto 10px auto;
-		background-color: $color-dark;
-		color: rgba(#fff, 0.95);
-		font-size: 42px!important;
-		line-height: 60px;
-		text-shadow: 1px 1px 1px rgba(#000, 0.1);
-		@include border-radius(50%);
-		@extend .elevation-low;
+    .desktop-icon {
+        width: 60px;
+        height: 60px;
+        margin: 5px auto 10px auto;
+        background-color: $color-dark;
+        color: rgba(#fff, 0.95);
+        font-size: 42px!important;
+        line-height: 60px;
+        text-shadow: 1px 1px 1px rgba(#000, 0.1);
+        @include border-radius(50%);
+        @extend .elevation-low;
 
-		// Set colors
-		@each $color in $icons-colors-80-32 {
-			&.app-icons-80-#{nth($color, 1)} {
-				background-color: nth($color, 2);
-			}
-		}
+        // Set colors
+        @each $color in $icons-colors-80-32 {
+            &.app-icons-80-#{nth($color, 1)} {
+                background-color: nth($color, 2);
+            }
+        }
 
-		// Exceptions
-		&.app-icons-80-pvr {
-			font-size: 60px!important;
-		}
-		&.app-icons-80-calls {
-			padding-right: 5px;
-			padding-top: 2px;
-		}
-	}
+        // Exceptions
+        &.app-icons-80-pvr {
+            font-size: 60px!important;
+        }
+        &.app-icons-80-calls {
+            padding-right: 5px;
+            padding-top: 2px;
+        }
+    }
 
-	&.desktop-selected {
-		padding: 5px;
-		border: 0;
-		background-color: $active-dark;
-		@extend .elevation-medium;
-		@include border-radius(2px!important);
-		@include transition-duration($timing-short);
-	}
+    &.desktop-selected {
+        padding: 5px;
+        border: 0;
+        background-color: $active-dark;
+        @extend .elevation-medium;
+        @include border-radius(2px!important);
+        @include transition-duration($timing-short);
+    }
 
-	span[aria-label] {
-		color: rgba(#fff, 0.95);
-		font-family: $roboto;
-		line-height: 15px;
-		text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
-		font-weight: 600;
-	}
+    span[aria-label] {
+        color: rgba(#fff, 0.95);
+        font-family: $roboto;
+        line-height: 15px;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+        font-weight: 600;
+    }
 }
 
 // MobileInfo
 #mobileInfo {
-	border: 0;
-	background-color: $color-dark;
-	@include border-radius(2px);
-	@extend .elevation-low;
+    border: 0;
+    background-color: $color-dark;
+    @include border-radius(2px);
+    @extend .elevation-low;
 
-	h3 {
-		font-family: $roboto;
-		margin-top: 0;
-	}
+    h3 {
+        font-family: $roboto;
+        margin-top: 0;
+    }
 
-	.btn-cancel {
-		color: #fff;
-	}
+    .btn-cancel {
+        color: #fff;
+    }
 }
 
 // Login form
 #login-form #formContent {
-	background-color: #fff;
-	@include border-radius(2px);
-	@extend .elevation-medium;
+    background-color: #fff;
+    @include border-radius(2px);
+    @extend .elevation-medium;
 
-	h3 {
-		font-family: $roboto;
-		font-size: 18px;
-		text-transform: none;
-	}
+    h3 {
+        font-family: $roboto;
+        font-size: 18px;
+        text-transform: none;
+    }
 
-	h5 {
-		font-family: $roboto;
-		font-weight: 500;
-		font-size: 13px;
-		border: 0;
-		text-shadow: none;
-		box-shadow: none;
-	}
+    h5 {
+        font-family: $roboto;
+        font-weight: 500;
+        font-size: 13px;
+        border: 0;
+        text-shadow: none;
+        box-shadow: none;
+    }
 
-	.submit-btn {
-		width: auto;
-		margin-left: auto;
-		margin-right: auto;
-		padding: 8px 15px;
-		@extend .material-button--elevated--primary;
-	}
+    .submit-btn {
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 8px 15px;
+        @extend .material-button--elevated--primary;
+    }
 }

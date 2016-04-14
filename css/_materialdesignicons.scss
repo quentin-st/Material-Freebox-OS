@@ -4,23 +4,23 @@
  */
 
 .mdi {
-	display: inline-block;
-	font: normal normal normal 24px/1 "Material Design Icons";
-	font-size: inherit;
-	text-rendering: auto;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	transform: translate(0, 0);
+    display: inline-block;
+    font: normal normal normal 24px/1 "Material Design Icons";
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
 
-	&:before {
-		font-family: "Material Design Icons";
-	}
+    &:before {
+        font-family: "Material Design Icons";
+    }
 }
 
 @mixin material-icon($icon) {
-	@extend .mdi;
+    @extend .mdi;
 
-	&:before {
-		content: $icon;
-	}
+    &:before {
+        content: $icon;
+    }
 }

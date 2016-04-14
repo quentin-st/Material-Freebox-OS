@@ -1,69 +1,69 @@
 // Treeview
 .x-tree-view {
-	.x-grid-row {
-		&.x-grid-tree-node-expanded {
+    .x-grid-row {
+        &.x-grid-tree-node-expanded {
 
-		}
+        }
 
-		.x-grid-cell {
-			@include transition-property(background-color);
-			@include transition-duration($timing-short);
+        .x-grid-cell {
+            @include transition-property(background-color);
+            @include transition-duration($timing-short);
 
-			.x-grid-cell-inner {
-				padding: 5px 6px 6px 0;
+            .x-grid-cell-inner {
+                padding: 5px 6px 6px 0;
 
-				.x-tree-icon {
-					margin-left: 6px;
-				}
-				.x-tree-node-text {
-					font-family: $roboto;
-					color: $color-text-dark;
-					font-size: 12px;
-					margin-left: 5px;
-					display: inline-block;
-				}
-			}
-		}
+                .x-tree-icon {
+                    margin-left: 6px;
+                }
+                .x-tree-node-text {
+                    font-family: $roboto;
+                    color: $color-text-dark;
+                    font-size: 12px;
+                    margin-left: 5px;
+                    display: inline-block;
+                }
+            }
+        }
 
-		// Selected row
-		&.x-grid-row-selected .x-grid-cell {
-			border-color: transparent;
-			background-color: transparent!important;
+        // Selected row
+        &.x-grid-row-selected .x-grid-cell {
+            border-color: transparent;
+            background-color: transparent!important;
 
-			.x-tree-node-text {
-				font-weight: 600;
-				color: $color-accent;
-			}
-		}
-	}
+            .x-tree-node-text {
+                font-weight: 600;
+                color: $color-accent;
+            }
+        }
+    }
 }
 
 // Mount point
 .fs-mount-point {
-	height: auto;
-	margin: 7px 8px;
-	padding: 5px 8px 5px 5px;
-	@extend .selectable-item;
+    height: auto;
+    margin: 7px 8px;
+    padding: 5px 8px 5px 5px;
+    @extend .selectable-item;
 
-	.fs-mount-icon {
-		height: 40px;
-	}
+    .fs-mount-icon {
+        height: 40px;
+    }
 
-	&.x-item-selected {
-		text-shadow: none;
-		@extend .selectable-item.selected;
+    &.x-item-selected {
+        text-shadow: none;
+        @extend .selectable-item.selected;
 
-		.fs-mount-icon div {
-			color: #fff;
-		}
-	}
+        .fs-mount-icon div {
+            color: #fff;
+        }
+    }
 
-	.x-progress-wrap {
-		margin: 3px 0;
-		background-color: lighten($color-accent, 15);
+    .x-progress-wrap {
+        margin: 3px 0;
+        background-color: lighten($color-accent, 15);
 
-		.x-progress-bar {
-			background-color: $color-accent-dark;
-		}
-	}
+        .x-progress-bar {
+            background-color: $color-accent-dark;
+        }
+    }
 }
