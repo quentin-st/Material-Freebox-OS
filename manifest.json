@@ -22,12 +22,7 @@
 				"https://*/*"
 			],
 			"js": [
-				"js/content-script.js",
-				"js/script.js"
-			],
-			"css" : [
-				"css/style.css",
-				"3d/css/materialdesignicons.min.css"
+				"js/injecter.js"
 			]
 		}
 	],

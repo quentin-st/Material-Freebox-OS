@@ -1,3 +1,8 @@
+/**
+ * Material-Freebox-OS
+ * Content-script
+ */
+
 // TODO tighten test
 if (document.title.indexOf('Freebox OS') == 0) {
 	var meta_name = 'Material-Freebox-OS';

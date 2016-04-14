@@ -29,7 +29,7 @@ manifest_json = open(manifest)
 version = json.load(manifest_json)['version']
 output_dir = os.path.join(output_dir, 'Material-Freebox-OS-{}'.format(version))
 
-# Expand files list (js/* => [js/script.js, js/content-script.js]
+# Expand files list (js/* => [js/script.js, js/injecter.js]
 expanded_files = []
 for file in files:
     if file.endswith('*'):
