@@ -73,11 +73,23 @@
 	}
 
 	// Right icons
-	.x-icon {
+	// Loading indicator
+	.taskbar-activity-btn {
+		background-color: transparent;
+		border-width: 0;
+
 		.x-btn-icon-el {
-			margin-top: 5px;
+			font-size: 28px;
+			margin-top: 8px;
 			color: rgba(#fff, 0.9);
+			background-image: none!important;
+			@include material-icon($mdi-cached);
 		}
+	}
+	// Standard icon (wifi, adblock)
+	.x-icon .x-btn-icon-el {
+		margin-top: 5px;
+		color: rgba(#fff, 0.9);
 	}
 
 	// Clock
