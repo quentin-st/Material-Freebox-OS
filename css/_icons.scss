@@ -37,12 +37,13 @@ $icons-80: (
 	epg: 			$mdi-newspaper, 		// Guide des programmes
 	contacts: 		$mdi-contact-mail, 		// Contacts
 	settings: 		$mdi-settings, 			// Paramètres de la Freebox
-	help:			$mdi-help-circle
+	help:			$mdi-help-circle,
 );
 
 // UI icons (size: 32)
 $icons-32: (
-	logout: 		$mdi-logout,
+	logout: 		$mdi-logout-variant,
+	login:			$mdi-login-variant,
 	reboot:			$mdi-reload,
 	quickstart:		$mdi-auto-fix,
 	wifi-toggle-off: $mdi-wifi,
