@@ -151,6 +151,13 @@
 		}
 	}
 
+	// Bottom toolbar on white background
+	.x-panel .x-toolbar-docked-bottom {
+		.x-btn {
+			@extend .material-button--flat--primary;
+		}
+	}
+
 	.x-splitter {
 		background-color: rgba(#fff, 0.3);
 	}
