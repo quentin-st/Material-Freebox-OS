@@ -110,6 +110,18 @@
                 @include transition-property(background);
                 @include transition-duration($timing-short);
 
+                .x-btn-arrow {
+                    background: none;
+                    padding-right: 0;
+                    font-size: 16px;
+                    @include material-icon($mdi-chevron-down);
+
+                    &:before {
+                        float: right;
+                        margin-left: 5px;
+                    }
+                }
+
                 .x-btn-inner {
                     font-family: $roboto;
                     font-size: 12px;

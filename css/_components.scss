@@ -112,27 +112,38 @@
         }
 
         .x-menu-item {
+            padding: 0;
             border-color: transparent;
             @include transition-property(background);
             @include transition-duration($timing-short);
             @include border-radius(0);
 
             .x-menu-item-link {
+                padding: 5px 0;
+                margin-left: 35px;
+
                 .x-menu-item-icon {
+                    top: 9px!important;
+                    left: 8px!important;
                     color: $color-icon-dark;
                 }
                 .x-menu-item-text {
-                    font-size: 12px;
+                    font-size: 13px;
                     font-family: $roboto;
                 }
             }
 
             &.x-menu-item-active {
+                border: 0;
                 background: $hover-light;
 
                 .x-menu-item-link {
                     background: transparent !important;
                 }
+            }
+
+            &.x-menu-item-separator {
+                display: none;
             }
         }
     }
