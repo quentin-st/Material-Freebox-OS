@@ -6,114 +6,114 @@
 // Icons colors
 // Each color should be assigned in its context when possible
 $icons-colors-80-32: (
-    settings-connectionstatus:    $color-amber,
+    settings-connectionstatus: $color-amber,
     tv:             $color-red,
     downloader:     $color-purple,
-    explorer:         $color-deep-purple,
+    explorer:       $color-deep-purple,
     settings-parentalfilterconfig: $color-indigo,
     lanbrowser:     $color-blue,
-    calls:             $color-teal,
-    pvr:             $color-green,
-    epg:             $color-light-green,
-    contacts:         $color-orange,
-    settings:         $color-deep-orange,
-    help:            $color-brown
+    calls:          $color-teal,
+    pvr:            $color-green,
+    epg:            $color-light-green,
+    contacts:       $color-orange,
+    settings:       $color-deep-orange,
+    help:           $color-brown
 );
 
 $icons-colors-16: (
-    help:            $color-primary-dark
+    help:           $color-primary-dark
 );
 
 // Desktop icons (size: 80)
 $icons-80: (
     settings-connectionstatus: $mdi-heart-pulse, // Etat de la Freebox
     tv:             $mdi-television,        // Freebox TV
-    downloader:     $mdi-cloud-download,     // Téléchargements
-    explorer:         $mdi-folder,            // Explorateur de fichiers
+    downloader:     $mdi-cloud-download,    // Téléchargements
+    explorer:       $mdi-folder,            // Explorateur de fichiers
     settings-parentalfilterconfig: $mdi-folder-lock, // Contrôle parental
-    lanbrowser:     $mdi-lan,                 // Périphériques réseau
-    calls:             $mdi-phone-log,         // Journal d'appels
-    pvr:             $mdi-record-rec,         // Gestion des enregistrements
-    epg:             $mdi-newspaper,         // Guide des programmes
-    contacts:         $mdi-contact-mail,         // Contacts
-    settings:         $mdi-settings,             // Paramètres de la Freebox
-    help:            $mdi-help-circle,
+    lanbrowser:     $mdi-lan,               // Périphériques réseau
+    calls:          $mdi-phone-log,         // Journal d'appels
+    pvr:            $mdi-record-rec,        // Gestion des enregistrements
+    epg:            $mdi-newspaper,         // Guide des programmes
+    contacts:       $mdi-contact-mail,      // Contacts
+    settings:       $mdi-settings,          // Paramètres de la Freebox
+    help:           $mdi-help-circle,
 );
 
 // UI icons (size: 32)
 $icons-32: (
     logout:         $mdi-logout-variant,
-    login:            $mdi-login-variant,
-    reboot:            $mdi-reload,
-    quickstart:        $mdi-auto-fix,
+    login:          $mdi-login-variant,
+    reboot:         $mdi-reload,
+    quickstart:     $mdi-auto-fix,
     wifi-toggle-off: $mdi-wifi,
     wifi-toggle-on: $mdi-wifi-off,
     pub-toggle-off: $mdi-hexagon,
     pub-toggle-on:  $mdi-hexagon-outline,
-    harddisk:        $mdi-harddisk,
+    harddisk:       $mdi-harddisk,
     usb:            $mdi-usb,
     settings-connectionconfig:         $mdi-settings-box,
     settings-connectionipv6config:     $mdi-web,
     settings-connectiondyndns:         $mdi-dns,
     settings-vpnserver:     $mdi-vpn,
     settings-vpnclient:     $mdi-vpn,
-    settings-ports-portredir:     $mdi-power-socket,
-    settings-domains-domains:     $mdi-web,
+    settings-ports-portredir:   $mdi-power-socket,
+    settings-domains-domains:   $mdi-web,
     settings-phonefxsstatus:    $mdi-deskphone,
-    settings-phonedectstatus:     $mdi-cellphone-basic,
+    settings-phonedectstatus:   $mdi-cellphone-basic,
     settings-wizarddect:        $mdi-cellphone-basic,
-    settings-networkmode:     $mdi-server-network,
-    settings-wifi-wifi: $mdi-access-point-network,
-    settings-wizardwifi: $mdi-access-point-network,
-    settings-dhcp:         $mdi-lan,
-    settings-switch:    $mdi-switch,
-    settings-freeplugs: $mdi-ethernet-cable,
-    settings-upnpigd:     $mdi-server-network,
-    settings-storage:     $mdi-harddisk,
-    settings-ftp:         $mdi-folder-move,
-    settings-sharesamba: $mdi-windows,
-    settings-shareafp:    $mdi-laptop-mac,
-    settings-airmedia:     $mdi-speaker,
-    settings-upnpav:    $mdi-television-guide,
-    settings-lcd:        $mdi-television,
-    settings-license:    $mdi-message-text,
-    settings-speedtest:    $mdi-speedometer,
-    settings-tnt:        $mdi-radar,
-    settings-accounts:    $mdi-lock,
+    settings-networkmode:       $mdi-server-network,
+    settings-wifi-wifi:     $mdi-access-point-network,
+    settings-wizardwifi:    $mdi-access-point-network,
+    settings-dhcp:          $mdi-lan,
+    settings-switch:        $mdi-switch,
+    settings-freeplugs:     $mdi-ethernet-cable,
+    settings-upnpigd:       $mdi-server-network,
+    settings-storage:       $mdi-harddisk,
+    settings-ftp:           $mdi-folder-move,
+    settings-sharesamba:    $mdi-windows,
+    settings-shareafp:      $mdi-laptop-mac,
+    settings-airmedia:      $mdi-speaker,
+    settings-upnpav:        $mdi-television-guide,
+    settings-lcd:           $mdi-television,
+    settings-license:       $mdi-message-text,
+    settings-speedtest:     $mdi-speedometer,
+    settings-tnt:           $mdi-radar,
+    settings-accounts:      $mdi-lock,
     settings-adblockconfig: $mdi-hexagon,
-    settings-reset:        $mdi-reload
+    settings-reset:         $mdi-reload
 );
 // Add $icons-80 to $icons-32
 $icons-32: map_merge($icons-32, $icons-80);
 
 // Toolbar icons (size: 24)
 $icons-24: (
-    add:            $mdi-plus-circle,
-    setting-tools:     $mdi-settings,
-    control-play-blue: $mdi-play-circle,
+    add:                $mdi-plus-circle,
+    setting-tools:      $mdi-settings,
+    control-play-blue:  $mdi-play-circle,
     control-pause-blue: $mdi-pause-circle,
-    rss-add:        $mdi-rss-box
+    rss-add:            $mdi-rss-box
 );
 
 // Toolbar icons (size: 16)
 $icons-16: (
     folder:         $mdi-folder,
-    folder-add:        $mdi-folder-plus,
-    arrow-refresh:    $mdi-refresh,
-    share:            $mdi-share,
-    bullet-white:    $mdi-checkbox-blank-circle,
-    delete:            $mdi-delete,
-    setting-tools:    $mdi-settings,
-    vcard-add:        $mdi-account-multiple-plus,
-    export-excel:    $mdi-file-export,
+    folder-add:     $mdi-folder-plus,
+    arrow-refresh:  $mdi-refresh,
+    share:          $mdi-share,
+    bullet-white:   $mdi-checkbox-blank-circle,
+    delete:         $mdi-delete,
+    setting-tools:  $mdi-settings,
+    vcard-add:      $mdi-account-multiple-plus,
+    export-excel:   $mdi-file-export,
     add:            $mdi-plus-circle,
-    group-add:        $mdi-account-multiple-plus,
-    cancel:            $mdi-close,
-    save:            $mdi-content-save,
+    group-add:      $mdi-account-multiple-plus,
+    cancel:         $mdi-close,
+    save:           $mdi-content-save,
     epg:            $mdi-newspaper,
-    help:            $mdi-help-circle,
-    accept:            $mdi-check-circle,
-    filter-add:        $mdi-filter,
+    help:           $mdi-help-circle,
+    accept:         $mdi-check-circle,
+    filter-add:     $mdi-filter,
     edit:			$mdi-pencil,
     winrar-add:		$mdi-zip-box,
     cut:			$mdi-content-cut,

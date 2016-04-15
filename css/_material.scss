@@ -1,32 +1,32 @@
 // Colors
-$color-red:                #F44336;
-$color-purple:            #9C27B0;
-$color-deep-purple:        #673AB7;
-$color-indigo:            #3F51B5;
-$color-blue:            #2196F3;
+$color-red:             #F44336;
+$color-purple:          #9C27B0;
+$color-deep-purple:     #673AB7;
+$color-indigo:          #3F51B5;
+$color-blue:			#2196F3;
 $color-teal:            #009688;
-$color-green:            #4CAF50;
-$color-light-green:        #8BC34A;
-$color-amber:            #FFC107;
-$color-orange:            #FF9800;
-$color-deep-orange:        #FF5722;
-$color-brown:            #795548;
-$color-blue-grey:        #607D8B;
+$color-green:           #4CAF50;
+$color-light-green:     #8BC34A;
+$color-amber:           #FFC107;
+$color-orange:          #FF9800;
+$color-deep-orange:     #FF5722;
+$color-brown:           #795548;
+$color-blue-grey:       #607D8B;
 
 $color-primary:         #2196F3;
-$color-primary-dark:     #1976D2;
-$color-primary-darker:     darken(#1976D2, 5);
-$color-accent:            $color-green;
-$color-accent-dark:        darken($color-accent, 10);
+$color-primary-dark:    #1976D2;
+$color-primary-darker:  darken(#1976D2, 5);
+$color-accent:          $color-green;
+$color-accent-dark:     darken($color-accent, 10);
 
-$color-dark:             #303030;
+$color-dark:            #303030;
 $color-text-dark:       rgba(#000, 0.87);
-$color-border:            #BDBDBD;
-$color-icon-dark:        #444444;
+$color-border:          #BDBDBD;
+$color-icon-dark:       #444444;
 
 $color-background-light: #FAFAFA;
 
-$typography-label-font-weight:     600;
+$typography-label-font-weight:   600;
 $typography-label-color:         rgba(#000, 0.7);
 $typography-label-font-size:     12px;
 
@@ -38,26 +38,26 @@ $elevation-4: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 $elevation-5: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 $elevation-negative: inset 1px 1px 3px rgba(0, 0, 0, 0.2);
 
-.elevation-1, .elevation-lowest { @include box-shadow($elevation-1); }
+.elevation-1, .elevation-lowest  { @include box-shadow($elevation-1); }
 .elevation-2, .elevation-low     { @include box-shadow($elevation-2); }
-.elevation-3, .elevation-medium { @include box-shadow($elevation-3); }
-.elevation-4, .elevation-high     { @include box-shadow($elevation-4); }
+.elevation-3, .elevation-medium  { @include box-shadow($elevation-3); }
+.elevation-4, .elevation-high    { @include box-shadow($elevation-4); }
 .elevation-5, .elevation-highest { @include box-shadow($elevation-5); }
-.elevation-negative             { @include box-shadow($elevation-negative); }
+.elevation-negative              { @include box-shadow($elevation-negative); }
 
 // Animations duration
-$timing-short:            150ms;
+$timing-short:          150ms;
 $timing-medium:         250ms;
-$timing-long:            350ms;
+$timing-long:           350ms;
 
 // Slight border
 $slight-border-top:     inset 0 1px 0 0px rgba(0, 0, 0, 0.2);
-$slight-border-right:     inset -1px 0 0 0px rgba(0, 0, 0, 0.2);
-$slight-border-bottom:     inset 0 -1px 0 0px rgba(0, 0, 0, 0.2);
-$slight-border-left:     inset 1px 0 0 0px rgba(0, 0, 0, 0.2);
+$slight-border-right:   inset -1px 0 0 0px rgba(0, 0, 0, 0.2);
+$slight-border-bottom:  inset 0 -1px 0 0px rgba(0, 0, 0, 0.2);
+$slight-border-left:    inset 1px 0 0 0px rgba(0, 0, 0, 0.2);
 
 // Hover, active colors
-$hover-light:            rgba(#000, 0.1);
-$active-light:            rgba(#000, 0.2);
+$hover-light:           rgba(#000, 0.1);
+$active-light:          rgba(#000, 0.2);
 $hover-dark:            rgba(#000, 0.7);
-$active-dark:            rgba(#000, 0.85);
+$active-dark:           rgba(#000, 0.85);
