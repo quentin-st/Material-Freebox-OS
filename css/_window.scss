@@ -31,6 +31,7 @@
         @include border-radius(2px 2px 0 0);
 
         .x-window-header-body {
+            cursor: default;
             background: transparent;
             @include transition-property(opacity);
             @include transition-duration($timing-short);
@@ -53,8 +54,11 @@
 
             // Buttons
             .x-box-item.x-tool-after-title {
+                cursor: default;
                 font-size: 18px!important;
-                color: rgba(#fff, 0.9);
+                color: rgba(#fff, 0.8);
+                @include transition-duration($timing-short);
+                @include transition-property(color);
 
                 $window-icons: (
                     "Fermer": $mdi-close,
@@ -81,6 +85,13 @@
                 .x-tool-close, .x-tool-restore, .x-tool-maximize, .x-tool-minimize, .x-tool-help {
                     display: none;
                 }
+
+                &:hover {
+                    color: rgba(#fff, 1);
+                }
+                &:active {
+                    color: rgba(#fff, 0.8);
+                }
             }
         }
     }
@@ -104,6 +115,7 @@
         // Top toolbar
         .x-toolbar-docked-top {
             .x-btn {
+                cursor: default;
                 border: 0!important;
                 padding: 14px 10px;
                 @include border-radius(0);
@@ -119,6 +131,12 @@
                     &:before {
                         float: right;
                         margin-left: 5px;
+                    }
+                }
+
+                &.x-btn-default-toolbar-medium {
+                    .x-btn-arrow:before {
+                        margin-top: 4px;
                     }
                 }
 

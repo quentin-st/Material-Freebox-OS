@@ -1,5 +1,6 @@
 // Tabs
 .x-tab {
+    cursor: default;
     padding: 10px 16px 8px 16px;
     background: transparent;
     border: 0!important;
@@ -112,6 +113,7 @@
         }
 
         .x-menu-item {
+            cursor: default;
             padding: 0;
             border-color: transparent;
             @include transition-property(background);
@@ -119,7 +121,9 @@
             @include border-radius(0);
 
             .x-menu-item-link {
-                padding: 5px 0;
+                cursor: default;
+                padding-top: 5px;
+                padding-bottom: 5px;
                 margin-left: 35px;
 
                 .x-menu-item-icon {
@@ -128,6 +132,7 @@
                     color: $color-icon-dark;
                 }
                 .x-menu-item-text {
+                    cursor: default;
                     font-size: 13px;
                     font-family: $roboto;
                 }

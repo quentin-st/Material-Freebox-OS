@@ -95,6 +95,7 @@
     // Clock
     .clock-display-field {
         .x-form-display-field {
+            cursor: default;
             padding: 4px 1px;
             margin: 14px 6px;
             @include border-radius(2px);
@@ -132,6 +133,8 @@
                 }
 
                 .x-menu-item-icon {
+                    top: 6px!important;
+
                     // Set colors
                     @each $color in $icons-colors-80-32 {
                         &.app-icons-32-#{nth($color, 1)} {
