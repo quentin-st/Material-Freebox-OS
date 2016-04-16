@@ -30,7 +30,8 @@
         "js/content-script.js",
         "js/script.js",
 
-        "img/wallpaper.jpg",
+        "img/wallpaper1.jpg",
+        "img/wallpaper2.jpg",
 
         "css/style.css",
 

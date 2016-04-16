@@ -24,13 +24,11 @@
             .text('v' + FbxConf.firmwareVersionMajor + '.' + FbxConf.firmwareVersionMinor)
             .appendTo($('.fbxos-version'));
 
-        
+
         // Add wallpaper credits
-        $('<a />')
+        $('<span />')
             .addClass('desktop-wallpaper-credits')
-            .attr('href', 'https://www.behance.net/michiel_vandenberg')
-            .attr('target', '_blank')
-            .text('Fond d\'écran : Michiel van den Berg')
+            .html('Fond d\'écran : <b>Google Maps / DigitalGlobe</b>')
             .appendTo($('.desktop-main-elem'));
 
 

@@ -19,7 +19,7 @@ This project ships & relies on the following projects:
 
 * [Material Design Icons](https://materialdesignicons.com)
 * [Roboto font](https://www.google.com/fonts/specimen/Roboto)
-* Wallpaper from [Michiel van den Berg](https://www.behance.net/michiel_vandenberg)
+* Wallpaper credits: 1: *Google Maps / DigitalGlobe*, 2: *Google Maps / Aerometrex*
 
 ## How does it work?
 Quite straight-forward actually: the [`injecter.js`](js/injecter.js) file is injected by Chrome inside the tab.

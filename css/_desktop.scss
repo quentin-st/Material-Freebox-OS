@@ -3,7 +3,7 @@ html, body {
 }
 
 body {
-    background-image: url('../img/wallpaper.jpg');
+    background-image: url('../img/wallpaper1.jpg');
     background-position: center;
     @include background-size(cover);
 }
@@ -110,23 +110,23 @@ body {
 
 // Wallpaper credits
 .desktop-wallpaper-credits {
+    cursor: default;
     position: absolute;
     top: 0;
     right: 0;
     padding: 5px 0;
-    color: #000;
+    color: #fff;
     font-family: $roboto;
     font-size: 12px;
-    text-decoration: none;
-    text-shadow: 1px 1px 1px rgba(#000, 0.3);
-    @include opacity(0.2);
+    text-shadow: 1px 1px 0 rgba(#000, 0.3);
+    @include opacity(0.5);
     @include rotate(-90deg);
     @include transform-origin(right bottom);
     @include transition-duration($timing-short);
     @include transition-property(opacity);
 
     &:hover {
-        @include opacity(0.4);
+        @include opacity(0.8);
     }
 }
 
