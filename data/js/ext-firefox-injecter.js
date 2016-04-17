@@ -1,6 +1,6 @@
 /**
  * Material-Freebox-OS
- * Content-script
+ * Firefox-specific injecter
  */
 (function() {
     var self = require("sdk/self");

@@ -1,6 +1,6 @@
 /**
  * Material-Freebox-OS
- * Main script - injected by injecter.js
+ * Main script - injected by borwser-specific injecter
  */
 (function() {
     /**

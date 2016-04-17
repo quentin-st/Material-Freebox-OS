@@ -1,3 +1,8 @@
+/**
+ * Material-Freebox-OS
+ * Base extension prototype
+ * Used in ext-chrome-injecter & script
+ */
 (function(window) {
     var MaterialFreeboxOS = function(options) {
         this.options = options;

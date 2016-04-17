@@ -1,6 +1,6 @@
 /**
  * Material-Freebox-OS
- * Content-script
+ * Chrome-specific injecter
  */
 (function() {
     if (document.title.indexOf('Freebox OS') == 0) {

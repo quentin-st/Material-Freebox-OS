@@ -1,7 +1,7 @@
 # <img src="/img/icon-48x48.png" align="left" /> Material-Freebox-OS
 
 This project's aim is to redesign Freebox OS's UI by injecting custom stylesheets into its web interface via a Google Chrome
-extension.
+or Firefox extension.
 
 As you can see, the redesign is hugely inspired from [Google's Material design guidelines](http://www.google.com/design/spec/material-design/introduction.html)
 and Chrome OS specs.
@@ -15,25 +15,27 @@ magic to set these minimize/maximize/close buttons padding.
 | ![Material-Freebox-OS](doc/screenshot1.png)  | ![Material-Freebox-OS](doc/screenshot2.png) |
 |:--------------------------------------------:|:-------------------------------------------:|
 
-This project ships & relies on the following projects:
+This project relies on the following projects:
 
 * [Material Design Icons](https://materialdesignicons.com)
 * [Roboto font](https://www.google.com/fonts/specimen/Roboto)
 * Wallpaper credits: 1: *Google Maps / DigitalGlobe*, 2: *Google Maps / Aerometrex*
 
 ## How does it work?
-Quite straight-forward actually: the [`injecter.js`](js/injecter.js) file is injected by Chrome inside the tab.
+Quite straight-forward actually: either [`ext-chrome-injecter.js`](data/js/ext-chrome-injecter.js) or
+[`ext-firefox-injecter.js`](data/js/ext-firefox-injecter.js) file is injected by Chrome or Firefox inside the tab.
  His aim is to inject the necessary resources - `style.css`, `script.js`, MaterialDesignIcons stylesheet and Roboto font.
 
 That's it!
 
 ### How about security?
-That's a legitimate question: you can browse both Javascript files ([`injecter.js`](js/injecter.js) and [`script.js`](js/script.js))
+That's a legitimate question: you can browse Javascript files ([`ext-chrome-injecter.js`](data/js/ext-chrome-injecter.js),
+[`ext-firefox-injecter.js`](data/js/ext-firefox-injecter.js) and [`script.js`](data/js/script.js))
 - in this repo or directly from Chrome's debugger tools - to see that their sole purpose is to manipulate the DOM to apply
  some styling that couldn't be set in CSS.
 
 ## How to contribute
-Do not hesitate to open issues or to create pull requests against the master branch !
+Do not hesitate to open issues or to create pull requests against the master branch!
 The main project is based on SCSS to build CSS files: you'll need an appropriate compiler alongside with some Chrome extensions notions.
 
 > Note: we're using the EditorConfig standard to supply coding rules for this project, learn more about it [here](http://editorconfig.org/).
