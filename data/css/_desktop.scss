@@ -3,6 +3,7 @@ html, body {
 }
 
 body {
+    margin: 0;
     background-image: url('../img/wallpaper1.jpg');
     background-position: center;
     @include background-size(cover);
@@ -158,5 +159,35 @@ body {
         margin-right: auto;
         padding: 8px 15px;
         @extend .material-button--elevated--primary;
+    }
+}
+
+// Alerts
+#secureLogin, #browserWarning, #diskFull {
+    font-size: 14px;
+    font-family: $roboto;
+    color: #ffffff;
+    border: 0;
+    background-color: $color-red;
+    @include border-radius(2px);
+    @extend .elevation-low;
+
+    a {
+        display: table;
+        margin: 10px auto 0 auto;
+        color: #fff;
+        @extend .material-button--flat;
+
+        &:hover {
+            color: #fff;
+            cursor: pointer;
+        }
+    }
+
+    .linklist div {
+        margin: 0;
+        &, &:hover {
+            background-color: transparent;
+        }
     }
 }
