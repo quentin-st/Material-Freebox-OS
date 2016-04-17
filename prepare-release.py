@@ -11,7 +11,6 @@ import json
 output_dir = 'release/'
 flavours = ['Chrome']
 files_generic = [
-    'data/3d/*',
     'data/css/style.css',
     'data/img/*',
     'data/js/script.js',
