@@ -71,6 +71,10 @@
             border-color: rgba(#fff, 0.9)!important;
         }
     }
+    // No icon elevation with solid background
+    &.solid-background .x-btn.fbx-taskbar .x-btn-wrap .x-btn-icon-el {
+        @extend .elevation-none;
+    }
 
     // Right icons
     // Loading indicator

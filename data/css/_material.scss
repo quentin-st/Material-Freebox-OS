@@ -44,6 +44,7 @@ $elevation-negative: inset 1px 1px 3px rgba(0, 0, 0, 0.2);
 .elevation-4, .elevation-high    { @include box-shadow($elevation-4); }
 .elevation-5, .elevation-highest { @include box-shadow($elevation-5); }
 .elevation-negative              { @include box-shadow($elevation-negative); }
+.elevation-none                  { @include box-shadow(none); }
 
 // Animations duration
 $timing-short:          150ms;
