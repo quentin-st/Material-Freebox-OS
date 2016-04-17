@@ -1,7 +1,7 @@
 {
     "title": "Material Freebox OS",
     "name": "material-freebox-os",
-    "version": "1.4.0",
+    "version": "1.5.0",
     "description": "Redesign de l'interface de Freebox OS",
     "main": "data/js/ext-firefox-injecter.js",
     "author": "Quentin S.",
