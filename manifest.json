@@ -5,9 +5,9 @@
     "description": "Redesign de l'interface de Freebox OS",
     "version": "1.4",
     "icons": {
-        "16": "img/icon-16x16.png",
-        "48": "img/icon-48x48.png",
-        "128": "img/icon-128x128.png"
+        "16": "data/img/icon-16x16.png",
+        "48": "data/img/icon-48x48.png",
+        "128": "data/img/icon-128x128.png"
     },
     "author": "Quentin S.",
 
@@ -22,20 +22,21 @@
                 "https://*/*"
             ],
             "js": [
-                "js/injecter.js"
+                "data/js/ext-base.js",
+                "data/js/ext-chrome-injecter.js"
             ]
         }
     ],
     "web_accessible_resources": [
-        "js/content-script.js",
-        "js/script.js",
+        "data/js/content-script.js",
+        "data/js/script.js",
 
-        "img/wallpaper1.jpg",
-        "img/wallpaper2.jpg",
+        "data/img/wallpaper1.jpg",
+        "data/img/wallpaper2.jpg",
 
-        "css/style.css",
+        "data/css/style.css",
 
-        "3d/css/materialdesignicons.min.css",
-        "3d/fonts/*"
+        "data/3d/css/materialdesignicons.min.css",
+        "data/3d/fonts/*"
     ]
 }

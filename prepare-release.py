@@ -8,32 +8,28 @@ import shutil
 import json
 
 
-def get_version(flavour):
-    manifest = manifests[flavour]
-
-    # Parse file depending on flavour
-    if flavour == 'chrome':
-        manifest_json = open(manifest)
-        return json.load(manifest_json)['version']
-    else:
-        return None
-
 output_dir = 'release/'
-flavours = ['chrome']
+flavours = ['Chrome']
 files_generic = [
-    'manifest.json',
-    '3d/*',
-    'css/style.css',
-    'img/*',
-    'js/*'
+    'data/3d/*',
+    'data/css/style.css',
+    'data/img/*',
+    'data/js/script.js',
+    'data/js/ext-base.js'
 ]
 files_flavours = {
-    'chrome': [
-        'manifest.json'
+    'Chrome': [
+        'manifest.json',
+        'data/js/ext-chrome-injecter.js'
+    ],
+    'Firefox': [
+        'package.json',
+        'data/js/ext-firefox-injecter.js'
     ]
 }
 manifests = {
-    'chrome': 'manifest.json'
+    'Chrome': 'manifest.json',
+    'Firefox': 'package.json'
 }
 
 parser = argparse.ArgumentParser(description='Prepare release packages for different flavours')
@@ -54,7 +50,8 @@ if not os.path.isdir(output_dir):
     os.makedirs(output_dir)
 
 # Read manifest & read version name
-version = get_version(flavour)
+manifest_json = open(manifest)
+version = json.load(manifest_json)['version']
 output_dir = os.path.join(output_dir, 'Material-Freebox-OS-{}-{}'.format(flavour, version))
 
 # Expand files list (js/* => [js/script.js, js/injecter.js]

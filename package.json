@@ -1,0 +1,16 @@
+{
+  "title": "Material-Freebox-OS",
+  "name": "material-freebox-os",
+  "version": "1.4.0",
+  "description": "Redesign de l'interface de Freebox OS",
+  "main": "data/js/ext-firefox-injecter.js",
+  "author": "Quentin S.",
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "license": "GNU GPL V2",
+  "keywords": [
+    "jetpack"
+  ]
+}

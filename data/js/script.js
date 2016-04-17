@@ -77,12 +77,6 @@
         };
     };
 
-    // Wait for jQuery & desktop to be loaded
-    waitFor(function() {
-        return !!window.jQuery && !!$('.fbxos-version').length;
-    }, desktopLoaded);
-
-
     function log(msg) {
         console.info('Material-Freebox-OS(script.js):', msg);
     }
@@ -95,4 +89,9 @@
             }
         }, 200);
     }
+
+    // Wait for jQuery & desktop to be loaded
+    waitFor(function() {
+        return !!window.jQuery && !!$('.fbxos-version').length;
+    }, desktopLoaded);
 })();
