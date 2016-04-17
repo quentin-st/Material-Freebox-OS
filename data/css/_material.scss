@@ -1,3 +1,6 @@
+// Font
+$roboto:                Roboto, sans-serif;
+
 // Colors
 $color-red:             #F55145;
 $color-purple:          #9C27B0;
@@ -23,6 +26,11 @@ $color-dark:            #303030;
 $color-text-dark:       rgba(#000, 0.87);
 $color-border:          #BDBDBD;
 $color-icon-dark:       #444444;
+
+$color-alert-info:      #0AB1FC;
+$color-alert-success:   #55B559;
+$color-alert-warning:   #FBC53C;
+$color-alert-danger:    $color-red;
 
 $color-background-light: #FAFAFA;
 
@@ -62,3 +70,16 @@ $hover-light:           rgba(#000, 0.1);
 $active-light:          rgba(#000, 0.2);
 $hover-dark:            rgba(#000, 0.7);
 $active-dark:           rgba(#000, 0.85);
+
+// Alerts
+.alert {
+    font-family: $roboto;
+    color: #ffffff;
+    border: 0;
+    @include border-radius(2px);
+
+    &.info {    background-color: $color-alert-info; }
+    &.success { background-color: $color-alert-success; }
+    &.warning { background-color: $color-alert-warning; }
+    &.danger {  background-color: $color-red; }
+}

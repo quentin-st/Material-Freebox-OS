@@ -27,17 +27,19 @@
         padding: 8px 15px;
         @extend .material-button--elevated--primary;
     }
+
+    #errorMsg {
+        @extend .alert;
+        @extend .alert.danger;
+    }
 }
 
 // Alerts
 #secureLogin, #browserWarning, #diskFull {
     font-size: 14px;
-    font-family: $roboto;
-    color: #ffffff;
-    border: 0;
-    background-color: $color-red;
-    @include border-radius(2px);
     @extend .elevation-low;
+    @extend .alert;
+    @extend .alert.danger;
 
     a {
         cursor: pointer;
