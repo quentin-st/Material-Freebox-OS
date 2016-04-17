@@ -10,7 +10,9 @@ and Chrome OS specs.
 I'd rather keep this project maintainable and compatible with upcoming releases of Freebox OS than doing some Javascript black
 magic to set these minimize/maximize/close buttons padding.
 
-## [Download on Chrome Web Store](https://chrome.google.com/webstore/detail/material-freebox-os/lhdfonhgkclaigpfmclbahllambeednh)
+*Firefox: coming soon*
+
+[![Download on Chrome Web Store](doc/download-chrome-web-store.png)](https://chrome.google.com/webstore/detail/material-freebox-os/lhdfonhgkclaigpfmclbahllambeednh)
 
 | ![Material-Freebox-OS](doc/screenshot1.png)  | ![Material-Freebox-OS](doc/screenshot2.png) |
 |:--------------------------------------------:|:-------------------------------------------:|

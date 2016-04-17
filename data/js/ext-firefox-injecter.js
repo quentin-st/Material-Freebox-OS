@@ -27,6 +27,7 @@
 
                 // We cannot inject stylesheets from here, but we can provide
                 // some Javascript that will do the work.
+                // TODO inject ext-base.js and wait for it?
                 var cssInjecterJs = "\
                 \
                 var hasCSS = function(src) {\

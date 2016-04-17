@@ -1,5 +1,5 @@
 {
-    "title": "Material-Freebox-OS",
+    "title": "Material Freebox OS",
     "name": "material-freebox-os",
     "version": "1.4.0",
     "description": "Redesign de l'interface de Freebox OS",
@@ -9,7 +9,7 @@
         "firefox": ">=38.0a1",
         "fennec": ">=38.0a1"
     },
-    "license": "GNU GPL V2",
+    "license": "GPL-2.0",
     "keywords": [
         "jetpack"
     ],
