@@ -148,7 +148,7 @@
 
                 &:hover {
                     border: 0!important;
-                    background: $hover-light!important;
+                    background: $color-hover-light !important;
 
                     .x-btn-inner {
                         color: #fff;
@@ -156,7 +156,7 @@
                 }
 
                 &.x-btn-menu-active {
-                    background: $active-light!important;
+                    background: $color-active-light !important;
                 }
             }
 

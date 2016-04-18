@@ -41,10 +41,10 @@
     }
 
     &:hover {
-        background: $hover-light!important;
+        background: $color-hover-light !important;
     }
     &:active, &.x-btn-pressed {
-        background: $active-light!important;
+        background: $color-active-light !important;
 
         color: #fff;
     }
@@ -61,12 +61,12 @@
     }
 
     &:hover {
-        background: $hover-light !important;
+        background: $color-hover-light !important;
         @include box-shadow($elevation-1);
     }
 
     &:active, &.x-btn-pressed {
-        background: $active-light !important;
+        background: $color-active-light !important;
         @include box-shadow($elevation-negative);
 
         .x-btn-icon-el {

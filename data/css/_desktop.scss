@@ -77,7 +77,7 @@ body {
     &.desktop-selected {
         padding: 5px;
         border: 0;
-        background-color: $active-dark;
+        background-color: $color-active-dark;
         @extend .elevation-medium;
         @include border-radius(2px!important);
         @include transition-duration($timing-short);
@@ -129,4 +129,9 @@ body {
     &:hover {
         @include opacity(0.8);
     }
+}
+
+.x-mask {
+    // Put the mask over the taskbar
+    height: 100%!important;
 }

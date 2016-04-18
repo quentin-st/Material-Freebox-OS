@@ -34,3 +34,63 @@ fieldset.x-fieldset {
     background-image: none;
     @include border-radius(2px);
 }
+
+// Combobox
+table[id^="combobox"] {
+    .x-form-trigger-input-cell {
+        @include material-icon($mdi-chevron-down);
+
+        &:before {
+            position: absolute;
+            right: 0;
+            padding: 8px;
+        }
+    }
+
+    .x-form-field[role="combobox"] {
+        padding: 0 8px;
+        height: 28px;
+        border-color: $color-border-light;
+        font-family: $roboto;
+        @include no-select();
+        @include transition-property(box-shadow);
+        @include transition-duration($timing-short);
+
+        &:hover {
+            @extend .elevation-tiny;
+        }
+    }
+    .x-form-arrow-trigger {
+        display: none;
+    }
+}
+.x-pickerfield-open table[id^="combobox"] .x-form-field[role="combobox"] {
+    @include box-shadow(inset $elevation-tiny);
+}
+// Combobox items list
+.x-boundlist {
+    border: 0;
+    @include border-radius(2px);
+    @extend .elevation-lowest;
+
+    .x-list-plain {
+        padding: 3px 0;
+
+        .x-boundlist-item {
+            cursor: default;
+            padding: 5px 10px;
+            border: 0;
+            font-family: $roboto;
+            @include transition-property(background);
+            @include transition-duration($timing-short);
+            @include border-radius(0);
+
+            &.x-boundlist-item-over {
+                background: $color-hover-light;
+            }
+            &.x-boundlist-selected {
+                background: $color-active-light;
+            }
+        }
+    }
+}

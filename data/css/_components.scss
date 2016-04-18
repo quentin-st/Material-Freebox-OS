@@ -25,7 +25,7 @@
     }
 
     &:hover {
-        background-color: $hover-light;
+        background-color: $color-hover-light;
     }
 }
 
@@ -69,7 +69,7 @@
             }
 
             &.x-column-header-over {
-                background: $hover-light none;
+                background: $color-hover-light none;
 
                 .x-column-header-trigger {
                     visibility: visible;
@@ -140,7 +140,7 @@
 
             &.x-menu-item-active {
                 border: 0;
-                background: $hover-light;
+                background: $color-hover-light;
 
                 .x-menu-item-link {
                     background: transparent !important;
