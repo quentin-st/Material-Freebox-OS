@@ -1,5 +1,5 @@
-// Login form
-#login-form #formContent {
+// Login form & loading splash
+#login-form #formContent, #loadingInfo {
     background-color: #fff;
     @include border-radius(2px);
     @extend .elevation-medium;
@@ -9,7 +9,10 @@
         font-size: 18px;
         text-transform: none;
     }
+}
 
+// Login form
+#login-form #formContent {
     h5 {
         font-family: $roboto;
         font-weight: 500;
@@ -31,6 +34,23 @@
     #errorMsg {
         @extend .alert;
         @extend .alert.danger;
+    }
+}
+
+// Loading splash
+#loadingInfo {
+    // Progressbar
+    #loading {
+        border: 0;
+
+        #loadPct {
+            padding: 2px 0;
+            font-family: $roboto;
+        }
+        #loadContent {
+            background: $color-green;
+            @include border-radius(2px);
+        }
     }
 }
 

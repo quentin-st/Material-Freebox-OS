@@ -1,4 +1,4 @@
-# <img src="/data/img/icon-48x48.png" align="left" /> Material-Freebox-OS
+# <img src="/data/img/icon-48x48.png" align="left" /> Material Freebox OS
 
 This project's aim is to redesign Freebox OS's UI by injecting custom stylesheets into its web interface via a Google Chrome
 or Firefox extension.
