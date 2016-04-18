@@ -23,7 +23,6 @@ files_flavours = {
     ],
     'Firefox': [
         'package.json',
-        'install.rdf',
         'data/js/ext-firefox-injecter.js'
     ]
 }
@@ -54,8 +53,6 @@ manifest = manifests[flavour]
 manifest_json = open(manifest)
 version = json.load(manifest_json)['version']
 output_dir = os.path.join(output_dir, 'Material-Freebox-OS-{}-{}'.format(flavour, version))
-
-# TODO update install.rdf for Firefox flavour
 
 # Expand files list (js/* => [js/script.js, js/injecter.js]
 expanded_files = []
