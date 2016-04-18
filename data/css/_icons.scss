@@ -224,9 +224,16 @@ $icons-16: (
 
 
 // Separate icons
-.x-message-box-question {
+.x-message-box-question, .x-message-box-warning {
     font-size: 35px;
     color: $color-text-dark;
     background-image: none;
+}
+.x-message-box-question {
+    color: $color-alert-info;
     @include material-icon($mdi-comment-question-outline);
+}
+.x-message-box-warning {
+    color: $color-alert-warning;
+    @include material-icon($mdi-alert-circle);
 }
