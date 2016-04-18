@@ -25,10 +25,10 @@
                     ]
                 };
 
-                // We cannot inject stylesheets from here, but we can provide
-                // some Javascript that will do the work.
+                // We cannot inject stylesheets from here, but we can provide some Javascript that will do the work.
+                // Also, injected javascripts does not seem to be injected as in Chrome. So let's manually inject these
                 // TODO inject ext-base.js and wait for it?
-                var cssInjecterJs = "\
+                var injecterJs = "\
                 \
                 var hasCSS = function(src) {\
                     var links = document.getElementsByTagName('link');\
@@ -49,26 +49,42 @@
                     s.media = 'all';\
                     s.type = 'text/css';\
                     document.head.appendChild(s);\
+                };\
+                var hasJS = function(src) {\
+                    var scripts = document.getElementsByTagName('script');\
+                    for (var i=0; i<scripts.length; i++) {\
+                        if (scripts[i].src == src)\
+                            return true;\
+                    }\
+                    return false;\
+                };\
+                var injectScript = function(src) {\
+                    if (hasJS(src))\
+                        return;\
+                    \
+                    console.log('Injecting ' + src);\
+                    var s = document.createElement('script');\
+                    s.type = 'text/javascript';\
+                    s.src = src;\
+                    document.head.appendChild(s);\
                 };";
 
-                for (var i=0; i<deps.css.length; i++) {
-                    var url = deps.css[i];
-
-                    url = url.substring(0, 'http'.length) == 'http'
-                        ? url
-                        : self.data.url(url);
-
-                    cssInjecterJs += "injectStylesheet('" + url + "');";
+                function getResourceUri(src) {
+                    return src.substring(0, 'http'.length) == 'http'
+                        ? src
+                        : self.data.url(src);
                 }
 
-                // Build JS files list
-                var contentScriptFiles = [];
+                // CSS
+                for (var i=0; i<deps.css.length; i++)
+                    injecterJs += "injectStylesheet('" + getResourceUri(deps.css[i]) + "');";
+
+                // JS
                 for (var y=0; y<deps.js.length; y++)
-                    contentScriptFiles.push(self.data.url(deps.js[y]));
+                    injecterJs += "injectScript('" + getResourceUri(deps.js[y]) + "');";
 
                 worker.tab.attach({
-                    contentScript: cssInjecterJs,
-                    contentScriptFile: contentScriptFiles
+                    contentScript: injecterJs
                 });
             }
         }
