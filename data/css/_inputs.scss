@@ -2,6 +2,11 @@
     cursor: default;
 }
 
+// Checkbox
+.x-form-cb-wrap-inner {
+
+}
+
 // Fieldset
 fieldset.x-fieldset {
     position: relative;
@@ -25,9 +30,10 @@ fieldset.x-fieldset {
     }
 }
 
-// Label
-.x-form-item-label {
+// Label, simple text value
+.x-form-item-label, .x-form-display-field {
     font-family: $roboto;
+    margin-top: 8px;
 }
 
 .x-form-text {
@@ -36,37 +42,39 @@ fieldset.x-fieldset {
 }
 
 // Combobox
-table[id^="combobox"] {
-    .x-form-trigger-input-cell {
+$selector-combobox-wrap: 'table[id^="combobox"].x-form-trigger-wrap, table[id^="timefield"].x-form-trigger-wrap';
+$selector-combobox: '.x-form-field[role="combobox"]';
+#{$selector-combobox-wrap} {
+    border: 1px solid $color-border-light;
+    @include border-radius(2px);
+    @include transition-property(box-shadow, background-color);
+    @include transition-duration($timing-short);
+
+    &:hover {
+        background-color: rgba(#000, 0.01);
+        @extend .elevation-tiny;
+    }
+
+    #{$selector-combobox} {
+        padding: 0 8px;
+        height: 28px;
+        border: 0;
+        background: transparent;
+        font-family: $roboto;
+        @include no-select();
+    }
+    .x-form-arrow-trigger, .x-form-time-trigger {
+        background: none;
+        border: 0;
         @include material-icon($mdi-chevron-down);
 
         &:before {
             position: absolute;
-            right: 0;
-            padding: 8px;
+            top: 8px;
         }
     }
-
-    .x-form-field[role="combobox"] {
-        padding: 0 8px;
-        height: 28px;
-        border-color: $color-border-light;
-        font-family: $roboto;
-        @include no-select();
-        @include transition-property(box-shadow);
-        @include transition-duration($timing-short);
-
-        &:hover {
-            @extend .elevation-tiny;
-        }
-    }
-    .x-form-arrow-trigger {
-        display: none;
-    }
 }
-.x-pickerfield-open table[id^="combobox"] .x-form-field[role="combobox"] {
-    @include box-shadow(inset $elevation-tiny);
-}
+
 // Combobox items list
 .x-boundlist {
     border: 0;
