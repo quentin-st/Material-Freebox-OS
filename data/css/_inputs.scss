@@ -94,3 +94,38 @@ table[id^="combobox"] {
         }
     }
 }
+
+// Slider
+.x-slider {
+    height: 2px;
+    background: $color-accent none;
+
+    .x-slider-end {
+        background: none;
+
+        .x-slider-inner {
+            background: none;
+
+            .x-slider-thumb {
+                cursor: pointer;
+                margin-top: -5px;
+                background: #fff none;
+                border: 1px solid $color-accent;
+                border-radius: 50%;
+                width: 14px;
+                height: 14px;
+                @extend .elevation-tiny;
+                @include transition-property(width, height, margin);
+                @include transition-duration($timing-short);
+
+                &.x-slider-thumb-drag {
+                    width: 16px;
+                    height: 16px;
+                    margin-top: -6px;
+                    margin-left: -8px;
+                    @extend .elevation-lowest;
+                }
+            }
+        }
+    }
+}
