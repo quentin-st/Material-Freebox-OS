@@ -8,7 +8,8 @@ import shutil
 import json
 
 
-output_dir = 'release/'
+release_dir = 'release/'
+base_dir = os.path.dirname(os.path.realpath(__file__))
 flavours = ['Chrome', 'Firefox']
 files_generic = [
     'data/css/style.css',
@@ -44,15 +45,16 @@ elif flavour not in flavours:
     sys.exit(1)
 
 # Create output dir if necessary
-if not os.path.isdir(output_dir):
+if not os.path.isdir(release_dir):
     print('Creating output dir')
-    os.makedirs(output_dir)
+    os.makedirs(release_dir)
 
 # Read manifest & read version name
 manifest = manifests[flavour]
 manifest_json = open(manifest)
 version = json.load(manifest_json)['version']
-output_dir = os.path.join(output_dir, 'Material-Freebox-OS-{}-{}'.format(flavour, version))
+output_dir_name = 'Material-Freebox-OS-{}-{}'.format(flavour, version)
+output_dir = os.path.join(release_dir, output_dir_name)
 
 # Expand files list (js/* => [js/script.js, js/injecter.js]
 expanded_files = []
@@ -77,3 +79,26 @@ for file in expanded_files:
 
     shutil.copy(file, destination)
     print('Copied {}'.format(file, destination))
+
+# Firefox: we're not finished yet
+if flavour == 'Firefox':
+    # Create .xpi from that
+    os.chdir(output_dir)
+    os.system('jpm xpi')
+
+    # Copy & rename xpi file to parent directory, delete working dir
+    found_xpi = False
+    for file in os.listdir('.'):
+        if file.endswith('.xpi'):
+            # That's the one!
+            found_xpi = True
+            shutil.copy(file, '../{}.xpi'.format(output_dir_name))
+            break
+
+    if not found_xpi:
+        print('XPI file could not be found. Did "jpm xpi" output something wrong?')
+        sys.exit(1)
+
+    if input('Should we delete {}? (y/N)'.format(output_dir)).lower() == 'y':
+        os.chdir(os.path.join(base_dir, release_dir))
+        shutil.rmtree(os.path.join(base_dir, output_dir))
