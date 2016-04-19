@@ -5,83 +5,46 @@
 (function() {
     var self = require("sdk/self");
     var pageMod = require("sdk/page-mod");
+    let {Cc, Ci, Cu} = require("chrome");
+    Cu.import(self.data.url('js/ext-base.js'), this);
 
     pageMod.PageMod({
         include: '*',
         onAttach: function onAttach(worker) {
             if (worker.tab.title.indexOf('Freebox OS') == 0) {
                 // That's the one!
+                // Define functions
+                var injecterJs =
+                    'var hasMeta = ' + MaterialFreeboxOS.hasMeta.toString() + ';' +
+                    'var addMeta = ' + MaterialFreeboxOS.addMeta.toString() + ';' +
+                    'var injectScript = ' + MaterialFreeboxOS.injectScript.toString() + ';' +
+                    'var injectStylesheet = ' + MaterialFreeboxOS.injectStylesheet.toString() + ';';
+
+                // Check if Material-Freebox-OS meta tag is here
+                // (it would mean that another instance has already been injected)
+                injecterJs += "\
+                var meta_name = '" + MaterialFreeboxOS.name + "';\
+                if (hasMeta(meta_name))\
+                    throw new Error('Material-Freebox-OS already injected, aborting.');\
+                \
+                addMeta(meta_name, true);";
 
                 // Inject dependencies
-                var deps = {
-                    js: [
-                        'js/script.js'
-                    ],
-                    css: [
-                        'css/style.css',
-                        //'https://cdn.materialdesignicons.com/1.5.54/css/materialdesignicons.min.css', <- Invalid certificate, let's use this one instead:
-                        'https://www.s-quent.in/bundles/app/3d/css/materialdesignicons.min.css',
-                        'https://fonts.googleapis.com/css?family=Roboto:400,300'
-                    ]
-                };
+                var deps = MaterialFreeboxOS.getDependencies('Firefox');
 
-                // We cannot inject stylesheets from here, but we can provide some Javascript that will do the work.
-                // Also, injected javascripts does not seem to be injected as in Chrome. So let's manually inject these
-                // TODO inject ext-base.js and wait for it?
-                var injecterJs = "\
-                \
-                var hasCSS = function(src) {\
-                    var links = document.getElementsByTagName('link');\
-                    for (var i=0; i<links.length; i++) {\
-                        if (links[i].href == src)\
-                            return true;\
-                    }\
-                    return false;\
-                };\
-                var injectStylesheet = function(src) {\
-                    if (hasCSS(src))\
-                        return;\
-                    \
-                    console.log('Injecting ' + src);\
-                    var s = document.createElement('link');\
-                    s.rel = 'stylesheet';\
-                    s.href = src;\
-                    s.media = 'all';\
-                    s.type = 'text/css';\
-                    document.head.appendChild(s);\
-                };\
-                var hasJS = function(src) {\
-                    var scripts = document.getElementsByTagName('script');\
-                    for (var i=0; i<scripts.length; i++) {\
-                        if (scripts[i].src == src)\
-                            return true;\
-                    }\
-                    return false;\
-                };\
-                var injectScript = function(src) {\
-                    if (hasJS(src))\
-                        return;\
-                    \
-                    console.log('Injecting ' + src);\
-                    var s = document.createElement('script');\
-                    s.type = 'text/javascript';\
-                    s.src = src;\
-                    document.head.appendChild(s);\
-                };";
-
-                function getResourceUri(src) {
+                var getResourceUri = function(src) {
                     return src.substring(0, 'http'.length) == 'http'
                         ? src
                         : self.data.url(src);
-                }
+                };
 
-                // CSS
-                for (var i=0; i<deps.css.length; i++)
-                    injecterJs += "injectStylesheet('" + getResourceUri(deps.css[i]) + "');";
+                deps.css.forEach(function(uri) {
+                    injecterJs += "injectStylesheet('" + getResourceUri(uri) + "');";
+                });
 
-                // JS
-                for (var y=0; y<deps.js.length; y++)
-                    injecterJs += "injectScript('" + getResourceUri(deps.js[y]) + "');";
+                deps.js.forEach(function(uri) {
+                    injecterJs += "injectScript('" + getResourceUri(uri) + "');";
+                });
 
                 worker.tab.attach({
                     contentScript: injecterJs

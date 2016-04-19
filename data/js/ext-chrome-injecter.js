@@ -4,10 +4,9 @@
  */
 (function() {
     if (document.title.indexOf('Freebox OS') == 0) {
-        var meta_name = 'Material-Freebox-OS';
-
         // Check if Material-Freebox-OS meta tag is here
-        // (it means that another instance has already been injected)
+        // (it would mean that another instance has already been injected)
+        var meta_name = MaterialFreeboxOS.name;
         if (MaterialFreeboxOS.hasMeta(meta_name))
             throw new Error('Material-Freebox-OS already injected, aborting.');
 
@@ -15,17 +14,7 @@
         MaterialFreeboxOS.addMeta(meta_name, true);
 
         // Inject dependencies
-        var deps = {
-            js: [
-                'data/js/script.js'
-            ],
-            css: [
-                'data/css/style.css',
-                //'https://cdn.materialdesignicons.com/1.5.54/css/materialdesignicons.min.css', <- Invalid certificate, let's use this one instead:
-                'https://www.s-quent.in/bundles/app/3d/css/materialdesignicons.min.css',
-                'https://fonts.googleapis.com/css?family=Roboto:400,300'
-            ]
-        };
+        var deps = MaterialFreeboxOS.getDependencies('Chrome');
 
         var getDepUrl = function(url) {
             return url.substring(0, 'http'.length) == 'http'
@@ -34,11 +23,13 @@
         };
 
         // Inject scripts
-        for (var i=0; i<deps.js.length; i++)
-            MaterialFreeboxOS.injectScript(getDepUrl(deps.js[i]));
+        deps.js.forEach(function(uri) {
+            MaterialFreeboxOS.injectScript(getDepUrl(uri));
+        });
 
         // Inject stylesheets
-        for (var y=0; y<deps.css.length; y++)
-            MaterialFreeboxOS.injectStylesheet(getDepUrl(deps.css[y]));
+        deps.css.forEach(function(uri) {
+            MaterialFreeboxOS.injectStylesheet(getDepUrl(uri));
+        });
     }
 })();
