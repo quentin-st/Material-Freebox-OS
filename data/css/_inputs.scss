@@ -20,7 +20,7 @@ fieldset.x-fieldset {
     position: relative;
     padding-top: 22px!important;
     padding-left: 14px!important;
-    border-color: $color-border;
+    border-color: $color-input-border;
     border-width: 0 0 0 1px;
     margin: 10px 0 20px 0;
 
@@ -94,6 +94,16 @@ fieldset.x-fieldset {
 .x-form-trigger-wrap-focus #{$selector-combobox-wrap} {
     border-color: $color-accent;
 }
+
+// Combobox inside window toolbar (primary-color background)
+.x-toolbar-docked-top #{$selector-combobox-wrap} {
+    border-color: $color-border-light;
+
+    .x-form-text {
+        color: #fff;
+    }
+}
+
 
 // Combobox items list
 .x-boundlist {

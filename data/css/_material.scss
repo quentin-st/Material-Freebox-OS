@@ -25,11 +25,11 @@ $color-accent-dark:     darken($color-accent, 10);
 
 $color-dark:            #303030;
 $color-text-dark:       rgba(#000, 0.87);
-$color-border:          #BDBDBD;
-$color-border-light:    rgba(#000, 0.2);
+$color-border-light:    rgba(#fff, 0.5);
+
 $color-icon-dark:       #444444;
 
-$color-input-border:    $color-border-light;
+$color-input-border:    rgba(#000, 0.2);
 
 $color-hover-light:     rgba(#000, 0.1);
 $color-active-light:    rgba(#000, 0.2);
