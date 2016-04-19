@@ -1,5 +1,13 @@
+$selector-combobox-wrap: 'table[id^="combobox"].x-form-trigger-wrap, table[id^="timefield"].x-form-trigger-wrap';
+$selector-combobox: '.x-form-field[role="combobox"]';
+
 .x-form-trigger {
     cursor: default;
+}
+
+// Default button
+.x-btn-default-small {
+    @extend .material-button--elevated--primary;
 }
 
 // Checkbox
@@ -36,25 +44,33 @@ fieldset.x-fieldset {
     margin-top: 8px;
 }
 
+// Text input
 .x-form-text {
     background-image: none;
-    @include border-radius(2px);
+    padding: 0 8px;
+    height: 28px;
+    font-family: $roboto;
+
+    &.x-field-form-focus {
+        border-color: $color-accent;
+    }
 }
 
-// Combobox
-$selector-combobox-wrap: 'table[id^="combobox"].x-form-trigger-wrap, table[id^="timefield"].x-form-trigger-wrap';
-$selector-combobox: '.x-form-field[role="combobox"]';
-#{$selector-combobox-wrap} {
-    border: 1px solid $color-border-light;
+// Shared styling between text input & combobox
+.x-form-text, #{$selector-combobox-wrap} {
+    border: 1px solid $color-input-border;
     @include border-radius(2px);
-    @include transition-property(box-shadow, background-color);
+    @include transition-property(box-shadow, background-color, border-color);
     @include transition-duration($timing-short);
 
     &:hover {
         background-color: rgba(#000, 0.01);
         @extend .elevation-tiny;
     }
+}
 
+// Combobox
+#{$selector-combobox-wrap} {
     #{$selector-combobox} {
         padding: 0 8px;
         height: 28px;
@@ -73,6 +89,10 @@ $selector-combobox: '.x-form-field[role="combobox"]';
             top: 8px;
         }
     }
+}
+// Focus state
+.x-form-trigger-wrap-focus #{$selector-combobox-wrap} {
+    border-color: $color-accent;
 }
 
 // Combobox items list

@@ -17,8 +17,9 @@ $color-brown:           #795548;
 $color-blue-grey:       #607D8B;
 
 $color-primary:         #2196F3;
+$color-primary-hover:   darken($color-primary, 8);
 $color-primary-dark:    #1976D2;
-$color-primary-darker:  darken(#1976D2, 5);
+$color-primary-darker:  darken($color-primary-dark, 5);
 $color-accent:          $color-green;
 $color-accent-dark:     darken($color-accent, 10);
 
@@ -27,6 +28,8 @@ $color-text-dark:       rgba(#000, 0.87);
 $color-border:          #BDBDBD;
 $color-border-light:    rgba(#000, 0.2);
 $color-icon-dark:       #444444;
+
+$color-input-border:    $color-border-light;
 
 $color-hover-light:     rgba(#000, 0.1);
 $color-active-light:    rgba(#000, 0.2);
@@ -51,7 +54,7 @@ $elevation-2: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 $elevation-3: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 $elevation-4: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 $elevation-5: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-$elevation-negative: inset 1px 1px 3px rgba(0, 0, 0, 0.2);
+$elevation-negative: inset 1px 1px 1px rgba(0, 0, 0, 0.1);
 
 .elevation-tiny                  { @include box-shadow($elevation-tiny); }
 .elevation-1, .elevation-lowest  { @include box-shadow($elevation-1); }
@@ -79,9 +82,20 @@ $slight-border-left:    inset 1px 0 0 0px rgba(0, 0, 0, 0.2);
     color: #ffffff;
     border: 0;
     @include border-radius(2px);
-
-    &.info {    background-color: $color-alert-info; }
-    &.success { background-color: $color-alert-success; }
-    &.warning { background-color: $color-alert-warning; }
-    &.danger {  background-color: $color-red; }
+}
+.alert--info {
+    @extend .alert;
+    background-color: $color-alert-info;
+}
+.alert--success {
+    @extend .alert;
+    background-color: $color-alert-success;
+}
+.alert--warning {
+    @extend .alert;
+    background-color: $color-alert-warning;
+}
+.alert--danger {
+    @extend .alert;
+    background-color: $color-red;
 }

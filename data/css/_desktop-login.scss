@@ -32,8 +32,7 @@
     }
 
     #errorMsg {
-        @extend .alert;
-        @extend .alert.danger;
+        @extend .alert--danger;
     }
 }
 
@@ -58,8 +57,7 @@
 #secureLogin, #browserWarning, #diskFull {
     font-size: 14px;
     @extend .elevation-low;
-    @extend .alert;
-    @extend .alert.danger;
+    @extend .alert--danger;
 
     a {
         cursor: pointer;

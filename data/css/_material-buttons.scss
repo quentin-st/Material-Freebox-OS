@@ -33,10 +33,11 @@
 .material-button--flat {
     @extend .material-button;
 
+    border: 0!important;
     background: transparent!important;
 
     .x-btn-inner, .x-btn-icon-el {
-        color: #fff;
+        color: #000;
         font-weight: 500;
     }
 
@@ -46,7 +47,7 @@
     &:active, &.x-btn-pressed {
         background: $color-active-light !important;
 
-        color: #fff;
+        color: #000;
     }
 }
 
@@ -83,10 +84,10 @@
     background: $color-primary!important;
 
     &:hover {
-        background: $color-primary-dark!important;
+        background: $color-primary-hover!important;
     }
 
-    .x-btn-inner {
+    .x-btn-inner, .x-btn-icon-el {
         color: #fff;
     }
     &:active, &.x-btn-pressed {
