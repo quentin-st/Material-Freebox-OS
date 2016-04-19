@@ -1,5 +1,5 @@
-// Login form & loading splash
-#login-form #formContent, #loadingInfo {
+// Login form, loading & restart splashes
+#formContent, #loadingInfo {
     background-color: #fff;
     @include border-radius(2px);
     @extend .elevation-medium;
@@ -9,10 +9,7 @@
         font-size: 18px;
         text-transform: none;
     }
-}
 
-// Login form
-#login-form #formContent {
     h5 {
         font-family: $roboto;
         font-weight: 500;
@@ -21,7 +18,10 @@
         text-shadow: none;
         box-shadow: none;
     }
+}
 
+// Login form
+#login-form #formContent {
     .submit-btn {
         cursor: default;
         width: auto;
