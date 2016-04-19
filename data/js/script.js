@@ -7,8 +7,6 @@
      * This function is called once the desktop is fully loaded
      */
     var desktopLoaded = function() {
-        log('Desktop\'s ready, let\'s go');
-
         // We're on login page, no need to go further
         if (window.FbxConf === undefined)
             return;
@@ -76,10 +74,6 @@
             return result;
         };
     };
-
-    function log(msg) {
-        console.info('Material-Freebox-OS(script.js):', msg);
-    }
 
     function waitFor(something, onceReady) {
         var i = setInterval(function() {
