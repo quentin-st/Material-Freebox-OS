@@ -3,6 +3,12 @@
  * Main script - injected by borwser-specific injecter
  */
 (function() {
+    // Override windows buttons size
+    // We need to override this ASAP
+    Ext.panel.Tool.prototype.width = 35;
+    Ext.panel.Tool.prototype.height = 35;
+
+
     /**
      * This function is called once the desktop is fully loaded
      */
@@ -28,11 +34,6 @@
             .addClass('desktop-wallpaper-credits')
             .html('Fond d\'écran : <b>Google Maps / DigitalGlobe</b>')
             .appendTo($('.desktop-main-elem'));
-
-
-        // Override windows buttons size
-        Ext.panel.Tool.prototype.width = 35;
-        Ext.panel.Tool.prototype.height = 35;
 
 
         // Listen for window size change events
