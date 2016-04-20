@@ -23,15 +23,13 @@ This project relies on the following projects:
 * Wallpaper credits: 1: *Google Maps / DigitalGlobe*, 2: *Google Maps / Aerometrex*
 
 ## How does it work?
-Quite straight-forward actually: either [`ext-chrome-injecter.js`](data/js/ext-chrome-injecter.js) or
-[`ext-firefox-injecter.js`](data/js/ext-firefox-injecter.js) file is injected by Chrome or Firefox inside the tab.
+Quite straight-forward actually: [`injector.js`](data/js/injector.js) file is injected by either Chrome or Firefox inside the tab.
  His aim is to inject the necessary resources - `style.css`, `script.js`, MaterialDesignIcons stylesheet and Roboto font.
 
 That's it!
 
 ### How about security?
-That's a legitimate question: you can browse Javascript files ([`ext-chrome-injecter.js`](data/js/ext-chrome-injecter.js),
-[`ext-firefox-injecter.js`](data/js/ext-firefox-injecter.js) and [`script.js`](data/js/script.js))
+That's a legitimate question: you can browse Javascript files ([`injector.js`](data/js/injector.js) and [`script.js`](data/js/script.js))
  in this repo or directly from Chrome's debugger tools - to see that their sole purpose is to manipulate the DOM to apply
  some styling that couldn't be set in CSS.
 

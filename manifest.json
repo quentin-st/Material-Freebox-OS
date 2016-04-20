@@ -11,6 +11,13 @@
     },
     "author": "Quentin S.",
 
+    "applications": {
+        "gecko": {
+            "id": "material-freebox-os@s-quent.in",
+            "strict_min_version": "45.0.0"
+        }
+    },
+
     "permissions": [
         "activeTab"
     ],
@@ -22,8 +29,7 @@
                 "https://*/*"
             ],
             "js": [
-                "data/js/ext-base.js",
-                "data/js/ext-chrome-injecter.js"
+                "data/js/injector.js"
             ]
         }
     ],

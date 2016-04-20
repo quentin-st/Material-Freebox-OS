@@ -15,22 +15,14 @@ files_generic = [
     'data/css/style.css',
     'data/img/*',
     'data/js/script.js',
-    'data/js/ext-base.js'
+    'data/js/injector.js',
+    'manifest.json'
 ]
 files_flavours = {
-    'Chrome': [
-        'manifest.json',
-        'data/js/ext-chrome-injecter.js'
-    ],
-    'Firefox': [
-        'package.json',
-        'data/js/ext-firefox-injecter.js'
-    ]
+    'Chrome': [],
+    'Firefox': []
 }
-manifests = {
-    'Chrome': 'manifest.json',
-    'Firefox': 'package.json'
-}
+manifest = 'manifest.json'
 
 parser = argparse.ArgumentParser(description='Prepare release packages for different flavours')
 parser.add_argument('--flavour')
@@ -49,14 +41,13 @@ if not os.path.isdir(release_dir):
     print('Creating output dir')
     os.makedirs(release_dir)
 
-# Read manifest & read version name
-manifest = manifests[flavour]
+# Open manifest & read version name
 manifest_json = open(manifest)
 version = json.load(manifest_json)['version']
 output_dir_name = 'Material-Freebox-OS-{}-{}'.format(flavour, version)
 output_dir = os.path.join(release_dir, output_dir_name)
 
-# Expand files list (js/* => [js/script.js, js/injecter.js]
+# Expand files list (js/* => [js/script.js, js/injector.js]
 expanded_files = []
 files = files_generic + files_flavours[flavour]
 for file in files:
@@ -80,25 +71,4 @@ for file in expanded_files:
     shutil.copy(file, destination)
     print('Copied {}'.format(file, destination))
 
-# Firefox: we're not finished yet
-if flavour == 'Firefox':
-    # Create .xpi from that
-    os.chdir(output_dir)
-    os.system('jpm xpi')
-
-    # Copy & rename xpi file to parent directory, delete working dir
-    found_xpi = False
-    for file in os.listdir('.'):
-        if file.endswith('.xpi'):
-            # That's the one!
-            found_xpi = True
-            shutil.copy(file, '../{}.xpi'.format(output_dir_name))
-            break
-
-    if not found_xpi:
-        print('XPI file could not be found. Did "jpm xpi" output something wrong?')
-        sys.exit(1)
-
-    if input('Should we delete {}? (y/N)'.format(output_dir)).lower() == 'y':
-        os.chdir(os.path.join(base_dir, release_dir))
-        shutil.rmtree(os.path.join(base_dir, output_dir))
+# TODO zip the directory & delete it

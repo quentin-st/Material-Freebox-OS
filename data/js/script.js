@@ -1,6 +1,6 @@
 /**
  * Material-Freebox-OS
- * Main script - injected by borwser-specific injecter
+ * Main script - injected by injector.js
  */
 (function() {
     // Override windows buttons size
