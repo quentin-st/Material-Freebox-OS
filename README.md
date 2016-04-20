@@ -32,7 +32,7 @@ That's it!
 ### How about security?
 That's a legitimate question: you can browse Javascript files ([`ext-chrome-injecter.js`](data/js/ext-chrome-injecter.js),
 [`ext-firefox-injecter.js`](data/js/ext-firefox-injecter.js) and [`script.js`](data/js/script.js))
-- in this repo or directly from Chrome's debugger tools - to see that their sole purpose is to manipulate the DOM to apply
+ in this repo or directly from Chrome's debugger tools - to see that their sole purpose is to manipulate the DOM to apply
  some styling that couldn't be set in CSS.
 
 ## How to contribute
