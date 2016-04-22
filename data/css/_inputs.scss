@@ -91,16 +91,20 @@ fieldset.x-fieldset {
     }
 }
 // Focus state
-.x-form-trigger-wrap-focus #{$selector-combobox-wrap} {
-    border-color: $color-accent;
+.x-form-trigger-wrap-focus {
+    #{$selector-combobox-wrap} {
+        border-color: $color-accent;
+    }
 }
 
 // Combobox inside window toolbar (primary-color background)
-.x-toolbar-docked-top #{$selector-combobox-wrap} {
-    border-color: $color-border-light;
+.x-toolbar-docked-top {
+    #{$selector-combobox-wrap} {
+        border-color: $color-border-light;
 
-    .x-form-text {
-        color: #fff;
+        .x-form-text {
+            color: #fff;
+        }
     }
 }
 
