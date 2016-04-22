@@ -1,0 +1,48 @@
+/**
+ * Material-Freebox-OS
+ * Browser action style
+ */
+
+@import '../../css/_mixins.scss';
+
+@import '../../css/_material.scss';
+@import '../../css/_material-buttons.scss';
+
+body {
+    min-width: 300px;
+    min-height: 200px;
+    cursor: default;
+    @include no-select;
+}
+
+h1 {
+
+}
+h2 {
+
+}
+
+ul.wallpapers {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+        width: 100px;
+        height: 75px;
+        cursor: pointer;
+        display: inline-block;
+        margin: 2px;
+        border: 2px solid transparent;
+        background-position: center;
+        background-repeat: no-repeat;
+        @include border-radius(2px);
+        @include background-size(cover);
+        @include transition-duration($timing-short);
+
+        &.current {
+            border-color: #ffffff;
+            @extend .elevation-lowest;
+        }
+    }
+}
