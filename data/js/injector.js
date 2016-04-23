@@ -69,6 +69,17 @@
             deps.css.forEach(function(uri) {
                 that.injectStylesheet(that.getDepURI(uri));
             });
+        },
+        applyWallpaper: function() {
+            var that = this;
+
+            // Retrieve setting
+            chrome.storage.sync.get('wallpaper', function(data) {
+                var settingsWallpaper = data['wallpaper'];
+
+                if (settingsWallpaper !== undefined)
+                    document.body.style.backgroundImage = "url('" + that.getDepURI(settingsWallpaper) + "')";
+            });
         }
     };
 
@@ -79,6 +90,9 @@
 
     // Append Material-Freebox-OS meta tag to head
     Injector.addMeta(Injector.metaName, true);
+
+    // Update wallpaper (defined in browser-action)
+    Injector.applyWallpaper();
 
     // Inject dependencies
     Injector.injectAll();
