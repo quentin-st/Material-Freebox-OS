@@ -155,14 +155,30 @@
 }
 
 // Tip
-.x-tip-default {
+.x-tip {
     border: 0;
     background-color: $color-dark;
+    @include border-radius(2px);
     @extend .elevation-lowest;
 
     .x-tip-body {
         color: #fff;
         font-family: $roboto;
+    }
+
+    &.x-tip-form-invalid {
+        background-color: $color-red;
+
+        .x-tip-body-form-invalid {
+            background: none;
+
+            > span:before {
+                position: absolute;
+                left: 0;
+                font-size: 15px;
+                @include material-icon-onbefore($mdi-alert-circle);
+            }
+        }
     }
 }
 
