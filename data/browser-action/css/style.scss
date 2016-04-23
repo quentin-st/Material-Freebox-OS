@@ -9,6 +9,7 @@
 
 @import '../../css/_material.scss';
 @import '../../css/_material-buttons.scss';
+@import '../../css/_inputs.scss';
 
 $footer-height: 40px;
 
@@ -57,11 +58,11 @@ h2 {
             line-height: 0;
 
             li {
+                display: inline-block;
+                margin: 2px;
                 width: calc(33% - 4px);
                 height: 75px;
                 cursor: pointer;
-                display: inline-block;
-                margin: 2px;
                 background-position: center;
                 background-repeat: no-repeat;
                 @include border-radius(2px);
@@ -82,11 +83,16 @@ h2 {
                     @include opacity(0);
                 }
 
-
                 &.current:before {
                     @include opacity(1);
                 }
             }
+        }
+
+        #wallpapers-url {
+            display: inline-block;
+            width: calc(100% - 8px);
+            margin: 6px 2px 2px;
         }
 
         .credits {
@@ -111,9 +117,10 @@ footer {
     background-color: $color-primary;
     text-align: right;
 
-    a {
+    a.material-button--flat--primary {
         display: inline-block;
         text-decoration: none;
+        padding-left: 4px;
 
         .x-btn-inner {
             font-size: 13px;
