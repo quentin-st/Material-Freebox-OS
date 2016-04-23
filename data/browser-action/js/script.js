@@ -7,16 +7,29 @@
         /**
          * Updates wallpaper in current tab
          * @param projectUri
+         * @param wallpaperInfos
          */
-        updateWallpaperInTab: function(projectUri) {
+        updateWallpaperInTab: function(projectUri, wallpaperInfos) {
             var uri = chrome.extension.getURL(projectUri);
 
             chrome.tabs.getSelected(null, function(tab) {
-                console.log(tab.title);
-                if (tab.title.indexOf('Freebox OS') == 0) {
+                if (MaterialFreeboxOS.matches(tab.title)) {
+                    var updateWallpaper = function(uri, wallpaperInfos) {
+                        document.body.style.backgroundImage = "url(" + uri + ")";
+
+                        if (wallpaperInfos != undefined) {
+                            var element = document.getElementsByClassName('desktop-wallpaper-credits')[0];
+                            MaterialFreeboxOS.updateWallpaperCredits(element, wallpaperInfos);
+                        }
+                    };
+
+                    var code =
+                        "var updateWallpaper = " + updateWallpaper.toString() + ";\
+                        updateWallpaper('" + uri + "', eval('(" + JSON.stringify(wallpaperInfos) + ")'))";
+
                     chrome.tabs.executeScript(null, {
-                        code: "document.body.style.backgroundImage = \"url('" + uri + "')\";"
-                    })
+                        code: code
+                    });
                 }
             });
         }
@@ -24,7 +37,18 @@
 
     $(document).ready(function () {
         // Wallpapers
-        var wallpapers = $('.wallpapers').find('li');
+        var wallpapersUl = $('.wallpapers');
+
+        // Inflate list
+        MaterialFreeboxOS.wallpapers.forEach(function(wallpaper) {
+            $('<li />')
+                .attr('data-uri', wallpaper.image)
+                .attr('data-credits', wallpaper.credits)
+                .attr('data-source', wallpaper.source)
+                .css('background-image', "url(" + MaterialFreeboxOS.getDepURI(wallpaper.image) + ")")
+                .appendTo(wallpapersUl);
+        });
+        var wallpapers = wallpapersUl.find('li');
 
         // Retrieve current settings
         chrome.storage.sync.get('wallpaper', function(data) {
@@ -40,7 +64,7 @@
             wallpapers.removeClass('current');
             $(this).addClass('current');
 
-            BrowserAction.updateWallpaperInTab(uri);
+            BrowserAction.updateWallpaperInTab(uri, MaterialFreeboxOS.findWallpaperInfos(uri));
             chrome.storage.sync.set({
                 'wallpaper': uri
             });

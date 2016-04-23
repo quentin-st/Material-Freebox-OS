@@ -1,5 +1,4 @@
 <!doctype html>
-
 <html lang="fr">
 <head>
     <meta charset="utf-8">
@@ -8,24 +7,32 @@
     <link rel="stylesheet" href="https://www.s-quent.in/bundles/app/3d/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300">
 </head>
-
 <body>
+<header>
+    <h1>Material Freebox OS</h1>
+</header>
+<div class="content">
+    <div class="part-wallpapers">
+        <h2>Fond d'écran <a href="http://www.chromeup.com/chrome-os-wallpapers/" target="_blank" class="source">(source)</a></h2>
 
-<h1>Material Freebox OS</h1>
-<h2>Fond d'écran</h2>
-
-<ul class="wallpapers">
-    <li class="wallpaper-1" data-uri="data/img/wallpaper1.jpg"></li>
-    <li class="wallpaper-2" data-uri="data/img/wallpaper2.jpg"></li>
-</ul>
-
-<style scoped>
-    .wallpaper-1 { background-image: url('../../data/img/wallpaper1.jpg'); }
-    .wallpaper-2 { background-image: url('../../data/img/wallpaper2.jpg'); }
-</style>
+        <ul class="wallpapers"></ul>
+    </div>
+</div>
+<footer>
+    <a class="material-button--flat--primary" href="https://www.s-quent.in" target="_blank">
+        <span class="x-btn-inner">
+            <i class="mdi mdi-account"></i> Quentin S.
+        </span>
+    </a>
+    <a class="material-button--flat--primary" href="https://github.com/chteuchteu/Material-Freebox-OS" target="_blank">
+        <span class="x-btn-inner">
+            <i class="mdi mdi-github-circle"></i> GitHub
+        </span>
+    </a>
+</footer>
 
 <script src="js/jquery-2.2.3.min.js"></script>
+<script src="../js/material-freebox-os.js"></script>
 <script src="js/script.js"></script>
-
 </body>
 </html>

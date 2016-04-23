@@ -32,13 +32,6 @@
             .appendTo($('.fbxos-version'));
 
 
-        // Add wallpaper credits
-        $('<span />')
-            .addClass('desktop-wallpaper-credits')
-            .html('Fond d\'écran : <b>Google Maps / DigitalGlobe</b>')
-            .appendTo($('.desktop-main-elem'));
-
-
         // Listen for window size change events
         var syncMonitorWindowResize = Ext.window.Window.prototype.syncMonitorWindowResize;
         Ext.window.Window.prototype.syncMonitorWindowResize = function() {

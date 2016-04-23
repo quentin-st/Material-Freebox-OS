@@ -3,7 +3,7 @@
  * Client dependencies injector
  */
 (function() {
-    if (document.title.indexOf('Freebox OS') != 0)
+    if (!MaterialFreeboxOS.matches(document.title))
         return;
 
     // Define functions
@@ -75,10 +75,21 @@
 
             // Retrieve setting
             chrome.storage.sync.get('wallpaper', function(data) {
-                var settingsWallpaper = data['wallpaper'];
+                var wallpaperUri = data['wallpaper'];
+                if (wallpaperUri === undefined)
+                    wallpaperUri = MaterialFreeboxOS.defaultWallpaper.image;
 
-                if (settingsWallpaper !== undefined)
-                    document.body.style.backgroundImage = "url('" + that.getDepURI(settingsWallpaper) + "')";
+                var wallpaperInfos = MaterialFreeboxOS.findWallpaperInfos(wallpaperUri);
+
+                document.body.style.backgroundImage = "url('" + that.getDepURI(wallpaperUri) + "')";
+
+                // Add credits information to page
+                var span = document.createElement('a');
+                span.className = 'desktop-wallpaper-credits';
+                document.body.appendChild(span);
+
+                if (wallpaperInfos !== null)
+                    MaterialFreeboxOS.updateWallpaperCredits(span, wallpaperInfos);
             });
         }
     };
