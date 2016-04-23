@@ -141,6 +141,22 @@
                     font-size: 13px;
                     font-family: $roboto;
                 }
+                .x-menu-item-arrow {
+                    top: 10px;
+                    right: 3px;
+                    color: $color-text-dark;
+                    background-image: none;
+                    @include material-icon($mdi-chevron-right);
+                }
+                .x-menu-item-checkbox {
+                    background-image: none;
+                    font-size: 8px;
+                    line-height: 16px;
+                    @include material-icon($mdi-checkbox-blank-circle-outline);
+                }
+            }
+            &.x-menu-item-checked .x-menu-item-checkbox {
+                @include material-icon($mdi-checkbox-blank-circle);
             }
 
             &.x-menu-item-active {
@@ -213,5 +229,16 @@
 
     &.selected {
         background-color: $color-accent;
+    }
+}
+
+// Active item in a list
+.dl-filter-active {
+    background-color: $color-active-light;
+
+    .x-menu-item-link {
+        border: 0;
+        padding-left: 0;
+        background: transparent none;
     }
 }

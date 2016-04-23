@@ -1,0 +1,45 @@
+/**
+ * Material-Freebox-OS
+ * Downloader app
+ */
+
+.animprogress {
+    height: 12px;
+    border: 0;
+    @include border-radius(2px);
+
+    .pct {
+        font-family: $roboto;
+    }
+
+    > span {
+        height: 12px;
+        background-image: none;
+        background-color: $color-green;
+        @include border-radius(2px);
+        @include box-shadow(none);
+    }
+
+    &.blue > span {
+        background-color: $color-blue;
+    }
+}
+
+.btn-24-download-stopped { color: $color-red; }
+.btn-24-download-queued { color: $color-orange; }
+.btn-24-download-downloading { color: $color-green; }
+
+.x-form-timetable-table {
+    tr {
+        border: 1px solid #fff;
+    }
+}
+
+.timetable-btn {
+    margin-top: -5px;
+
+    em span {
+        color: #fff;
+        font-style: normal;
+    }
+}

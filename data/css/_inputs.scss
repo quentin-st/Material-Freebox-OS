@@ -61,6 +61,10 @@ fieldset.x-fieldset {
         background-image: none!important;
         border-bottom: 1px solid $color-red!important;
     }
+
+    &.x-form-textarea {
+        height: auto;
+    }
 }
 
 // Shared styling between text input & combobox

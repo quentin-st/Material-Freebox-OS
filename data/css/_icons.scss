@@ -93,7 +93,10 @@ $icons-24: (
     setting-tools:      $mdi-settings,
     control-play-blue:  $mdi-play-circle,
     control-pause-blue: $mdi-pause-circle,
-    rss-add:            $mdi-rss-box
+    rss-add:            $mdi-rss-box,
+    download-stopped:   $mdi-close-octagon,
+    download-queued:    $mdi-dots-horizontal,
+    download-downloading: $mdi-download
 );
 
 // Toolbar icons (size: 16)
@@ -134,7 +137,22 @@ $icons-16: (
     move-top:       $mdi-chevron-double-up,
     move-up:        $mdi-chevron-up,
     move-down:      $mdi-chevron-down,
-    move-bottom:    $mdi-chevron-double-down
+    move-bottom:    $mdi-chevron-double-down,
+    download-downloading: $mdi-download,
+    download-seeding: $mdi-transfer,
+    download-done:  $mdi-check-circle,
+    download-error: $mdi-alert-box,
+    rss:            $mdi-rss-box,
+    rocket:         $mdi-rocket,
+    turtle:         $mdi-duck,
+    stop:           $mdi-octagon,
+    calendar-view-month: $mdi-calendar-blank,
+    access-allowed: $mdi-check-circle,
+    rss-add:        $mdi-rss-box,
+    rss-refresh:    $mdi-rss-box,
+    world-add:      $mdi-plus-circle,
+    page-add:       $mdi-folder-plus,
+    cog-add:        $mdi-library-plus
 );
 
 
@@ -226,6 +244,10 @@ $icons-16: (
 
 
 // Separate icons
+.app-icons-16-downloader {
+    @extend .app-icons-16;
+    @include material-icon($mdi-cloud-download);
+}
 .x-message-box-question, .x-message-box-warning {
     font-size: 35px;
     color: $color-text-dark;
