@@ -18,8 +18,14 @@
         }
     },
 
+    "browser_action": {
+        "default_popup": "data/browser-action/index.html"
+    },
+
     "permissions": [
-        "activeTab"
+        "tabs",
+        "activeTab",
+        "storage"
     ],
     "content_scripts": [
         {
@@ -29,6 +35,7 @@
                 "https://*/*"
             ],
             "js": [
+                "data/js/material-freebox-os.js",
                 "data/js/injector.js"
             ]
         }
@@ -37,8 +44,7 @@
         "data/js/content-script.js",
         "data/js/script.js",
 
-        "data/img/wallpaper1.jpg",
-        "data/img/wallpaper2.jpg",
+        "data/img/wallpaper*.jpg",
 
         "data/css/style.css",
 

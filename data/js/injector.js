@@ -3,7 +3,7 @@
  * Client dependencies injector
  */
 (function() {
-    if (document.title.indexOf('Freebox OS') != 0)
+    if (!MaterialFreeboxOS.matches(document.title))
         return;
 
     // Define functions
@@ -38,11 +38,6 @@
                 ]
             };
         },
-        getDepURI: function(relative) {
-            return relative.substring(0, 'http'.length) == 'http'
-                ? relative
-                : chrome.extension.getURL(relative);
-        },
         injectScript: function(src) {
             var s = document.createElement('script');
             s.src = src;
@@ -62,12 +57,34 @@
 
             // Inject scripts
             deps.js.forEach(function(uri) {
-                that.injectScript(that.getDepURI(uri));
+                that.injectScript(MaterialFreeboxOS.getDepURI(uri));
             });
 
             // Inject stylesheets
             deps.css.forEach(function(uri) {
-                that.injectStylesheet(that.getDepURI(uri));
+                that.injectStylesheet(MaterialFreeboxOS.getDepURI(uri));
+            });
+        },
+        applyWallpaper: function() {
+            var that = this;
+
+            // Retrieve setting
+            chrome.storage.sync.get('wallpaper', function(data) {
+                var wallpaperUri = data['wallpaper'];
+                if (wallpaperUri === undefined)
+                    wallpaperUri = MaterialFreeboxOS.defaultWallpaper.image;
+
+                var wallpaperInfos = MaterialFreeboxOS.findWallpaperInfos(wallpaperUri);
+
+                document.body.style.backgroundImage = "url('" + MaterialFreeboxOS.getDepURI(wallpaperUri) + "')";
+
+                // Add credits information to page
+                var span = document.createElement('a');
+                span.className = 'desktop-wallpaper-credits';
+                document.body.appendChild(span);
+
+                if (wallpaperInfos !== null)
+                    MaterialFreeboxOS.updateWallpaperCredits(span, wallpaperInfos);
             });
         }
     };
@@ -79,6 +96,9 @@
 
     // Append Material-Freebox-OS meta tag to head
     Injector.addMeta(Injector.metaName, true);
+
+    // Update wallpaper (defined in browser-action)
+    Injector.applyWallpaper();
 
     // Inject dependencies
     Injector.injectAll();

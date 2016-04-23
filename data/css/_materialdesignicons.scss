@@ -24,3 +24,8 @@
         content: $icon;
     }
 }
+
+@mixin material-icon-onbefore($icon) {
+    @extend .mdi;
+    content: $icon;
+}

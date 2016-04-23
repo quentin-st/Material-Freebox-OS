@@ -120,6 +120,7 @@ body {
     font-family: $roboto;
     font-size: 12px;
     text-shadow: 1px 1px 0 rgba(#000, 0.3);
+    text-decoration: none;
     @include opacity(0.5);
     @include rotate(-90deg);
     @include transform-origin(right bottom);

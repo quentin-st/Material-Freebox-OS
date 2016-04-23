@@ -1,0 +1,129 @@
+/**
+ * Material-Freebox-OS
+ * Browser action style
+ */
+
+@import '../../css/_mixins.scss';
+@import '../../css/_materialdesignicons.scss';
+@import '../../css/_materialdesignicons-vars.scss';
+
+@import '../../css/_material.scss';
+@import '../../css/_material-buttons.scss';
+@import '../../css/_inputs.scss';
+
+$footer-height: 40px;
+
+body {
+    min-width: 380px;
+    min-height: 300px;
+    margin: 0;
+    padding: 0 0 #{$footer-height+15px} 0;
+    font-family: $roboto;
+    color: $color-text-dark;
+
+    cursor: default;
+    @include no-select;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+header, .content, footer {
+    padding: 5px 10px;
+}
+
+h1 {
+    margin: 5px 0 0 0;
+}
+h2 {
+    font-weight: 500;
+    margin: 0 0 5px 0;
+
+    .source {
+        color: $color-text-dark;
+        text-decoration: none;
+        font-size: 10px;
+        @include opacity(0.4);
+    }
+}
+
+.content {
+    .part-wallpapers {
+        ul.wallpapers {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-size: 0;
+            line-height: 0;
+
+            li {
+                display: inline-block;
+                margin: 2px;
+                width: calc(33% - 4px);
+                height: 75px;
+                cursor: pointer;
+                background-position: center;
+                background-repeat: no-repeat;
+                @include border-radius(2px);
+                @include background-size(cover);
+
+                // Check icon
+                position: relative;
+
+                &:before {
+                    position: absolute;
+                    bottom: 2px;
+                    right: 2px;
+                    font-size: 20px;
+                    color: #fff;
+                    text-shadow: 1px 1px 1px rgba(#000, 0.3);
+                    @include transition-duration($timing-short);
+                    @include material-icon-onbefore($mdi-check-circle);
+                    @include opacity(0);
+                }
+
+                &.current:before {
+                    @include opacity(1);
+                }
+            }
+        }
+
+        #wallpapers-url {
+            display: inline-block;
+            width: calc(100% - 8px);
+            margin: 6px 2px 2px;
+        }
+
+        .credits {
+            display: table;
+            margin-left: auto;
+            @include opacity(0.4);
+            @include transition-duration($timing-short);
+            @include transition-property(opacity);
+
+            &:hover {
+                @include opacity(0.8);
+            }
+        }
+    }
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: $footer-height;
+    background-color: $color-primary;
+    text-align: right;
+
+    a.material-button--flat--primary {
+        display: inline-block;
+        text-decoration: none;
+        padding-left: 4px;
+
+        .x-btn-inner {
+            font-size: 13px;
+        }
+    }
+}

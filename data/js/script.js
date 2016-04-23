@@ -3,10 +3,13 @@
  * Main script - injected by injector.js
  */
 (function() {
-    // Override windows buttons size
-    // We need to override this ASAP
-    Ext.panel.Tool.prototype.width = 35;
-    Ext.panel.Tool.prototype.height = 35;
+    // Could be undefined on login page
+    if (typeof Ext !== 'undefined') {
+        // Override windows buttons size
+        // We need to override this ASAP
+        Ext.panel.Tool.prototype.width = 35;
+        Ext.panel.Tool.prototype.height = 35;
+    }
 
 
     /**
@@ -27,13 +30,6 @@
             .addClass('fbxos-version-text')
             .text('v' + FbxConf.firmwareVersionMajor + '.' + FbxConf.firmwareVersionMinor)
             .appendTo($('.fbxos-version'));
-
-
-        // Add wallpaper credits
-        $('<span />')
-            .addClass('desktop-wallpaper-credits')
-            .html('Fond d\'écran : <b>Google Maps / DigitalGlobe</b>')
-            .appendTo($('.desktop-main-elem'));
 
 
         // Listen for window size change events
