@@ -6,15 +6,12 @@ or Firefox extension.
 As you can see, the redesign is hugely inspired from [Google's Material design guidelines](http://www.google.com/design/spec/material-design/introduction.html)
 and Chrome OS specs.
 
-> Warning: this is not meant to be perfect. Freebox OS's UI is quite difficult to style, and some changes aren't possible for now.
-I'd rather keep this project maintainable and compatible with upcoming releases of Freebox OS than doing some Javascript black
-magic to set these minimize/maximize/close buttons padding.
-
 [![Download on Chrome Web Store](doc/download-chrome-web-store.png)](https://chrome.google.com/webstore/detail/material-freebox-os/lhdfonhgkclaigpfmclbahllambeednh)
 [![Download for Firefox](doc/download-firefox.png)](https://addons.mozilla.org/fr/firefox/addon/material-freeboxos/)
 
-| ![Material-Freebox-OS](doc/screenshot1.png)  | ![Material-Freebox-OS](doc/screenshot2.png) |
-|:--------------------------------------------:|:-------------------------------------------:|
+| ![Material-Freebox-OS](doc/screenshot1.png)  | ![Material-Freebox-OS](doc/screenshot2.png) | ![Material-Freebox-OS](doc/screenshot3.png) |
+|:--------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
+| Freebox OS desktop                           | Freebox OS windows                          | Wallpaper dialog (only for Chrome)          |
 
 This project relies on the following projects:
 
@@ -38,6 +35,10 @@ Do not hesitate to open issues or to create pull requests against the master bra
 The main project is based on SCSS to build CSS files: you'll need an appropriate compiler alongside with some Chrome extensions notions.
 
 > Note: we're using the EditorConfig standard to supply coding rules for this project, learn more about it [here](http://editorconfig.org/).
+
+> Warning: this is not meant to be perfect. Freebox OS's UI is quite difficult to style, and some changes aren't possible for now.
+I'd rather keep this project maintainable and compatible with upcoming releases of Freebox OS than doing some Javascript black
+magic to set these minimize/maximize/close buttons padding.
 
 ### Sidenotes
 I'm really sorry for all these `!important` in the stylesheets. As you may know, Freebox OS use a lot of these so I had no choice.
