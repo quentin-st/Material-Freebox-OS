@@ -6,7 +6,7 @@
     var BrowserAction = {
         updateWallpaperAndSave: function(uri) {
             BrowserAction.updateWallpaperInTab(uri, MaterialFreeboxOS.findWallpaperInfos(uri));
-            chrome.storage.sync.set({
+            chrome.storage.local.set({
                 'wallpaper': uri
             });
         },
@@ -57,7 +57,7 @@
             wallpapers_url = $('#wallpapers-url');
 
         // Retrieve current settings
-        chrome.storage.sync.get('wallpaper', function(data) {
+        chrome.storage.local.get('wallpaper', function(data) {
             var defaultWallpaper = wallpapers_images.first().data('uri'),
                 wallpaper = data['wallpaper'] || defaultWallpaper;
 
@@ -86,12 +86,7 @@
         });
 
         $('input[type="submit"]').click(function() {
-            var uri = $('input[type="file"]').val();
-
-            BrowserAction.updateWallpaperInTab(uri, null);
-            chrome.storage.sync.set({
-                'wallpaper': uri
-            });
+            BrowserAction.updateWallpaperAndSave($('input[type="file"]').val());
         });
     });
 })();

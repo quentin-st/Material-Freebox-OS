@@ -66,10 +66,8 @@
             });
         },
         applyWallpaper: function() {
-            var that = this;
-
             // Retrieve setting
-            chrome.storage.sync.get('wallpaper', function(data) {
+            chrome.storage.local.get('wallpaper', function(data) {
                 var wallpaperUri = data['wallpaper'];
                 if (wallpaperUri === undefined)
                     wallpaperUri = MaterialFreeboxOS.defaultWallpaper.image;
