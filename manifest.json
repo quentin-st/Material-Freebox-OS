@@ -3,7 +3,7 @@
 
     "name": "Material Freebox OS",
     "description": "Redesign de l'interface de Freebox OS",
-    "version": "1.7.0",
+    "version": "1.8.0",
     "icons": {
         "16": "data/img/icon-16x16.png",
         "48": "data/img/icon-48x48.png",
