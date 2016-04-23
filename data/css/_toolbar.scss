@@ -19,6 +19,7 @@
         width: 46px;
         padding: 8px;
         font-size: 31px;
+        text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
 
         @include material-icon($mdi-apps);
 
@@ -94,6 +95,7 @@
     .x-icon .x-btn-icon-el {
         margin-top: 5px;
         color: rgba(#fff, 0.9);
+        text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
     }
 
     // Clock
