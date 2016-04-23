@@ -23,7 +23,9 @@
     },
 
     "permissions": [
-        "activeTab"
+        "tabs",
+        "activeTab",
+        "storage"
     ],
     "content_scripts": [
         {

@@ -2,19 +2,48 @@
  * Material-Freebox-OS
  * Browser action JS
  */
+(function() {
+    var BrowserAction = {
+        /**
+         * Updates wallpaper in current tab
+         * @param projectUri
+         */
+        updateWallpaperInTab: function(projectUri) {
+            var uri = chrome.extension.getURL(projectUri);
 
-$(document).ready(function () {
-    // Wallpapers
-    var wallpapers = $('.wallpapers').find('li');
+            chrome.tabs.getSelected(null, function(tab) {
+                console.log(tab.title);
+                if (tab.title.indexOf('Freebox OS') == 0) {
+                    chrome.tabs.executeScript(null, {
+                        code: "document.body.style.backgroundImage = \"url('" + uri + "')\";"
+                    })
+                }
+            });
+        }
+    };
 
-    // Highlight active wallpaper TODO
-    wallpapers.filter(':first-child').addClass('current');
+    $(document).ready(function () {
+        // Wallpapers
+        var wallpapers = $('.wallpapers').find('li');
 
-    // Update current wallpaper
-    wallpapers.click(function () {
-        wallpapers.removeClass('current');
-        $(this).addClass('current');
+        // Retrieve current settings
+        chrome.storage.sync.get('wallpaper', function(data) {
+            var defaultWallpaper = wallpapers.first().data('uri'),
+                settingsWallpaper = data['wallpaper'] || defaultWallpaper;
 
-        chrome.tabs.executeScript(null, {code: "document.body.style.backgroundImage = \"url('" + chrome.extension.getURL($(this).data('uri')) + "')\";"});
+            wallpapers.filter('[data-uri="' + settingsWallpaper + '"]').addClass('current');
+        });
+
+        // Update current wallpaper
+        wallpapers.click(function () {
+            var uri = $(this).data('uri');
+            wallpapers.removeClass('current');
+            $(this).addClass('current');
+
+            BrowserAction.updateWallpaperInTab(uri);
+            chrome.storage.sync.set({
+                'wallpaper': uri
+            });
+        });
     });
-});
+})();
