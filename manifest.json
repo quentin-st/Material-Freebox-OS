@@ -41,14 +41,11 @@
         }
     ],
     "web_accessible_resources": [
-        "data/js/content-script.js",
+        "data/js/material-freebox-os.js",
         "data/js/script.js",
 
         "data/img/wallpaper*.jpg",
 
-        "data/css/style.css",
-
-        "data/3d/css/materialdesignicons.min.css",
-        "data/3d/fonts/*"
+        "data/css/style.css"
     ]
 }

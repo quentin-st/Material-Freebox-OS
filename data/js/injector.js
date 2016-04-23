@@ -28,6 +28,7 @@
         getDeps: function() {
             return {
                 js: [
+                    'data/js/material-freebox-os.js',
                     'data/js/script.js'
                 ],
                 css: [
@@ -68,7 +69,6 @@
         applyWallpaper: function() {
             // Retrieve setting
             chrome.storage.local.get('wallpaper', function(data) {
-                alert(data['wallpaper']);
                 var wallpaperUri = data['wallpaper'];
                 if (wallpaperUri === undefined)
                     wallpaperUri = MaterialFreeboxOS.wallpaper.defaultWallpaper.image;
