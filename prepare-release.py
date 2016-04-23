@@ -12,10 +12,18 @@ release_dir = 'release/'
 base_dir = os.path.dirname(os.path.realpath(__file__))
 flavours = ['Chrome', 'Firefox']
 files_generic = [
+    'data/browser-action/css/style.css',
+    'data/browser-action/js/*',
+    'data/browser-action/index.html',
+
     'data/css/style.css',
+
     'data/img/*',
-    'data/js/script.js',
+
     'data/js/injector.js',
+    'data/js/material-freebox-os.js',
+    'data/js/script.js',
+
     'manifest.json'
 ]
 files_flavours = {
