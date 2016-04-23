@@ -38,11 +38,6 @@
                 ]
             };
         },
-        getDepURI: function(relative) {
-            return relative.substring(0, 'http'.length) == 'http'
-                ? relative
-                : chrome.extension.getURL(relative);
-        },
         injectScript: function(src) {
             var s = document.createElement('script');
             s.src = src;
@@ -62,12 +57,12 @@
 
             // Inject scripts
             deps.js.forEach(function(uri) {
-                that.injectScript(that.getDepURI(uri));
+                that.injectScript(MaterialFreeboxOS.getDepURI(uri));
             });
 
             // Inject stylesheets
             deps.css.forEach(function(uri) {
-                that.injectStylesheet(that.getDepURI(uri));
+                that.injectStylesheet(MaterialFreeboxOS.getDepURI(uri));
             });
         },
         applyWallpaper: function() {
@@ -81,7 +76,7 @@
 
                 var wallpaperInfos = MaterialFreeboxOS.findWallpaperInfos(wallpaperUri);
 
-                document.body.style.backgroundImage = "url('" + that.getDepURI(wallpaperUri) + "')";
+                document.body.style.backgroundImage = "url('" + MaterialFreeboxOS.getDepURI(wallpaperUri) + "')";
 
                 // Add credits information to page
                 var span = document.createElement('a');

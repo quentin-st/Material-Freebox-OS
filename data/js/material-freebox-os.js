@@ -14,7 +14,9 @@
         },
 
         getDepURI: function(relative) {
-            return relative.substring(0, 'http'.length) == 'http'
+            var prefix = relative.substring(0, 'http'.length);
+
+            return prefix == 'http' || prefix == 'file'
                 ? relative
                 : chrome.extension.getURL(relative);
         },
