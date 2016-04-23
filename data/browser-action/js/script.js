@@ -5,7 +5,7 @@
 (function() {
     var BrowserAction = {
         updateWallpaperAndSave: function(uri) {
-            BrowserAction.updateWallpaperInTab(uri, MaterialFreeboxOS.findWallpaperInfos(uri));
+            BrowserAction.updateWallpaperInTab(uri, MaterialFreeboxOS.wallpaper.findWallpaperInfos(uri));
             chrome.storage.local.set({
                 'wallpaper': uri
             });
@@ -25,7 +25,7 @@
                         document.body.style.backgroundImage = "url(" + uri + ")";
 
                         var element = document.getElementsByClassName('desktop-wallpaper-credits')[0];
-                        MaterialFreeboxOS.updateWallpaperCredits(element, wallpaperInfos);
+                        MaterialFreeboxOS.wallpaper.updateWallpaperCredits(element, wallpaperInfos);
                     };
 
                     var code =
@@ -42,10 +42,15 @@
 
     $(document).ready(function () {
         // Wallpapers
+        if (MaterialFreeboxOS.browser.isFirefox()) {
+            $('.part-wallpapers').css('opacity', '0.2');
+            $('.unsupported').show();
+        }
+
         var wallpapersUl = $('#wallpapers-images');
 
         // Inflate list
-        MaterialFreeboxOS.wallpapers.forEach(function(wallpaper) {
+        MaterialFreeboxOS.wallpaper.wallpapers.forEach(function(wallpaper) {
             $('<li />')
                 .attr('data-uri', wallpaper.image)
                 .attr('data-credits', wallpaper.credits)
@@ -58,10 +63,10 @@
 
         // Retrieve current settings
         chrome.storage.local.get('wallpaper', function(data) {
-            var defaultWallpaper = wallpapers_images.first().data('uri'),
+            var defaultWallpaper = MaterialFreeboxOS.wallpaper.defaultWallpaper.image,
                 wallpaper = data['wallpaper'] || defaultWallpaper;
 
-            if (MaterialFreeboxOS.findWallpaperInfos(wallpaper) != null)
+            if (MaterialFreeboxOS.wallpaper.findWallpaperInfos(wallpaper) != null)
                 wallpapers_images.filter('[data-uri="' + wallpaper + '"]').addClass('current');
             else
                 wallpapers_url.val(wallpaper);

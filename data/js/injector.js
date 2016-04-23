@@ -68,11 +68,12 @@
         applyWallpaper: function() {
             // Retrieve setting
             chrome.storage.local.get('wallpaper', function(data) {
+                alert(data['wallpaper']);
                 var wallpaperUri = data['wallpaper'];
                 if (wallpaperUri === undefined)
-                    wallpaperUri = MaterialFreeboxOS.defaultWallpaper.image;
+                    wallpaperUri = MaterialFreeboxOS.wallpaper.defaultWallpaper.image;
 
-                var wallpaperInfos = MaterialFreeboxOS.findWallpaperInfos(wallpaperUri);
+                var wallpaperInfos = MaterialFreeboxOS.wallpaper.findWallpaperInfos(wallpaperUri);
 
                 document.body.style.backgroundImage = "url('" + MaterialFreeboxOS.getDepURI(wallpaperUri) + "')";
 
@@ -82,7 +83,7 @@
                 document.body.appendChild(span);
 
                 if (wallpaperInfos !== null)
-                    MaterialFreeboxOS.updateWallpaperCredits(span, wallpaperInfos);
+                    MaterialFreeboxOS.wallpaper.updateWallpaperCredits(span, wallpaperInfos);
             });
         }
     };
@@ -96,7 +97,8 @@
     Injector.addMeta(Injector.metaName, true);
 
     // Update wallpaper (defined in browser-action)
-    Injector.applyWallpaper();
+    if (!MaterialFreeboxOS.browser.isFirefox())
+        Injector.applyWallpaper();
 
     // Inject dependencies
     Injector.injectAll();
