@@ -43,6 +43,11 @@
         @include border-radius(0);
         @include transition-duration($timing-short);
 
+        // Let shadow go outside the container
+        .x-btn-button {
+            overflow: visible;
+        }
+
         .x-btn-wrap {
             .x-btn-inner {
                 font-family: $roboto;
