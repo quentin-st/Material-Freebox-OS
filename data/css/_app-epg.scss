@@ -1,0 +1,134 @@
+/**
+ * Material-Freebox-OS
+ * EPG ("Guide des programmes")
+ */
+
+$prog-elem-colors: (
+    0: $color-purple,
+    1: $color-indigo,
+    2: $color-blue,
+    3: $color-orange,
+    4: $color-amber,
+    5: $color-brown,
+    6: $color-teal,
+    7: $color-green,
+    8: $color-red,
+    9: $color-blue-grey,
+);
+
+.epg-highlights, .epg-outer {
+    background-color: #eeeeee;
+
+    .epg-btn-container {
+        width: 100%!important;
+        height: auto!important;
+        left: 0!important;
+        padding: 7px 0;
+        text-align: center;
+        background-color: #fff;
+
+        > * {
+            float: none;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .btn-epg-view-toggle {
+            height: auto;
+            padding: 8px 10px!important;
+            color: $color-text-dark;
+            @extend .material-button--elevated;
+
+            &.btn-epg-view-toggle-selected {
+                color: #fff;
+                @extend .material-button--elevated--primary;
+            }
+        }
+
+        .btn-epg-complete, .btn-now {
+            margin-right: 20px;
+        }
+
+        .btn-day {
+            width: auto;
+            height: auto;
+            padding: 6px 10px!important;
+            color: $color-text-dark;
+            @extend .material-button--elevated;
+
+            &.btn-now {
+                padding: 8px 10px!important;
+            }
+
+            &.btn-day-selected {
+                color: #fff;
+                @extend .material-button--elevated--primary;
+            }
+        }
+
+        .btn-hour-container {
+            .btn-hour {
+                font-family: $roboto;
+                @include border-radius(2px);
+            }
+        }
+    }
+
+    .epg-viewport {
+        @include box-shadow(inset $elevation-2);
+    }
+
+    .epg-timeline {
+        background-color: transparent;
+        @extend .elevation-lowest;
+
+        .epg-time-elem {
+            font-family: $roboto;
+            background-color: transparent;
+            color: $color-text-dark;
+        }
+    }
+
+    .epg-channellist {
+        .epg-channel-elem {
+            background-color: $color-amber;
+            border: 0;
+            @include border-radius(2px);
+            @extend .elevation-lowest;
+
+            .epg-channel-name {
+                color: rgba(0, 0, 0, 0.8);
+                font-family: $roboto;
+                font-weight: 700;
+            }
+        }
+    }
+
+    .epg-container {
+        .epg-prog-elem {
+            border: 0;
+            background-color: #ffffff;
+            font-family: $roboto;
+            @include border-radius(1px);
+
+            // Colors
+            @each $icon in $prog-elem-colors {
+                &.epg-prog-cat-#{nth($icon, 1)} {
+                    @include box-shadow(
+                        inset #{nth($icon, 2)} 0 3px 0,
+                        $elevation-1
+                    );
+                }
+            }
+
+            .epg-prog-infos {
+                > * {
+                    color: $color-text-dark;
+                }
+                .epg-prog-timeinfo {
+                    @include opacity(0.7);
+                }
+            }
+        }
+    }
+}
