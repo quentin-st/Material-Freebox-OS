@@ -66,9 +66,19 @@
     .x-progress-wrap {
         margin: 3px 0;
         background-color: lighten($color-accent, 15);
+        @include border-radius(1px);
 
-        .x-progress-bar {
-            background-color: $color-accent-dark;
+        .x-progress-inner {
+            .x-progress-bar {
+                background-color: $color-accent-dark;
+                @include border-radius(1px);
+            }
+
+            // Percentage text
+            > div:not(.x-progress-bar) {
+                color: #fff;
+                padding-top: 3px;
+            }
         }
     }
 }
