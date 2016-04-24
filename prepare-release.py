@@ -50,8 +50,9 @@ if not os.path.isdir(release_dir):
     os.makedirs(release_dir)
 
 # Open manifest & read version name
-manifest_json = open(manifest)
-version = json.load(manifest_json)['version']
+manifest_file = open(manifest)
+manifest_json = json.load(manifest_file)
+version = manifest_json['version']
 output_dir_name = 'Material-Freebox-OS-{}-{}'.format(flavour, version)
 output_dir = os.path.join(release_dir, output_dir_name)
 
@@ -78,5 +79,12 @@ for file in expanded_files:
 
     shutil.copy(file, destination)
     print('Copied {}'.format(file, destination))
+
+# With Chrome flavour: rewrite manifest to remove Firefox's specific nodes
+if flavour == 'Chrome':
+    output_manifest_path = os.path.join(output_dir, manifest)
+    output_manifest_file = open(output_manifest_path, 'w')
+    del manifest_json['applications']
+    json.dump(manifest_json, output_manifest_file)
 
 # TODO zip the directory & delete it
