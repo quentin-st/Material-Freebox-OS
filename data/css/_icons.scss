@@ -21,6 +21,9 @@ $icons-colors-80-32: (
     help:           $color-brown
 );
 
+$icons-colors-24: (
+);
+
 $icons-colors-16: (
     help:           $color-primary-dark
 );
@@ -96,7 +99,9 @@ $icons-24: (
     rss-add:            $mdi-rss-box,
     download-stopped:   $mdi-close-octagon,
     download-queued:    $mdi-dots-horizontal,
-    download-downloading: $mdi-download
+    download-downloading: $mdi-download,
+    pvr:                $mdi-record-rec,
+    epg:                $mdi-newspaper
 );
 
 // Toolbar icons (size: 16)
@@ -155,7 +160,14 @@ $icons-16: (
     cog-add:        $mdi-library-plus,
     phone-add:      $mdi-phone,
     email-add:      $mdi-email,
-    building-add:   $mdi-home-map-marker
+    building-add:   $mdi-home-map-marker,
+    player-quality: $mdi-quality-high,
+    player-play:    $mdi-play,
+    player-stop:    $mdi-stop,
+    player-record:  $mdi-record,
+    player-volume:  $mdi-volume-high,
+    sound-mute:     $mdi-volume-off,
+    subtitle:       $mdi-message-text
 );
 
 // Sprite icons (no .btn- prefix)
@@ -261,6 +273,17 @@ $icons-16-no-prefix: (
 }
 
 // Set colors
+// Toolbar icons (size: 24)
+@each $icon in $icons-colors-24 {
+    $selector: ".btn-24-#{nth($icon, 1)}:not(img)";
+
+    #{$selector},
+    .x-btn-icon-text-right #{$selector},
+    .x-btn-icon-text-left #{$selector} {
+        color: nth($icon, 2);
+    }
+}
+
 // Toolbar icons (16)
 @each $icon in $icons-colors-16 {
     $selector: ".btn-#{nth($icon, 1)}:not(img)";

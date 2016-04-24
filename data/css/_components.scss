@@ -148,11 +148,17 @@
                     background-image: none;
                     @include material-icon($mdi-chevron-right);
                 }
-                .x-menu-item-checkbox {
+                .x-menu-item-checkbox,
+                .btn-bullet-blue {
                     background-image: none;
                     font-size: 8px;
                     line-height: 16px;
+                }
+                .x-menu-item-checkbox {
                     @include material-icon($mdi-checkbox-blank-circle-outline);
+                }
+                .btn-bullet-blue {
+                    @include material-icon($mdi-checkbox-blank-circle);
                 }
             }
             &.x-menu-item-checked .x-menu-item-checkbox {
@@ -242,3 +248,23 @@
         background: transparent none;
     }
 }
+
+.x-btn-default-toolbar-small {
+    background: none;
+
+    .x-btn-split-right {
+        background-image: none;
+        @include material-icon($mdi-chevron-down);
+
+        &:before {
+            position: absolute;
+            right: 0;
+            top: 3px;
+        }
+    }
+}
+
+.x-toolbar .x-toolbar-separator-horizontal {
+    border: 0;
+}
+
