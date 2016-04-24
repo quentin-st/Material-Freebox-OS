@@ -84,8 +84,10 @@
     // Right icons
     // Loading indicator
     .taskbar-activity-btn {
-        background-color: transparent;
-        border-width: 0;
+        background-color: transparent!important;
+        border-width: 0!important;
+        padding: 0;
+        @include box-shadow(none!important);
 
         .x-btn-icon-el {
             font-size: 28px;
