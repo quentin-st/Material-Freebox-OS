@@ -41,6 +41,7 @@ body {
             font-size: 21px;
             color: rgba(#fff, 0.95);
             text-shadow: 0 0 4px rgba(#000, 0.5);
+            @include opacity(0.6);
         }
     }
 }

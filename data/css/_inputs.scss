@@ -3,10 +3,6 @@
  * Inputs styling
  */
 
-.x-form-trigger {
-    cursor: default;
-}
-
 // Default button
 .x-btn-default-small {
     @extend .material-button--elevated--primary;
@@ -214,5 +210,31 @@ fieldset.x-fieldset {
                 }
             }
         }
+    }
+}
+
+.x-form-trigger {
+    cursor: default;
+
+    &.x-form-clear-trigger,
+    &.x-form-search-trigger,
+    &.x-form-date-trigger {
+        background: none;
+        border: 0;
+        height: 24px;
+        line-height: 28px;
+        font-size: 16px;
+        color: $color-text-dark;
+    }
+
+    &.x-form-clear-trigger {
+        font-size: 13px;
+        @include material-icon($mdi-close-circle);
+    }
+    &.x-form-search-trigger {
+        @include material-icon($mdi-magnify);
+    }
+    &.x-form-date-trigger {
+        @include material-icon($mdi-calendar);
     }
 }

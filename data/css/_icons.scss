@@ -152,7 +152,29 @@ $icons-16: (
     rss-refresh:    $mdi-rss-box,
     world-add:      $mdi-plus-circle,
     page-add:       $mdi-folder-plus,
-    cog-add:        $mdi-library-plus
+    cog-add:        $mdi-library-plus,
+    phone-add:      $mdi-phone,
+    email-add:      $mdi-email,
+    building-add:   $mdi-home-map-marker
+);
+
+// Sprite icons (no .btn- prefix)
+$icons-16-no-prefix: (
+    tel-icon-fixed:     $mdi-phone,
+    tel-icon-work:      $mdi-phone,
+    tel-icon-other:     $mdi-phone,
+    tel-icon-mobile:    $mdi-cellphone,
+    tel-icon-fax:       $mdi-fax,
+    email-icon-work:    $mdi-email,
+    email-icon-home:    $mdi-email,
+    email-icon-other:   $mdi-email,
+    address-icon-home:  $mdi-home,
+    address-icon-work:  $mdi-home-modern,
+    address-icon-other: $mdi-home,
+    url-icon-profile:   $mdi-account,
+    url-icon-blog:      $mdi-web,
+    url-icon-site:      $mdi-web,
+    url-icon-other:     $mdi-web
 );
 
 
@@ -225,6 +247,14 @@ $icons-16: (
     #{$selector},
     .x-btn-icon-text-right #{$selector},
     .x-btn-icon-text-left #{$selector} {
+        @extend .app-icons-16;
+        @include material-icon(nth($icon, 2));
+    }
+}
+@each $icon in $icons-16-no-prefix {
+    $selector: ".#{nth($icon, 1)}:not(img)";
+
+    #{$selector} {
         @extend .app-icons-16;
         @include material-icon(nth($icon, 2));
     }
