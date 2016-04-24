@@ -91,7 +91,17 @@
                     element.removeAttribute('target');
                 }
 
-                element.innerHTML = "Fond d'écran : <b>" + wallpaperInfos['name'] + "</b> par <b>" + wallpaperInfos['credits'] + "</b>";
+                // Equivalent for element.innerHTML = "Fond d'écran : <b>" + wallpaperInfos['name'] + "</b> par <b>" + wallpaperInfos['credits'] + "</b>";
+                //  but Firefox validation process will complain about creating DOM nodes from HTML string
+                element.innerHTML = '';
+                element.appendChild(document.createTextNode("Fond d'écran : "));
+                element.appendChild(
+                    document.createElement('b').appendChild(document.createTextNode(wallpaperInfos['name'])).parentNode
+                );
+                element.appendChild(document.createTextNode(" par "));
+                element.appendChild(
+                    document.createElement('b').appendChild(document.createTextNode(wallpaperInfos['credits'])).parentNode
+                );
             }
         },
 
