@@ -13,8 +13,16 @@
 }
 
 // Checkbox
-.x-form-cb-wrap-inner {
-
+.x-form-checkbox {
+    width: 16px;
+    height: 16px;
+    background: none no-repeat -1px -2px;
+    border: 2px solid $color-accent;
+    @include border-radius(2px);
+    @include transition-duration($timing-medium);
+}
+.x-form-cb-checked .x-form-checkbox {
+    background: $color-accent url('../img/mdi-check.png') -1px -2px;
 }
 
 // Fieldset
