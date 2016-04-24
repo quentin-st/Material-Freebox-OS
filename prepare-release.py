@@ -6,6 +6,7 @@ import sys
 import os
 import shutil
 import json
+import zipfile
 
 
 release_dir = 'release/'
@@ -50,8 +51,8 @@ if not os.path.isdir(release_dir):
     os.makedirs(release_dir)
 
 # Open manifest & read version name
-manifest_file = open(manifest)
-manifest_json = json.load(manifest_file)
+with open(manifest) as manifest_file:
+    manifest_json = json.load(manifest_file)
 version = manifest_json['version']
 output_dir_name = 'Material-Freebox-OS-{}-{}'.format(flavour, version)
 output_dir = os.path.join(release_dir, output_dir_name)
@@ -78,13 +79,29 @@ for file in expanded_files:
         os.makedirs(destination_dirs)
 
     shutil.copy(file, destination)
-    print('Copied {}'.format(file, destination))
+    print('\tCopied {}'.format(file, destination))
 
 # With Chrome flavour: rewrite manifest to remove Firefox's specific nodes
 if flavour == 'Chrome':
-    output_manifest_path = os.path.join(output_dir, manifest)
-    output_manifest_file = open(output_manifest_path, 'w')
-    del manifest_json['applications']
-    json.dump(manifest_json, output_manifest_file)
+    with open(os.path.join(output_dir, manifest), 'w') as output_manifest_file:
+        del manifest_json['applications']
+        json.dump(manifest_json, output_manifest_file)
 
-# TODO zip the directory & delete it
+# Create final ZIP package
+zip_extension = 'xpi' if flavour == 'Firefox' else 'zip'
+zip_name = 'Material-Freebox-OS-{}-{}.{}'.format(flavour, version, zip_extension)
+
+with zipfile.ZipFile(os.path.join(release_dir, zip_name), 'w') as zip:
+    print('Creating package {}'.format(zip_name))
+
+    for root, dirs, files in os.walk(output_dir):
+        for file in files:
+            zip_filepath = os.path.relpath(os.path.join(root, file), output_dir)
+            zip.write(os.path.join(root, file), zip_filepath)
+
+            print('\tAdded {}'.format(zip_filepath))
+
+shutil.rmtree(output_dir)
+print('Deleted working directory {}'.format(output_dir))
+
+print('Release file {} created for flavour {}'.format(zip_name, flavour))
