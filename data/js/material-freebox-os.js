@@ -105,7 +105,7 @@
             }
         },
 
-        browser: {
+        environment: {
             isFirefox: function() {
                 return /firefox/i.test(navigator.userAgent);
             }

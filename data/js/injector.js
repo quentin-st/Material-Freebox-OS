@@ -96,7 +96,7 @@
     Injector.addMeta(Injector.metaName, true);
 
     // Update wallpaper (defined in browser-action)
-    if (!MaterialFreeboxOS.browser.isFirefox())
+    if (!MaterialFreeboxOS.environment.isFirefox())
         Injector.applyWallpaper();
 
     // Inject dependencies

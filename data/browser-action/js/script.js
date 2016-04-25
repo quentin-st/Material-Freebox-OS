@@ -42,7 +42,7 @@
 
     $(document).ready(function () {
         // Wallpapers
-        if (MaterialFreeboxOS.browser.isFirefox()) {
+        if (MaterialFreeboxOS.environment.isFirefox()) {
             $('.part-wallpapers').css('opacity', '0.2');
             $('.unsupported').show();
         }
