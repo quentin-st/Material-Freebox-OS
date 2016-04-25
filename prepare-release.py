@@ -14,8 +14,9 @@ base_dir = os.path.dirname(os.path.realpath(__file__))
 flavours = ['Chrome', 'Firefox']
 files_generic = [
     'data/browser-action/css/style.css',
-    'data/browser-action/js/*',
+    'data/browser-action/js/script.js',
     'data/browser-action/index.html',
+    'data/vendor/jquery-2.2.3.min.js',
 
     'data/css/style.css',
     'data/css/fonts/roboto.css',
