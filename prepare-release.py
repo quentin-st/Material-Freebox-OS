@@ -19,6 +19,7 @@ files_generic = [
 
     'data/css/style.css',
     'data/css/fonts/roboto.css',
+    'data/css/fonts/materialdesignicons.css',
 
     'data/img/*',
 

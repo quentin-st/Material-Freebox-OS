@@ -4,6 +4,7 @@
 # Compiled CSS files
 data/css/style.css*
 data/css/fonts/roboto.css*
+data/css/fonts/materialdesignicons.css*
 data/browser-action/css/style.css*
 
 # Release files

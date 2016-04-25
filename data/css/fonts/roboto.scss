@@ -4,6 +4,8 @@
  * Inspired from https://github.com/FontFaceKit/roboto
  */
 
+@import 'fonts-mixins';
+
 // Import base64 definitions
 @import 'roboto-light-woff';
 @import 'roboto-light-woff2';
@@ -11,12 +13,6 @@
 @import 'roboto-regular-woff2';
 @import 'roboto-medium-woff';
 @import 'roboto-medium-woff2';
-
-// Define font-definition mixin
-@mixin font-definition($woff-base64, $woff2-base64) {
-    src: url(data:application/x-font-woff2;charset:utf-8;base64,#{$woff2-base64}) format('woff2'),
-         url(data:application/x-font-woff;charset:utf-8;base64,#{$woff-base64}) format('woff');
-}
 
 // Declare fonts
 // Light (400)

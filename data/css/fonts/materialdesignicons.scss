@@ -1,0 +1,28 @@
+/**
+ * Material-Freebox-OS
+ * MaterialDesignIcons font definition
+ * Inspired from https://github.com/FontFaceKit/roboto
+ */
+
+@import 'fonts-mixins';
+
+// Import base64 definitions
+@import 'materialdesignicons-woff';
+@import 'materialdesignicons-woff2';
+
+@font-face {
+    font-family: "Material Design Icons";
+    @include font-definition($materialdesignicons-woff, $materialdesignicons-woff2);
+    font-weight: normal;
+    font-style: normal;
+}
+
+.mdi {
+    display: inline-block;
+    font: normal normal normal 24px/1 "Material Design Icons";
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+}

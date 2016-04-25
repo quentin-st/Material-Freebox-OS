@@ -1,0 +1,11 @@
+/**
+ * Material-Freebox-OS
+ * Fonts declaration generation
+ * Inspired from https://github.com/FontFaceKit/roboto
+ */
+
+// Define font-definition mixin
+@mixin font-definition($woff-base64, $woff2-base64) {
+    src: url(data:application/x-font-woff2;charset:utf-8;base64,#{$woff2-base64}) format('woff2'),
+         url(data:application/x-font-woff;charset:utf-8;base64,#{$woff-base64}) format('woff');
+}
