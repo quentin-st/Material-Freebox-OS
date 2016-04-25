@@ -1,0 +1,50 @@
+/**
+ * Material-Freebox-OS
+ * Roboto font definition
+ * Inspired from https://github.com/FontFaceKit/roboto
+ */
+
+// Import base64 definitions
+@import 'roboto-light-woff';
+@import 'roboto-light-woff2';
+@import 'roboto-regular-woff';
+@import 'roboto-regular-woff2';
+@import 'roboto-medium-woff';
+@import 'roboto-medium-woff2';
+
+// Define font-definition mixin
+@mixin font-definition($woff-base64, $woff2-base64) {
+    src: url(data:application/x-font-woff2;charset:utf-8;base64,#{$woff2-base64}) format('woff2'),
+         url(data:application/x-font-woff;charset:utf-8;base64,#{$woff-base64}) format('woff');
+}
+
+// Declare fonts
+// Light (400)
+@font-face {
+    font-family: Roboto;
+    @include font-definition($roboto-light-woff, $roboto-light-woff2);
+    font-weight: 300;
+    font-style: normal;
+}
+
+// Regular
+@font-face {
+    font-family: Roboto;
+    @include font-definition($roboto-regular-woff, $roboto-regular-woff2);
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: Roboto;
+    @include font-definition($roboto-regular-woff, $roboto-regular-woff2);
+    font-weight: normal;
+    font-style: normal;
+}
+
+// Medium (500)
+/*@font-face {
+    font-family: Roboto;
+    @include font-definition($roboto-medium-woff, $roboto-medium-woff2);
+    font-weight: 500;
+    font-style: normal;
+}*/

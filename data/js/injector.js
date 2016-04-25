@@ -40,9 +40,9 @@
                 ],
                 css: [
                     'data/css/style.css',
+                    'data/css/fonts/roboto.css',
                     //'https://cdn.materialdesignicons.com/1.5.54/css/materialdesignicons.min.css', <- Invalid certificate, let's use this one instead:
-                    'https://www.s-quent.in/bundles/app/3d/css/materialdesignicons.min.css',
-                    'https://fonts.googleapis.com/css?family=Roboto:400,300'
+                    'https://www.s-quent.in/bundles/app/3d/css/materialdesignicons.min.css'
                 ]
             };
         },

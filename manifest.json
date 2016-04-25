@@ -47,6 +47,7 @@
         "data/img/mdi-check.png",
         "data/img/wallpaper*.jpg",
 
-        "data/css/style.css"
+        "data/css/style.css",
+        "data/css/roboto.css"
     ]
 }

@@ -18,6 +18,7 @@ files_generic = [
     'data/browser-action/index.html',
 
     'data/css/style.css',
+    'data/css/fonts/roboto.css',
 
     'data/img/*',
 
