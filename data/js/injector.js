@@ -26,6 +26,13 @@
             return m;
         },
         getDeps: function() {
+            /**
+             * IMPORTANT
+             * Firefox reviewers, please read this:
+             * I tried everything to avoid importing MaterialDesignIcons & Roboto from a remote server, but it fails
+             *  on Firefox (while all the techniques mentioned worked on Google Chrome). I documented the process here:
+             *  https://github.com/chteuchteu/Material-Freebox-OS/issues/6.
+             */
             return {
                 js: [
                     'data/js/material-freebox-os.js',
