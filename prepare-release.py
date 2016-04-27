@@ -4,6 +4,7 @@
 import argparse
 import sys
 import os
+import glob
 import shutil
 import json
 import zipfile
@@ -22,7 +23,9 @@ files_generic = [
     'data/css/fonts/roboto.css',
     'data/css/fonts/materialdesignicons.css',
 
-    'data/img/*',
+    'data/img/icon-*x*.png',
+    'data/img/mdi-check.png',
+    'data/img/wallpaper*.jpg',
 
     'data/js/injector.js',
     'data/js/material-freebox-os.js',
@@ -49,10 +52,14 @@ def do_release(flavour):
     expanded_files = []
     files = files_generic + files_flavours[flavour]
     for file in files:
-        if file.endswith('*'):
+        if file.endswith('/*'):  # That's a directory: include all its elements
             real_name = file[:-1]
             expanded_files.extend(
                 [os.path.join(dp, f) for dp, dn, filenames in os.walk(real_name) for f in filenames]
+            )
+        elif '*' in file:  # Find all files matching this pattern
+            expanded_files.extend(
+                glob.glob(file)
             )
         else:
             expanded_files.append(file)
