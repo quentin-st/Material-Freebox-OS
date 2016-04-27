@@ -89,7 +89,8 @@ def do_release(flavour):
 
                 print('\tAdded {}'.format(zip_filepath))
 
-    shutil.rmtree(output_dir)
+    # Note: ignore_errors=True allows us to ignore "directory is not empty" errors on Windows
+    shutil.rmtree(output_dir, ignore_errors=True)
     print('Deleted working directory {}'.format(output_dir))
 
     print('Release file {} created for flavour {}'.format(zip_name, flavour))
