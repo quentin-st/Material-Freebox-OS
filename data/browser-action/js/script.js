@@ -42,11 +42,6 @@
 
     $(document).ready(function () {
         // Wallpapers
-        if (MaterialFreeboxOS.environment.isFirefox()) {
-            $('.part-wallpapers').css('opacity', '0.2');
-            $('.unsupported').show();
-        }
-
         var wallpapersUl = $('#wallpapers-images');
 
         // Inflate list
@@ -58,6 +53,14 @@
                 .css('background-image', "url(" + MaterialFreeboxOS.getDepURI(wallpaper.image) + ")")
                 .prependTo(wallpapersUl);
         });
+
+        // Firefox: disable wallpapers URI & stop here
+        if (MaterialFreeboxOS.environment.isFirefox()) {
+            $('.part-wallpapers').css('opacity', '0.2');
+            $('.unsupported').show();
+            return;
+        }
+
         var wallpapers_images = wallpapersUl.find('li'),
             wallpapers_url = $('#wallpapers-url');
 
