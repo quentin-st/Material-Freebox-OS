@@ -3,19 +3,21 @@
  * Browser action style
  */
 
-@import '../../css/_mixins.scss';
-@import '../../css/_materialdesignicons.scss';
-@import '../../css/_materialdesignicons-vars.scss';
+@import '../../css/mixins';
+@import '../../css/materialdesignicons';
+@import '../../css/materialdesignicons-vars';
 
-@import '../../css/_material.scss';
-@import '../../css/_material-buttons.scss';
-@import '../../css/_inputs.scss';
+@import '../../css/material';
+@import '../../css/material-buttons';
+@import '../../css/inputs';
 
 $footer-height: 40px;
 
-body {
+html, body {
     min-width: 380px;
-    min-height: 300px;
+}
+
+body {
     margin: 0;
     padding: 0 0 #{$footer-height+15px} 0;
     font-family: $roboto;
@@ -141,7 +143,8 @@ footer {
     a.material-button--flat--primary {
         display: inline-block;
         text-decoration: none;
-        padding-left: 4px;
+        padding-left: 7px;
+        margin: 0;
 
         .x-btn-inner {
             font-size: 13px;
@@ -149,7 +152,8 @@ footer {
             &:before {
                 font-size: 16px!important;
                 vertical-align: middle;
-                margin-right: 3px;
+                margin-right: 5px;
+                margin-top: -1px;
             }
         }
 
