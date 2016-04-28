@@ -69,7 +69,7 @@
             if (MaterialFreeboxOS.environment.isFirefox()) {
                 // On Firefox, we cannot access chrome.storage.local: apply default colors
                 document.body.setAttribute('data-color-primary', MaterialFreeboxOS.materialColors.defaultPrimary);
-                document.body.setAttribute('data-color-accent', MaterialFreeboxOS.materialColors.defaultPrimary);
+                document.body.setAttribute('data-color-accent', MaterialFreeboxOS.materialColors.defaultAccent);
             } else {
                 chrome.storage.local.get('color-primary', function (data) {
                     var primaryColor = data['color-primary'] || MaterialFreeboxOS.materialColors.defaultPrimary;
@@ -84,6 +84,9 @@
             }
         },
         applyWallpaper: function() {
+            if (MaterialFreeboxOS.environment.isFirefox())
+                return;
+
             // Retrieve setting
             chrome.storage.local.get('wallpaper', function(data) {
                 var wallpaperUri = data['wallpaper'] || MaterialFreeboxOS.wallpaper.defaultWallpaper.image;
