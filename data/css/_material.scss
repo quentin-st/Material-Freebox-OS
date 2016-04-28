@@ -28,7 +28,11 @@ $color-brown: (         500: #795548, 600: #6D4C41, 700: #5D4037, 800: #4E342E, 
 $color-grey: (          500: #9E9E9E, 600: #757575, 700: #616161, 800: #424242, 900: #212121 );
 $color-blue-grey: (     500: #607D8B, 600: #546E7A, 700: #455A64, 800: #37474F, 900: #263238 );
 
-$color-accent:          map-get($color-green, 500);
+@function material-color($color, $hue:500) {
+    @return map-get($color, $hue);
+}
+
+$color-accent:          material-color($color-green);
 $color-accent-dark:     darken($color-accent, 10);
 
 // Primary color
@@ -59,16 +63,16 @@ $default-primary-color: 'blue';
     $color-name: nth($primary-color, 1);
     $color-hexes: nth($primary-color, 2);
 
-    $selector: 'body[data-primary-color="#{map-get($color-hexes, 500)}"]';
+    $selector: 'body[data-primary-color="#{material-color($color-hexes)}"]';
     @if $color-name == $default-primary-color {
         $selector: 'body, ' + $selector;
     }
 
     #{$selector} {
-        $color: map-get($color-hexes, 500);
-        $color-hover: map-get($color-hexes, 600);
-        $color-dark: map-get($color-hexes, 700);
-        $color-active: map-get($color-hexes, 800);
+        $color: material-color($color-hexes);
+        $color-hover: material-color($color-hexes, 600);
+        $color-dark: material-color($color-hexes, 700);
+        $color-active: material-color($color-hexes, 800);
 
         @each $modifier in (
             '': $color,
@@ -162,5 +166,5 @@ $slight-border-left:    inset 1px 0 0 0px rgba(0, 0, 0, 0.2);
 }
 .alert--danger {
     @extend .alert;
-    background-color: map-get($color-red, 500);
+    background-color: material-color($color-red);
 }

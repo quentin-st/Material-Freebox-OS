@@ -4,16 +4,16 @@
  */
 
 $prog-elem-colors: (
-    0: map-get($color-purple, 500),
-    1: map-get($color-indigo, 500),
-    2: map-get($color-blue, 500),
-    3: map-get($color-orange, 500),
-    4: map-get($color-amber, 500),
-    5: map-get($color-brown, 500),
-    6: map-get($color-teal, 500),
-    7: map-get($color-green, 500),
-    8: map-get($color-red, 500),
-    9: map-get($color-blue-grey, 500),
+    0: material-color($color-purple),
+    1: material-color($color-indigo),
+    2: material-color($color-blue),
+    3: material-color($color-orange),
+    4: material-color($color-amber),
+    5: material-color($color-brown),
+    6: material-color($color-teal),
+    7: material-color($color-green),
+    8: material-color($color-red),
+    9: material-color($color-blue-grey),
 );
 
 .epg-highlights, .epg-outer {
@@ -91,7 +91,7 @@ $prog-elem-colors: (
 
     .epg-channellist {
         .epg-channel-elem {
-            background-color: map-get($color-amber, 500);
+            background-color: material-color($color-amber);
             border: 0;
             @include border-radius(2px);
             @extend .elevation-lowest;

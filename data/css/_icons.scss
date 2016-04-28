@@ -7,18 +7,18 @@
 // Icons colors
 // Each color should be assigned in its context when possible
 $icons-colors-80-32: (
-    settings-connectionstatus: map-get($color-amber, 500),
-    tv:             map-get($color-red, 500),
-    downloader:     map-get($color-purple, 500),
-    explorer:       map-get($color-deep-purple, 500),
-    settings-parentalfilterconfig: map-get($color-indigo, 500),
-    lanbrowser:     map-get($color-blue, 500),
-    calls:          map-get($color-teal, 500),
-    pvr:            map-get($color-green, 500),
-    epg:            map-get($color-light-green, 500),
-    contacts:       map-get($color-orange, 500),
-    settings:       map-get($color-deep-orange, 500),
-    help:           map-get($color-brown, 500),
+    settings-connectionstatus: material-color($color-amber),
+    tv:             material-color($color-red),
+    downloader:     material-color($color-purple),
+    explorer:       material-color($color-deep-purple),
+    settings-parentalfilterconfig: material-color($color-indigo),
+    lanbrowser:     material-color($color-blue),
+    calls:          material-color($color-teal),
+    pvr:            material-color($color-green),
+    epg:            material-color($color-light-green),
+    contacts:       material-color($color-orange),
+    settings:       material-color($color-deep-orange),
+    help:           material-color($color-brown),
 );
 
 $icons-colors-24: (

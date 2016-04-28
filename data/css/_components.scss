@@ -194,7 +194,7 @@
     }
 
     &.x-tip-form-invalid {
-        background-color: map-get($color-red, 500);
+        background-color: material-color($color-red);
 
         .x-tip-body-form-invalid {
             background: none;

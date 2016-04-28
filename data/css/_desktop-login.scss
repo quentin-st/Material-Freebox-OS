@@ -52,7 +52,7 @@
             font-family: $roboto;
         }
         #loadContent {
-            background: map-get($color-green, 500);
+            background: material-color($color-green);
             @include border-radius(2px);
         }
     }

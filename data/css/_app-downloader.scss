@@ -15,19 +15,19 @@
     > span {
         height: 12px;
         background-image: none;
-        background-color: map-get($color-green, 500);
+        background-color: material-color($color-green);
         @include border-radius(2px);
         @include box-shadow(none);
     }
 
     &.blue > span {
-        background-color: map-get($color-blue, 500);
+        background-color: material-color($color-blue);
     }
 }
 
-.btn-24-download-stopped { color: map-get($color-red, 500); }
-.btn-24-download-queued { color: map-get($color-orange, 500); }
-.btn-24-download-downloading { color: map-get($color-green, 500); }
+.btn-24-download-stopped { color: material-color($color-red); }
+.btn-24-download-queued { color: material-color($color-orange); }
+.btn-24-download-downloading { color: material-color($color-green); }
 
 .x-form-timetable-table {
     tr {
