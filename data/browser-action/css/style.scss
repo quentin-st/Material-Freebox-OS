@@ -11,15 +11,15 @@
 @import '../../css/material-buttons';
 @import '../../css/inputs';
 
-$footer-height: 40px;
-
 html, body {
+    margin: 0;
+    padding: 0;
     width: 380px;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 body {
-    margin: 0;
-    padding: 0 0 #{$footer-height+15px} 0;
     font-family: $roboto;
     color: $color-text-dark;
 
@@ -31,7 +31,7 @@ body {
     box-sizing: border-box;
 }
 
-header, .content, footer {
+header, .content .part, footer {
     padding: 5px 10px;
 }
 
@@ -167,10 +167,7 @@ h2 {
 }
 
 footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: $footer-height;
+    margin-top: 20px;
     text-align: right;
     @extend .primary-color--background;
     @include transition-duration($timing-medium);

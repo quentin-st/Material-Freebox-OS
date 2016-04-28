@@ -92,14 +92,18 @@
         var primaryColor_colors = primaryColorsUl.find('li'),
             accentColor_colors = accentColorsUl.find('li');
 
-        if (!MaterialFreeboxOS.environment.isFirefox()) {
+        if (MaterialFreeboxOS.environment.isFirefox()) {
+            $('body')
+                .attr('data-color-primary', MaterialFreeboxOS.materialColors.defaultPrimary)
+                .attr('data-color-accent', MaterialFreeboxOS.materialColors.defaultAccent);
+        } else {
             // Retrieve current settings
             chrome.storage.local.get('color-primary', function (data) {
                 var defaultPrimaryColor = MaterialFreeboxOS.materialColors.defaultPrimary,
                     primaryColor = data['color-primary'] || defaultPrimaryColor;
 
                 primaryColor_colors.filter('[data-color="' + primaryColor + '"]').addClass('current');
-                $('body').attr('data-color-primary', primaryColor)
+                $('body').attr('data-color-primary', primaryColor);
             });
             chrome.storage.local.get('color-accent', function (data) {
                 var defaultAccentColor = MaterialFreeboxOS.materialColors.defaultAccent,
