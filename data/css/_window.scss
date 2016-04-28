@@ -10,11 +10,11 @@
 .x-window {
     padding: 0!important;
     border: 0!important;
-    background-color: $color-primary!important;
     @include transition-property(box-shadow);
     @include transition-duration($timing-short);
     @include border-radius(2px!important);
     @extend .elevation-medium;
+    @extend .primary-color--background;
 
     // Blur / focus states
     &.x-window-focus-blurred {
@@ -32,8 +32,8 @@
 
         padding: 0 0 0 10px;
         border: 0;
-        background-color: $color-primary-dark!important;
         @include border-radius(2px 2px 0 0);
+        @extend .primary-color--dark--background;
 
         .x-window-header-body {
             cursor: default;
@@ -102,12 +102,12 @@
     }
 
     .x-window-body {
-        background: $color-primary;
+        @extend .primary-color--background;
 
         &, .x-header .x-tab-bar-body, .x-toolbar-docked-top {
             padding: 0;
-            background: $color-primary!important;
             @include box-shadow(0 1px 3px 0 rgba(#000, 0.2));
+            @extend .primary-color--background;
         }
 
         .x-header {
@@ -187,7 +187,7 @@
         padding-bottom: 4px;
 
         &.x-toolbar-default {
-            background: $color-primary-dark!important;
+            @extend .primary-color--dark--background;
         }
 
         .x-btn {

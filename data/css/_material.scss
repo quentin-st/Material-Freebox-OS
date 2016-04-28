@@ -6,6 +6,7 @@
 // Font
 $roboto:                Roboto, sans-serif;
 
+
 // Colors
 $color-red:             #F55145;
 $color-purple:          #9C27B0;
@@ -21,12 +22,53 @@ $color-deep-orange:     #FF5722;
 $color-brown:           #795548;
 $color-blue-grey:       #607D8B;
 
-$color-primary:         $color-blue;
-$color-primary-hover:   darken($color-primary, 8);
-$color-primary-dark:    #1976D2;
-$color-primary-darker:  darken($color-primary-dark, 5);
 $color-accent:          $color-green;
 $color-accent-dark:     darken($color-accent, 10);
+
+// Primary color
+$primary-colors: (
+    'blue': #2196F3,
+    'red': #F55145,
+    'deep-purple': #673AB7,
+    'indigo': #3F51B5,
+    'teal': #009688,
+    'green': #4CAF50,
+    'light-green': #8BC34A,
+    'amber': #FFC107,
+    'orange': #FF9800,
+    'deep-orange': #FF5722,
+    'brown': #795548,
+    'blue-grey': #607D8B
+);
+$default-primary-color: 'blue';
+
+@each $primary-color in $primary-colors {
+    $color-name: nth($primary-color, 1);
+    $color-hex: nth($primary-color, 2);
+
+    $selector: 'body[data-primary-color="#{$color-hex}"]';
+    @if $color-name == $default-primary-color {
+        $selector: 'body, ' + $selector;
+    }
+
+    #{$selector} {
+        $color-hover: darken($color-hex, 8);
+        $color-dark: darken($color-hex, 10);
+        $color-active: darken($color-dark, 5);
+
+        @each $modifier in (
+            '': $color-hex,
+            '--hover': $color-hover,
+            '--dark': $color-dark,
+            '--active': $color-active
+        ) {
+            .primary-color#{nth($modifier, 1)}--color {      color: nth($modifier, 2)!important;      }
+            .primary-color#{nth($modifier, 1)}--border {     background: nth($modifier, 2)!important; }
+            .primary-color#{nth($modifier, 1)}--background { background: nth($modifier, 2)!important; }
+        }
+    }
+}
+
 
 $color-dark:            #303030;
 $color-text-dark:       rgba(#000, 0.87);
@@ -52,6 +94,7 @@ $typography-label-font-weight:   600;
 $typography-label-color:         rgba(#000, 0.7);
 $typography-label-font-size:     12px;
 
+
 // Elevation
 $elevation-tiny: 0 1px 1px rgba(0,0,0,0.1);
 $elevation-1: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -70,16 +113,19 @@ $elevation-negative: inset 1px 1px 1px rgba(0, 0, 0, 0.1);
 .elevation-negative              { @include box-shadow($elevation-negative); }
 .elevation-none                  { @include box-shadow(none); }
 
+
 // Animations duration
 $timing-short:          150ms;
 $timing-medium:         250ms;
 $timing-long:           350ms;
+
 
 // Slight border
 $slight-border-top:     inset 0 1px 0 0px rgba(0, 0, 0, 0.2);
 $slight-border-right:   inset -1px 0 0 0px rgba(0, 0, 0, 0.2);
 $slight-border-bottom:  inset 0 -1px 0 0px rgba(0, 0, 0, 0.2);
 $slight-border-left:    inset 1px 0 0 0px rgba(0, 0, 0, 0.2);
+
 
 // Alerts
 .alert {

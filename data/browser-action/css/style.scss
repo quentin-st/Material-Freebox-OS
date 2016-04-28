@@ -168,8 +168,10 @@ footer {
     bottom: 0;
     width: 100%;
     height: $footer-height;
-    background-color: $color-primary;
     text-align: right;
+    @extend .primary-color--background;
+    @include transition-duration($timing-medium);
+    @include transition-property(background);
 
     a.material-button--flat--primary {
         display: inline-block;

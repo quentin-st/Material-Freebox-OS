@@ -86,6 +86,7 @@
                 primaryColor = data['primary-color'] || defaultPrimaryColor;
 
             primaryColor_colors.filter('[data-color="' + primaryColor + '"]').addClass('current');
+            $('body').attr('data-primary-color', primaryColor)
         });
 
         // Update current primary color
