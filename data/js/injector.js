@@ -65,11 +65,16 @@
                 that.injectStylesheet(MaterialFreeboxOS.getDepURI(uri));
             });
         },
-        applyPrimaryColor: function() {
-            chrome.storage.local.get('primary-color', function(data) {
-                var primaryColor = data['primary-color'] || MaterialFreeboxOS.primaryColor.defaultColor;
+        applyColors: function() {
+            chrome.storage.local.get('color-primary', function(data) {
+                var primaryColor = data['color-primary'] || MaterialFreeboxOS.materialColors.defaultPrimary;
 
-                document.body.setAttribute('data-primary-color', primaryColor);
+                document.body.setAttribute('data-color-primary', primaryColor);
+            });
+            chrome.storage.local.get('color-accent', function(data) {
+                var accentColor = data['color-accent'] || MaterialFreeboxOS.materialColors.defaultAccent;
+
+                document.body.setAttribute('data-color-accent', accentColor);
             });
         },
         applyWallpaper: function() {
@@ -102,7 +107,7 @@
 
     // Update wallpaper (defined in browser-action)
     if (!MaterialFreeboxOS.environment.isFirefox()) {
-        Injector.applyPrimaryColor();
+        Injector.applyColors();
         Injector.applyWallpaper();
     }
 

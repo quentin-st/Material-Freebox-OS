@@ -21,7 +21,7 @@
                 : chrome.extension.getURL(relative);
         },
 
-        primaryColor: {
+        materialColors: {
             colors: [
                 '#F44336', // red
                 '#E91E63', // pink
@@ -41,11 +41,15 @@
                 '#FF5722', // deep-orange
                 '#795548', // brown
                 '#9E9E9E', // grey
-                '#607D8B', // blue-grey
+                '#607D8B'  // blue-grey
             ],
 
-            get defaultColor() {
-                return this.colors[0]
+            get defaultPrimary() {
+                return this.colors[5];
+            },
+
+            get defaultAccent() {
+                return this.colors[8];
             }
         },
 

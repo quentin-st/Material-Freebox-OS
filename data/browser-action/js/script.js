@@ -4,24 +4,29 @@
  */
 (function() {
     var BrowserAction = {
-        updatePrimaryColorAndSave: function(color) {
-            $('body').attr('data-primary-color', color);
-            BrowserAction.updatePrimaryColorInTab(color);
+        updateColorsAndSave: function(primary, accent) {
+            $('body')
+                .attr('data-color-primary', primary)
+                .attr('data-color-accent', accent);
+
+            BrowserAction.updateColorsInTab(primary, accent);
             chrome.storage.local.set({
-                'primary-color': color
+                'color-primary': primary,
+                'color-accent': accent
             });
         },
 
-        updatePrimaryColorInTab: function(color) {
+        updateColorsInTab: function(primary, accent) {
             chrome.tabs.getSelected(null, function(tab) {
                 if (MaterialFreeboxOS.matches(tab.title)) {
-                    var updatePrimaryColor = function(color) {
-                        document.body.setAttribute('data-primary-color', color);
+                    var updateColors = function(primary, accent) {
+                        document.body.setAttribute('data-color-primary', primary);
+                        document.body.setAttribute('data-color-accent', accent);
                     };
 
                     var code =
-                        "var updatePrimaryColor = " + updatePrimaryColor.toString() + ";\
-                        updatePrimaryColor('" + color + "');";
+                        "var updateColors = " + updateColors.toString() + ";\
+                        updateColors('" + primary + "', '" + accent + "');";
 
                     chrome.tabs.executeScript(null, {
                         code: code
@@ -67,34 +72,47 @@
     };
 
     $(document).ready(function () {
-        // Primary colors
-        var primaryColorsUl = $('#primary-colors');
+        // Colors
+        var primaryColorsUl = $('#colors-primary'),
+            accentColorsUl = $('#colors-accent');
 
         // Inflate list
-        MaterialFreeboxOS.primaryColor.colors.forEach(function(color) {
+        MaterialFreeboxOS.materialColors.colors.forEach(function(color) {
             $('<li />')
                 .attr('data-color', color)
                 .css('background-color', color)
-                .appendTo(primaryColorsUl);
+                .appendTo(primaryColorsUl)
+                .clone().appendTo(accentColorsUl);
         });
 
-        var primaryColor_colors = primaryColorsUl.find('li');
+        var primaryColor_colors = primaryColorsUl.find('li'),
+            accentColor_colors = accentColorsUl.find('li');
 
         // Retrieve current settings
-        chrome.storage.local.get('primary-color', function(data) {
-            var defaultPrimaryColor = MaterialFreeboxOS.primaryColor.defaultColor,
-                primaryColor = data['primary-color'] || defaultPrimaryColor;
+        chrome.storage.local.get('color-primary', function(data) {
+            var defaultPrimaryColor = MaterialFreeboxOS.materialColors.defaultPrimary,
+                primaryColor = data['color-primary'] || defaultPrimaryColor;
 
             primaryColor_colors.filter('[data-color="' + primaryColor + '"]').addClass('current');
-            $('body').attr('data-primary-color', primaryColor)
+            $('body').attr('data-color-primary', primaryColor)
+        });
+        chrome.storage.local.get('color-accent', function(data) {
+            var defaultAccentColor = MaterialFreeboxOS.materialColors.defaultAccent,
+                accentColor = data['color-accent'] || defaultAccentColor;
+
+            accentColor_colors.filter('[data-color="' + accentColor + '"]').addClass('current');
+            $('body').attr('data-color-accent', accentColor);
         });
 
-        // Update current primary color
-        primaryColor_colors.click(function() {
-            primaryColor_colors.removeClass('current');
+        // Update current colors
+        $(primaryColor_colors, accentColor_colors).click(function() {
+            $(this).closest('ul').find('li').removeClass('current');
             $(this).addClass('current');
 
-            BrowserAction.updatePrimaryColorAndSave($(this).attr('data-color'));
+            BrowserAction.updateColorsAndSave(
+                primaryColorsUl.find('li.current').attr('data-color'),
+                accentColorsUl.find('li.current').attr('data-color')
+            );
         });
 
 

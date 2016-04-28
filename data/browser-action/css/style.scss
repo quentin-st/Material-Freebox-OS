@@ -40,7 +40,7 @@ h1 {
 }
 h2 {
     font-weight: 500;
-    margin: 0 0 5px 0;
+    margin: 25px 0 5px 0;
 
     .source {
         color: $color-text-dark;
@@ -62,27 +62,14 @@ h2 {
     position: relative;
 
     // Colors & wallpapers lists
-    .part-primary-colors, .part-wallpapers {
+    .part-colors, .part-wallpapers {
         ul {
             @extend .ul-nostyle;
 
             li {
+                cursor: pointer;
                 display: inline-block;
                 margin: 2px;
-            }
-        }
-    }
-
-    .part-primary-colors {
-        margin-bottom: 25px;
-
-        ul.primary-colors {
-            @extend .ul-nostyle;
-
-            li {
-                width: 32px;
-                height: 32px;
-                cursor: pointer;
                 @include border-radius(2px);
 
                 // Check icon
@@ -107,10 +94,25 @@ h2 {
         }
     }
 
+    .part-colors {
+        h2:first-child {
+            margin-top: 0;
+        }
+
+        ul {
+            @extend .ul-nostyle;
+
+            li {
+                width: 32px;
+                height: 32px;
+            }
+        }
+    }
+
     .part-wallpapers {
         position: relative;
 
-        ul.wallpapers {
+        ul {
             @extend .ul-nostyle;
 
             li {

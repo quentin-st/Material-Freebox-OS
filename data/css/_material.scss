@@ -63,7 +63,7 @@ $default-primary-color: 'blue';
     $color-name: nth($primary-color, 1);
     $color-hexes: nth($primary-color, 2);
 
-    $selector: 'body[data-primary-color="#{material-color($color-hexes)}"]';
+    $selector: 'body[data-color-primary="#{material-color($color-hexes)}"]';
     @if $color-name == $default-primary-color {
         $selector: 'body, ' + $selector;
     }
