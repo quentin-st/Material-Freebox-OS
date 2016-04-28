@@ -49,7 +49,7 @@
             },
 
             get defaultAccent() {
-                return this.colors[8];
+                return this.colors[9];
             }
         },
 
