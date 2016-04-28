@@ -21,7 +21,7 @@ $color-deep-orange:     #FF5722;
 $color-brown:           #795548;
 $color-blue-grey:       #607D8B;
 
-$color-primary:         #2196F3;
+$color-primary:         $color-blue;
 $color-primary-hover:   darken($color-primary, 8);
 $color-primary-dark:    #1976D2;
 $color-primary-darker:  darken($color-primary-dark, 5);

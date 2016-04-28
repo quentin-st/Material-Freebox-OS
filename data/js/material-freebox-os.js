@@ -21,6 +21,27 @@
                 : chrome.extension.getURL(relative);
         },
 
+        primaryColor: {
+            colors: [
+                '#2196F3', // blue
+                '#F55145', // red
+                '#673AB7', // deep-purple
+                '#3F51B5', // indigo
+                '#009688', // teal
+                '#4CAF50', // green
+                '#8BC34A', // light-green
+                '#FFC107', // amber
+                '#FF9800', // orange
+                '#FF5722', // deep-orange
+                '#795548', // brown
+                '#607D8B'  // blue-grey
+            ],
+
+            get defaultColor() {
+                return this.colors[0]
+            }
+        },
+
         /**
          * Wallpaper-related methods
          */

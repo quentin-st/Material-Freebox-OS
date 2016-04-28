@@ -4,6 +4,32 @@
  */
 (function() {
     var BrowserAction = {
+        updatePrimaryColorAndSave: function(color) {
+            $('body').attr('data-primary-color', color);
+            BrowserAction.updatePrimaryColorInTab(color);
+            chrome.storage.local.set({
+                'primary-color': color
+            });
+        },
+
+        updatePrimaryColorInTab: function(color) {
+            chrome.tabs.getSelected(null, function(tab) {
+                if (MaterialFreeboxOS.matches(tab.title)) {
+                    var updatePrimaryColor = function(color) {
+                        document.body.setAttribute('data-primary-color', color);
+                    };
+
+                    var code =
+                        "var updatePrimaryColor = " + updatePrimaryColor.toString() + ";\
+                        updatePrimaryColor('" + color + "');";
+
+                    chrome.tabs.executeScript(null, {
+                        code: code
+                    });
+                }
+            });
+        },
+
         updateWallpaperAndSave: function(uri) {
             BrowserAction.updateWallpaperInTab(uri, MaterialFreeboxOS.wallpaper.findWallpaperInfos(uri));
             chrome.storage.local.set({
@@ -41,6 +67,36 @@
     };
 
     $(document).ready(function () {
+        // Primary colors
+        var primaryColorsUl = $('#primary-colors');
+
+        // Inflate list
+        MaterialFreeboxOS.primaryColor.colors.forEach(function(color) {
+            $('<li />')
+                .attr('data-color', color)
+                .css('background-color', color)
+                .appendTo(primaryColorsUl);
+        });
+
+        var primaryColor_colors = primaryColorsUl.find('li');
+
+        // Retrieve current settings
+        chrome.storage.local.get('primary-color', function(data) {
+            var defaultPrimaryColor = MaterialFreeboxOS.primaryColor.defaultColor,
+                primaryColor = data['primary-color'] || defaultPrimaryColor;
+
+            primaryColor_colors.filter('[data-color="' + primaryColor + '"]').addClass('current');
+        });
+
+        // Update current primary color
+        primaryColor_colors.click(function() {
+            primaryColor_colors.removeClass('current');
+            $(this).addClass('current');
+
+            BrowserAction.updatePrimaryColorAndSave($(this).attr('data-color'));
+        });
+
+
         // Wallpapers
         var wallpapersUl = $('#wallpapers-images');
 
@@ -56,7 +112,6 @@
 
         // Firefox: disable wallpapers URI & stop here
         if (MaterialFreeboxOS.environment.isFirefox()) {
-            $('.part-wallpapers').css('opacity', '0.2');
             $('.unsupported').show();
             return;
         }
@@ -91,10 +146,6 @@
 
                 BrowserAction.updateWallpaperAndSave($(this).val());
             }
-        });
-
-        $('input[type="submit"]').click(function() {
-            BrowserAction.updateWallpaperAndSave($('input[type="file"]').val());
         });
     });
 })();
