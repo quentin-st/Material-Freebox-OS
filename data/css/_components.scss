@@ -234,7 +234,7 @@
     @extend .elevation-lowest;
 
     &.selected {
-        background-color: $color-accent;
+        @extend .accent-color--background;
     }
 }
 

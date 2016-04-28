@@ -105,7 +105,7 @@
         });
 
         // Update current colors
-        $(primaryColor_colors, accentColor_colors).click(function() {
+        $().add(primaryColor_colors).add(accentColor_colors).click(function() {
             $(this).closest('ul').find('li').removeClass('current');
             $(this).addClass('current');
 

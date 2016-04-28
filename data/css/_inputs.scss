@@ -28,12 +28,16 @@
 }
 .x-form-cb-checked {
     .x-form-checkbox {
-        border: 2px solid $color-accent;
-        background: $color-accent url('../img/mdi-check.png') -1px -2px;
+        border-width: 2px;
+        border-style: solid;
+        @extend .accent-color--border;
+
+        background-image: url('../img/mdi-check.png');
+        background-position: -1px -2px;
+        @extend .accent-color--background;
     }
     .x-form-radio {
-        background: $color-accent;
-        //border-color: $color-accent;
+        @extend .accent-color--background;
         @include box-shadow(inset 0 0 0 2px #fff);
     }
 }
@@ -56,7 +60,7 @@ fieldset.x-fieldset {
             font-family: $roboto;
             font-weight: 600;
             font-size: 14px;
-            color: $color-accent-dark;
+            @extend .accent-color--dark--color;
         }
     }
 }
@@ -75,7 +79,7 @@ fieldset.x-fieldset {
     font-family: $roboto;
 
     &.x-field-form-focus {
-        border-color: $color-accent;
+        @extend .accent-color--border;
     }
     &.x-form-invalid-field {
         color: material-color($color-red);
@@ -156,7 +160,7 @@ fieldset.x-fieldset {
 }
 // Focus state
 .x-form-trigger-wrap-focus .x-form-trigger-wrap {
-    border-color: $color-accent;
+    @extend .accent-color--border;
 }
 
 // Combobox inside window toolbar (primary-color background)
@@ -199,7 +203,8 @@ fieldset.x-fieldset {
 // Slider
 .x-slider {
     height: 2px;
-    background: $color-accent none;
+    background-image: none;
+    @extend .accent-color--background;
 
     .x-slider-end {
         background: none;
@@ -211,7 +216,9 @@ fieldset.x-fieldset {
                 cursor: pointer;
                 margin-top: -5px;
                 background: #fff none;
-                border: 1px solid $color-accent;
+                border-width: 1px;
+                border-style: solid;
+                @extend .accent-color--border;
                 border-radius: 50%;
                 width: 14px;
                 height: 14px;

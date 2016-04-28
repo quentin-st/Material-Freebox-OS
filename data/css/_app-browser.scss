@@ -37,7 +37,7 @@
 
             .x-tree-node-text {
                 font-weight: 600;
-                color: $color-accent;
+                @extend .accent-color--color;
             }
         }
     }
@@ -65,12 +65,12 @@
 
     .x-progress-wrap {
         margin: 3px 0;
-        background-color: lighten($color-accent, 15);
         @include border-radius(1px);
+        @extend .accent-color--background;
 
         .x-progress-inner {
             .x-progress-bar {
-                background-color: $color-accent-dark;
+                @extend .accent-color--dark--background;
                 @include border-radius(1px);
             }
 

@@ -32,11 +32,8 @@ $color-blue-grey: (     500: #607D8B, 600: #546E7A, 700: #455A64, 800: #37474F, 
     @return map-get($color, $hue);
 }
 
-$color-accent:          material-color($color-green);
-$color-accent-dark:     darken($color-accent, 10);
-
-// Primary color
-$primary-colors: (
+// Primary & accent colors
+$material-colors: (
     'red':      $color-red,
     'pink':     $color-pink,
     'purple':   $color-purple,
@@ -57,32 +54,43 @@ $primary-colors: (
     'grey':     $color-grey,
     'blue-grey': $color-blue-grey
 );
-$default-primary-color: 'blue';
+$defaults: (
+    'primary': 'blue',
+    'accent': 'green'
+);
 
-@each $primary-color in $primary-colors {
-    $color-name: nth($primary-color, 1);
-    $color-hexes: nth($primary-color, 2);
+@each $material-color in $material-colors {
+    $color-name: nth($material-color, 1);
+    $color-hexes: nth($material-color, 2);
 
-    $selector: 'body[data-color-primary="#{material-color($color-hexes)}"]';
-    @if $color-name == $default-primary-color {
-        $selector: 'body, ' + $selector;
-    }
+    $color-500: material-color($color-hexes, 500);
+    $color-600: material-color($color-hexes, 600);
+    $color-700: material-color($color-hexes, 700);
+    $color-800: material-color($color-hexes, 800);
+    $color-900: material-color($color-hexes, 900);
 
-    #{$selector} {
-        $color: material-color($color-hexes);
-        $color-hover: material-color($color-hexes, 600);
-        $color-dark: material-color($color-hexes, 700);
-        $color-active: material-color($color-hexes, 800);
+    @each $color-type in ('primary', 'accent') {
+        $selector: 'body[data-color-#{$color-type}="#{$color-500}"]';
+        @if $color-name == map-get($defaults, $color-type) {
+            $selector: 'body, ' + $selector;
+        }
 
-        @each $modifier in (
-            '': $color,
-            '--hover': $color-hover,
-            '--dark': $color-dark,
-            '--active': $color-active
-        ) {
-            .primary-color#{nth($modifier, 1)}--color {      color: nth($modifier, 2)!important;      }
-            .primary-color#{nth($modifier, 1)}--border {     background: nth($modifier, 2)!important; }
-            .primary-color#{nth($modifier, 1)}--background { background: nth($modifier, 2)!important; }
+        #{$selector} {
+            $color: $color-500;
+            $color-hover: $color-600;
+            $color-dark: $color-700;
+            $color-active: $color-800;
+
+            @each $modifier in (
+                '': $color,
+                '--hover': $color-hover,
+                '--dark': $color-dark,
+                '--active': $color-active
+            ) {
+                .#{$color-type}-color#{nth($modifier, 1)}--color {      color: nth($modifier, 2)!important;        }
+                .#{$color-type}-color#{nth($modifier, 1)}--border {     border-color: nth($modifier, 2)!important; }
+                .#{$color-type}-color#{nth($modifier, 1)}--background { background: nth($modifier, 2)!important;   }
+            }
         }
     }
 }

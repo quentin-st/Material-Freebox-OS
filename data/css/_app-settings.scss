@@ -29,7 +29,7 @@
 
         &.setting-app-selected {
             border-color: transparent;
-            background-color: $color-accent;
+            @extend .accent-color--background;
 
             .thumb .setting-app-img {
                 color: #fff;
