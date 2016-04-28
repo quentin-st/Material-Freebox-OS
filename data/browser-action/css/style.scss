@@ -77,7 +77,6 @@ h2 {
         margin-bottom: 25px;
 
         ul.primary-colors {
-            max-width: 6*(32px+4px);
             @extend .ul-nostyle;
 
             li {

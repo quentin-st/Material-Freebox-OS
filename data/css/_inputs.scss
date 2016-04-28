@@ -78,9 +78,9 @@ fieldset.x-fieldset {
         border-color: $color-accent;
     }
     &.x-form-invalid-field {
-        color: $color-red;
+        color: map-get($color-red, 500);
         background-image: none!important;
-        border-bottom: 1px solid $color-red!important;
+        border-bottom: 1px solid map-get($color-red, 500)!important;
     }
 
     &.x-form-textarea {

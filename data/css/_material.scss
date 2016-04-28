@@ -8,56 +8,70 @@ $roboto:                Roboto, sans-serif;
 
 
 // Colors
-$color-red:             #F55145;
-$color-purple:          #9C27B0;
-$color-deep-purple:     #673AB7;
-$color-indigo:          #3F51B5;
-$color-blue:            #2196F3;
-$color-teal:            #009688;
-$color-green:           #4CAF50;
-$color-light-green:     #8BC34A;
-$color-amber:           #FFC107;
-$color-orange:          #FF9800;
-$color-deep-orange:     #FF5722;
-$color-brown:           #795548;
-$color-blue-grey:       #607D8B;
+$color-red: (           500: #F44336, 600: #E53935, 700: #D32F2F, 800: #C62828, 900: #B71C1C );
+$color-pink: (          500: #E91E63, 600: #D81B60, 700: #C2185B, 800: #AD1457, 900: #880E4F );
+$color-purple: (        500: #9C27B0, 600: #8E24AA, 700: #7B1FA2, 800: #6A1B9A, 900: #4A148C );
+$color-deep-purple: (   500: #673AB7, 600: #5E35B1, 700: #512DA8, 800: #4527A0, 900: #311B92 );
+$color-indigo: (        500: #3F51B5, 600: #3949AB, 700: #303F9F, 800: #283593, 900: #1A237E );
+$color-blue: (          500: #2196F3, 600: #1E88E5, 700: #1976D2, 800: #1565C0, 900: #0D47A1 );
+$color-light-blue: (    500: #03A9F4, 600: #039BE5, 700: #0288D1, 800: #0277BD, 900: #01579B );
+$color-cyan: (          500: #00BCD4, 600: #00ACC1, 700: #0097A7, 800: #00838F, 900: #006064 );
+$color-teal: (          500: #009688, 600: #00897B, 700: #00796B, 800: #00695C, 900: #004D40 );
+$color-green: (         500: #4CAF50, 600: #43A047, 700: #388E3C, 800: #2E7D32, 900: #1B5E20 );
+$color-light-green: (   500: #8BC34A, 600: #7CB342, 700: #689F38, 800: #558B2F, 900: #33691E );
+$color-lime: (          500: #CDDC39, 600: #C0CA33, 700: #AFB42B, 800: #9E9D24, 900: #827717 );
+$color-yellow: (        500: #FFEB3B, 600: #FDD835, 700: #FBC02D, 800: #F9A825, 900: #F57F17 );
+$color-amber: (         500: #FFC107, 600: #FFB300, 700: #FFA000, 800: #FF8F00, 900: #FF6F00 );
+$color-orange: (        500: #FF9800, 600: #FB8C00, 700: #F57C00, 800: #EF6C00, 900: #E65100 );
+$color-deep-orange: (   500: #FF5722, 600: #F4511E, 700: #E64A19, 800: #D84315, 900: #BF360C );
+$color-brown: (         500: #795548, 600: #6D4C41, 700: #5D4037, 800: #4E342E, 900: #3E2723 );
+$color-grey: (          500: #9E9E9E, 600: #757575, 700: #616161, 800: #424242, 900: #212121 );
+$color-blue-grey: (     500: #607D8B, 600: #546E7A, 700: #455A64, 800: #37474F, 900: #263238 );
 
-$color-accent:          $color-green;
+$color-accent:          map-get($color-green, 500);
 $color-accent-dark:     darken($color-accent, 10);
 
 // Primary color
 $primary-colors: (
-    'blue': #2196F3,
-    'red': #F55145,
-    'deep-purple': #673AB7,
-    'indigo': #3F51B5,
-    'teal': #009688,
-    'green': #4CAF50,
-    'light-green': #8BC34A,
-    'amber': #FFC107,
-    'orange': #FF9800,
-    'deep-orange': #FF5722,
-    'brown': #795548,
-    'blue-grey': #607D8B
+    'red':      $color-red,
+    'pink':     $color-pink,
+    'purple':   $color-purple,
+    'deep-purple': $color-deep-purple,
+    'indigo':   $color-indigo,
+    'blue':     $color-blue,
+    'light-blue': $color-light-blue,
+    'cyan':     $color-cyan,
+    'teal':     $color-teal,
+    'green':    $color-green,
+    'light-green': $color-light-green,
+    'lime':     $color-lime,
+    'yellow':   $color-yellow,
+    'amber':    $color-amber,
+    'orange':   $color-orange,
+    'deep-orange': $color-deep-orange,
+    'brown':    $color-brown,
+    'grey':     $color-grey,
+    'blue-grey': $color-blue-grey
 );
 $default-primary-color: 'blue';
 
 @each $primary-color in $primary-colors {
     $color-name: nth($primary-color, 1);
-    $color-hex: nth($primary-color, 2);
+    $color-hexes: nth($primary-color, 2);
 
-    $selector: 'body[data-primary-color="#{$color-hex}"]';
+    $selector: 'body[data-primary-color="#{map-get($color-hexes, 500)}"]';
     @if $color-name == $default-primary-color {
         $selector: 'body, ' + $selector;
     }
 
     #{$selector} {
-        $color-hover: darken($color-hex, 8);
-        $color-dark: darken($color-hex, 10);
-        $color-active: darken($color-dark, 5);
+        $color: map-get($color-hexes, 500);
+        $color-hover: map-get($color-hexes, 600);
+        $color-dark: map-get($color-hexes, 700);
+        $color-active: map-get($color-hexes, 800);
 
         @each $modifier in (
-            '': $color-hex,
+            '': $color,
             '--hover': $color-hover,
             '--dark': $color-dark,
             '--active': $color-active
@@ -148,5 +162,5 @@ $slight-border-left:    inset 1px 0 0 0px rgba(0, 0, 0, 0.2);
 }
 .alert--danger {
     @extend .alert;
-    background-color: $color-red;
+    background-color: map-get($color-red, 500);
 }
