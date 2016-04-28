@@ -72,6 +72,10 @@
     };
 
     $(document).ready(function () {
+        if (MaterialFreeboxOS.environment.isFirefox()) {
+            $('.unsupported').show();
+        }
+
         // Colors
         var primaryColorsUl = $('#colors-primary'),
             accentColorsUl = $('#colors-accent');
@@ -88,21 +92,23 @@
         var primaryColor_colors = primaryColorsUl.find('li'),
             accentColor_colors = accentColorsUl.find('li');
 
-        // Retrieve current settings
-        chrome.storage.local.get('color-primary', function(data) {
-            var defaultPrimaryColor = MaterialFreeboxOS.materialColors.defaultPrimary,
-                primaryColor = data['color-primary'] || defaultPrimaryColor;
+        if (!MaterialFreeboxOS.environment.isFirefox()) {
+            // Retrieve current settings
+            chrome.storage.local.get('color-primary', function (data) {
+                var defaultPrimaryColor = MaterialFreeboxOS.materialColors.defaultPrimary,
+                    primaryColor = data['color-primary'] || defaultPrimaryColor;
 
-            primaryColor_colors.filter('[data-color="' + primaryColor + '"]').addClass('current');
-            $('body').attr('data-color-primary', primaryColor)
-        });
-        chrome.storage.local.get('color-accent', function(data) {
-            var defaultAccentColor = MaterialFreeboxOS.materialColors.defaultAccent,
-                accentColor = data['color-accent'] || defaultAccentColor;
+                primaryColor_colors.filter('[data-color="' + primaryColor + '"]').addClass('current');
+                $('body').attr('data-color-primary', primaryColor)
+            });
+            chrome.storage.local.get('color-accent', function (data) {
+                var defaultAccentColor = MaterialFreeboxOS.materialColors.defaultAccent,
+                    accentColor = data['color-accent'] || defaultAccentColor;
 
-            accentColor_colors.filter('[data-color="' + accentColor + '"]').addClass('current');
-            $('body').attr('data-color-accent', accentColor);
-        });
+                accentColor_colors.filter('[data-color="' + accentColor + '"]').addClass('current');
+                $('body').attr('data-color-accent', accentColor);
+            });
+        }
 
         // Update current colors
         $().add(primaryColor_colors).add(accentColor_colors).click(function() {
@@ -129,25 +135,21 @@
                 .prependTo(wallpapersUl);
         });
 
-        // Firefox: disable wallpapers URI & stop here
-        if (MaterialFreeboxOS.environment.isFirefox()) {
-            $('.unsupported').show();
-            return;
-        }
-
         var wallpapers_images = wallpapersUl.find('li'),
             wallpapers_url = $('#wallpapers-url');
 
-        // Retrieve current settings
-        chrome.storage.local.get('wallpaper', function(data) {
-            var defaultWallpaper = MaterialFreeboxOS.wallpaper.defaultWallpaper.image,
-                wallpaper = data['wallpaper'] || defaultWallpaper;
+        if (!MaterialFreeboxOS.environment.isFirefox()) {
+            // Retrieve current settings
+            chrome.storage.local.get('wallpaper', function (data) {
+                var defaultWallpaper = MaterialFreeboxOS.wallpaper.defaultWallpaper.image,
+                    wallpaper = data['wallpaper'] || defaultWallpaper;
 
-            if (MaterialFreeboxOS.wallpaper.findWallpaperInfos(wallpaper) != null)
-                wallpapers_images.filter('[data-uri="' + wallpaper + '"]').addClass('current');
-            else
-                wallpapers_url.val(wallpaper);
-        });
+                if (MaterialFreeboxOS.wallpaper.findWallpaperInfos(wallpaper) != null)
+                    wallpapers_images.filter('[data-uri="' + wallpaper + '"]').addClass('current');
+                else
+                    wallpapers_url.val(wallpaper);
+            });
+        }
 
         // Update current wallpaper: image
         wallpapers_images.click(function () {

@@ -66,16 +66,22 @@
             });
         },
         applyColors: function() {
-            chrome.storage.local.get('color-primary', function(data) {
-                var primaryColor = data['color-primary'] || MaterialFreeboxOS.materialColors.defaultPrimary;
+            if (MaterialFreeboxOS.environment.isFirefox()) {
+                // On Firefox, we cannot access chrome.storage.local: apply default colors
+                document.body.setAttribute('data-color-primary', MaterialFreeboxOS.materialColors.defaultPrimary);
+                document.body.setAttribute('data-color-accent', MaterialFreeboxOS.materialColors.defaultPrimary);
+            } else {
+                chrome.storage.local.get('color-primary', function (data) {
+                    var primaryColor = data['color-primary'] || MaterialFreeboxOS.materialColors.defaultPrimary;
 
-                document.body.setAttribute('data-color-primary', primaryColor);
-            });
-            chrome.storage.local.get('color-accent', function(data) {
-                var accentColor = data['color-accent'] || MaterialFreeboxOS.materialColors.defaultAccent;
+                    document.body.setAttribute('data-color-primary', primaryColor);
+                });
+                chrome.storage.local.get('color-accent', function (data) {
+                    var accentColor = data['color-accent'] || MaterialFreeboxOS.materialColors.defaultAccent;
 
-                document.body.setAttribute('data-color-accent', accentColor);
-            });
+                    document.body.setAttribute('data-color-accent', accentColor);
+                });
+            }
         },
         applyWallpaper: function() {
             // Retrieve setting
@@ -105,11 +111,9 @@
     // Append Material-Freebox-OS meta tag to head
     Injector.addMeta(Injector.metaName, true);
 
-    // Update wallpaper (defined in browser-action)
-    if (!MaterialFreeboxOS.environment.isFirefox()) {
-        Injector.applyColors();
-        Injector.applyWallpaper();
-    }
+    // Apply colors & wallpaper (defined in browser-action)
+    Injector.applyColors();
+    Injector.applyWallpaper();
 
     // Inject dependencies
     Injector.injectAll();
