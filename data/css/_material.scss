@@ -54,10 +54,6 @@ $material-colors: (
     'grey':     $color-grey,
     'blue-grey': $color-blue-grey
 );
-$defaults: (
-    'primary': 'blue',
-    'accent': 'green'
-);
 
 @each $material-color in $material-colors {
     $color-name: nth($material-color, 1);
@@ -71,9 +67,6 @@ $defaults: (
 
     @each $color-type in ('primary', 'accent') {
         $selector: 'body[data-color-#{$color-type}="#{$color-500}"]';
-        @if $color-name == map-get($defaults, $color-type) {
-            $selector: 'body, ' + $selector;
-        }
 
         #{$selector} {
             $color: $color-500;
