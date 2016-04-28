@@ -87,9 +87,9 @@ $defaults: (
                 '--dark': $color-dark,
                 '--active': $color-active
             ) {
-                .#{$color-type}-color#{nth($modifier, 1)}--color {      color: nth($modifier, 2)!important;        }
-                .#{$color-type}-color#{nth($modifier, 1)}--border {     border-color: nth($modifier, 2)!important; }
-                .#{$color-type}-color#{nth($modifier, 1)}--background { background: nth($modifier, 2)!important;   }
+                .#{$color-type}-color#{nth($modifier, 1)}--color {      color: nth($modifier, 2)!important;            }
+                .#{$color-type}-color#{nth($modifier, 1)}--border {     border-color: nth($modifier, 2)!important;     }
+                .#{$color-type}-color#{nth($modifier, 1)}--background { background-color: nth($modifier, 2)!important; }
             }
         }
     }
