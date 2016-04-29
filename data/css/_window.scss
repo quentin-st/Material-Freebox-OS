@@ -14,7 +14,7 @@
     @include transition-duration($timing-short);
     @include border-radius(2px!important);
     @extend .elevation-medium;
-    @extend .primary-color--background;
+    @extend .primary-color--background--important;
 
     // Blur / focus states
     &.x-window-focus-blurred {
@@ -33,7 +33,7 @@
         padding: 0 0 0 10px;
         border: 0;
         @include border-radius(2px 2px 0 0);
-        @extend .primary-color--dark--background;
+        @extend .primary-color--dark--background--important;
 
         .x-window-header-body {
             cursor: default;
@@ -107,7 +107,7 @@
         &, .x-header .x-tab-bar-body, .x-toolbar-docked-top {
             padding: 0;
             @include box-shadow(0 1px 3px 0 rgba(#000, 0.2));
-            @extend .primary-color--background;
+            @extend .primary-color--background--important;
         }
 
         .x-header {
@@ -187,7 +187,7 @@
         padding-bottom: 4px;
 
         &.x-toolbar-default {
-            @extend .primary-color--dark--background;
+            @extend .primary-color--dark--background--important;
         }
 
         .x-btn {
@@ -215,8 +215,8 @@
 
 // Messagebox
 .x-message-box {
-    .x-window-body, .x-toolbar-footer {
-        background: #fff!important;
+    .x-window-body .x-box-inner, .x-toolbar-footer {
+        background-color: #fff!important;
     }
 
     .x-window-body {

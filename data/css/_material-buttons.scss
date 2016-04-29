@@ -34,7 +34,7 @@
     @extend .material-button;
 
     border: 0!important;
-    background: transparent!important;
+    background-color: transparent;
 
     .x-btn-inner, .x-btn-icon-el {
         color: #000;
@@ -42,10 +42,10 @@
     }
 
     &:hover {
-        background: $color-hover-light !important;
+        background-color: $color-hover-light;
     }
     &:active, &.x-btn-pressed {
-        background: $color-active-light !important;
+        background-color: $color-active-light;
 
         color: #000;
     }
@@ -54,7 +54,7 @@
 .material-button--elevated {
     @extend .material-button;
 
-    background: rgba(0, 0, 0, 0.05) !important;
+    background-color: rgba(0, 0, 0, 0.05);
     border: 1px solid rgba(0, 0, 0, 0.15) !important;
 
     .x-btn-inner {
@@ -62,12 +62,12 @@
     }
 
     &:hover {
-        background: $color-hover-light !important;
+        background-color: $color-hover-light;
         @include box-shadow($elevation-1);
     }
 
     &:active, &.x-btn-pressed {
-        background: $color-active-light !important;
+        background-color: $color-active-light;
         @include box-shadow($elevation-negative);
 
         .x-btn-icon-el {
@@ -91,7 +91,7 @@
         color: #fff;
     }
     &:active, &.x-btn-pressed {
-        @extend .primary-color--active--background;
+        @extend .primary-color--active--background--important;
 
         .x-btn-icon-el {
             color: #fff;

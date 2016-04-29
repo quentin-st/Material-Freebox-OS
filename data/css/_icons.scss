@@ -167,7 +167,8 @@ $icons-16: (
     player-record:  $mdi-record,
     player-volume:  $mdi-volume-high,
     sound-mute:     $mdi-volume-off,
-    subtitle:       $mdi-message-text
+    subtitle:       $mdi-message-text,
+    pvr:            $mdi-record-rec
 );
 
 // Sprite icons (no .btn- prefix)
@@ -194,11 +195,11 @@ $icons-16-no-prefix: (
 // Define classes
 .app-icons {
     background: none 0;
-
-    font-size: 16px;
 }
 .app-icons-16 {
     @extend .app-icons;
+
+    font-size: 16px;
 }
 .app-icons-24 {
     @extend .app-icons;
