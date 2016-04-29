@@ -168,7 +168,10 @@ $icons-16: (
     player-volume:  $mdi-volume-high,
     sound-mute:     $mdi-volume-off,
     subtitle:       $mdi-message-text,
-    pvr:            $mdi-record-rec
+    pvr:            $mdi-record-rec,
+    settings-parentalfilterconfig: $mdi-human-child,
+    transmit:       $mdi-wifi,
+    wol:            $mdi-power,
 );
 
 // Sprite icons (no .btn- prefix)
@@ -187,7 +190,12 @@ $icons-16-no-prefix: (
     url-icon-profile:   $mdi-account,
     url-icon-blog:      $mdi-web,
     url-icon-site:      $mdi-web,
-    url-icon-other:     $mdi-web
+    url-icon-other:     $mdi-web,
+    app-icons-16-downloader: $mdi-cloud-download,
+    app-icons-16-settings-ports-portredir: $mdi-power-socket,
+    app-icons-16-settings-dhcp: $mdi-lan,
+    icon-whitelist:     $mdi-playlist-check,
+    icon-blacklist:     $mdi-playlist-remove
 );
 
 
@@ -298,10 +306,6 @@ $icons-16-no-prefix: (
 
 
 // Separate icons
-.app-icons-16-downloader {
-    @extend .app-icons-16;
-    @include material-icon($mdi-cloud-download);
-}
 .x-message-box-question, .x-message-box-warning {
     font-size: 35px;
     color: $color-text-dark;
