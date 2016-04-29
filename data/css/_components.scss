@@ -11,6 +11,7 @@
     border: 0!important;
     border-bottom: 3px solid transparent!important;
     @include transition-duration(150ms);
+    @include transition-property(background, border-bottom-color);
     @include border-radius(0);
 
     .x-tab-inner {
