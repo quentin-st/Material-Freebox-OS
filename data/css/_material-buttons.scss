@@ -14,7 +14,6 @@
     @include transition-duration($timing-short);
     @include border-radius(2px!important);
     @include box-shadow(none);
-    @extend .primary-color--background;
 
     .x-btn-inner {
         color: #333;
@@ -76,8 +75,14 @@
     }
 }
 
-.material-button--flat--primary     { @extend .material-button--flat; }
-.material-button--elevated--primary { @extend .material-button--elevated; }
+.material-button--flat--primary {
+    @extend .primary-color--background;
+    @extend .material-button--flat;
+}
+.material-button--elevated--primary {
+    @extend .primary-color--background;
+    @extend .material-button--elevated;
+}
 
 .material-button--flat--primary,
 .material-button--elevated--primary {
