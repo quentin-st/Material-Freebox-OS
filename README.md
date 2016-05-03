@@ -9,21 +9,24 @@ and Chrome OS specs.
 [![Download on Chrome Web Store](doc/download-chrome-web-store.png)](https://chrome.google.com/webstore/detail/material-freebox-os/lhdfonhgkclaigpfmclbahllambeednh)
 [![Download for Firefox](doc/download-firefox.png)](https://addons.mozilla.org/fr/firefox/addon/material-freeboxos/)
 
-| ![Material-Freebox-OS](doc/screenshot1.png)  | ![Material-Freebox-OS](doc/screenshot2.png) | ![Material-Freebox-OS](doc/screenshot3.png) |
-|:--------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| Freebox OS desktop                           | Freebox OS windows                          | Wallpaper dialog (only for Chrome)          |
+![Material-Freebox-OS](doc/screenshot2.png)
 
-This project relies on the following projects:
-
-* [Material Design Icons](https://materialdesignicons.com)
-* [Roboto font](https://www.google.com/fonts/specimen/Roboto)
-* Wallpaper credits: 1: *Google Maps / DigitalGlobe*, 2: *Google Maps / Aerometrex*
+See [below](#screenshots) for more screenshots.
 
 ## How does it work?
 Quite straight-forward actually: [`injector.js`](data/js/injector.js) file is injected by either Chrome or Firefox inside the tab.
  His aim is to inject the necessary resources - `style.css`, `script.js`, MaterialDesignIcons stylesheet and Roboto font.
 
+We use SCSS (compiled CSS) to override Freebox OS's styles alongside with some Javascript when necessary.
+
 That's it!
+
+This project relies on the following resources:
+
+* [Material Design Icons](https://materialdesignicons.com)
+* [Roboto font](https://www.google.com/fonts/specimen/Roboto)
+* Wallpaper credits: see [`material-freebox-os.js/MaterialFreeboxOS.wallpaper.wallpapers`](https://github.com/chteuchteu/Material-Freebox-OS/blob/master/data/js/material-freebox-os.js#L71)
+
 
 ### How about security?
 That's a legitimate question: you can browse Javascript files ([`injector.js`](data/js/injector.js) and [`script.js`](data/js/script.js))
@@ -40,8 +43,12 @@ The main project is based on SCSS to build CSS files: you'll need an appropriate
 I'd rather keep this project maintainable and compatible with upcoming releases of Freebox OS than doing some Javascript black
 magic to set these minimize/maximize/close buttons padding.
 
-### Sidenotes
-I'm really sorry for all these `!important` in the stylesheets. As you may know, Freebox OS use a lot of these so I had no choice.
+## Screenshots
+![Material-Freebox-OS](doc/screenshot1.png)
+![Material-Freebox-OS](doc/screenshot3.png)
+
+Check Material Freebox OS's page on the [Chrome Web Store](https://chrome.google.com/webstore/detail/material-freebox-os/lhdfonhgkclaigpfmclbahllambeednh)
+ or [Firefox addons repository](https://addons.mozilla.org/fr/firefox/addon/material-freeboxos/) for some more.
 
 ## Licensing
 Material-Freebox-OS is distributed under the GNU GPL version 2.
