@@ -8,6 +8,7 @@ and Chrome OS specs.
 
 [![Download on Chrome Web Store](doc/download-chrome-web-store.png)](https://chrome.google.com/webstore/detail/material-freebox-os/lhdfonhgkclaigpfmclbahllambeednh)
 [![Download for Firefox](doc/download-firefox.png)](https://addons.mozilla.org/fr/firefox/addon/material-freeboxos/)
+[![Download for Opera](doc/download-opera.png)](doc/opera/opera-en.md)
 
 ![Material-Freebox-OS](doc/screenshot2.png)
 
