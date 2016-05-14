@@ -1,6 +1,6 @@
 # Installing Material Freebox OS on Opera
 
-[[EN] Installer Material Freebox OS sur Opera](opera-fr.md)
+[[FR] Installer Material Freebox OS sur Opera](opera-fr.md)
 
 Opera allows you to install & use Google Chrome extensions. Follow these steps to install Material Freebox OS:
 
