@@ -1,0 +1,71 @@
+/**
+ * Material-Freebox-OS
+ * Tasks list
+ */
+
+.task-list-win {
+    .task-list-grid-body {
+        background: transparent;
+
+        .x-grid-table {
+            border: 0;
+
+            .x-grid-row {
+                &, &.x-grid-row-over {
+                    background: transparent;
+                }
+            }
+
+            .x-grid-cell {
+                background-color: transparent!important;
+
+                .fstask-view {
+                    border: 0;
+                    margin: 0;
+                    background-color: #fff;
+                    @include border-radius(2px!important);
+                    @extend .elevation-low;
+
+                    .fstask-title {
+                        padding: 10px 40px 10px 10px;
+                        height: auto;
+                        @include border-radius(2px 2px 0 0);
+                    }
+
+                    .fstask-content {
+                        border: 0;
+                        background: transparent;
+                        color: $color-text-dark;
+                        padding: 8px 10px;
+
+                        // Progressbar
+                        .fstask-progress-outer {
+                            background: #ccc;
+
+                            .fstask-progress {
+                                @include border-radius(2px);
+
+                                &.fstask-progress-done {
+                                    background-color: material-color($color-green);
+                                }
+                            }
+                            .fstask-progress-txt {
+                                font-size: 12px;
+                            }
+                        }
+
+                        .fstask-path {
+                            text-overflow: ellipsis;
+                        }
+                    }
+                }
+            }
+
+            .task-list-grid-action-column img {
+                margin-left: 5px;
+                margin-top: 10px;
+                margin-right: -2px;
+            }
+        }
+    }
+}
