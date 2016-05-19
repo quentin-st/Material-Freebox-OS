@@ -66,8 +66,10 @@
                 @include border-radius(50%);
                 @extend .elevation-low;
 
+                // Default background color
+                @extend .accent-color--background;
 
-                // Set colors
+                // Override for specific icons
                 @each $name, $color in $icons-colors-80-32 {
                     &.app-icons-32-#{$name} {
                         background-color: $color;
