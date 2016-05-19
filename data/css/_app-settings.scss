@@ -37,3 +37,14 @@
         }
     }
 }
+
+.x-docked {
+    // Remove background from wifi settings left pane icons
+    .btn-32-lock-edit,
+    .btn-32-wifi-calendar,
+    .btn-32-wifi-toggle-on,
+    .btn-32-wifi-toggle-off,
+    .btn-32-delete {
+        background: none;
+    }
+}
