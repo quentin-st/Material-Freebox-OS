@@ -56,6 +56,9 @@ $icons-32: (
     pub-toggle-on:  $mdi-hexagon,
     harddisk:       $mdi-harddisk,
     usb:            $mdi-usb,
+    lock-edit:      $mdi-lock-open,
+    wifi-calendar:  $mdi-clock,
+    delete:         $mdi-delete,
     settings-connectionconfig:         $mdi-settings-box,
     settings-connectionipv6config:     $mdi-web,
     settings-connectiondyndns:         $mdi-dns,
@@ -126,9 +129,9 @@ $icons-16: (
     filter-add:     $mdi-filter,
     edit:           $mdi-pencil,
     winrar-add:     $mdi-zip-box,
-    cut:            $mdi-content-cut,
     page-copy:      $mdi-content-copy,
-    btn-page-paste: $mdi-content-paste,
+    cut:            $mdi-content-cut,
+    page-paste: $mdi-content-paste,
     folder-delete:  $mdi-delete,
     folder-edit:    $mdi-rename-box,
     application:    $mdi-open-in-app,
@@ -203,27 +206,27 @@ $icons-16-no-prefix: (
 
 // USE ICONS DEFINITIONS
 // Define classes
-.app-icons {
+@mixin app-icon() {
     background: none 0;
 }
 .app-icons-16 {
-    @extend .app-icons;
+    @include app-icon;
 
     font-size: 16px;
 }
 .app-icons-24 {
-    @extend .app-icons;
+    @include app-icon;
 
     font-size: 24px;
 }
 .app-icons-32 {
-    @extend .app-icons;
+    @include app-icon;
 
     color: $color-icon-dark;
     font-size: 28px;
 }
 .app-icons-80 {
-    @extend .app-icons;
+    @include app-icon;
 
     display: block!important;
     font-size: 60px!important;
