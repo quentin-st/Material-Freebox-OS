@@ -55,10 +55,7 @@ $material-colors: (
     'blue-grey': $color-blue-grey
 );
 
-@each $material-color in $material-colors {
-    $color-name: nth($material-color, 1);
-    $color-hexes: nth($material-color, 2);
-
+@each $color-name, $color-hexes in $material-colors {
     $color-500: material-color($color-hexes, 500);
     $color-600: material-color($color-hexes, 600);
     $color-700: material-color($color-hexes, 700);
@@ -74,16 +71,16 @@ $material-colors: (
             $color-dark: $color-700;
             $color-active: $color-800;
 
-            @each $modifier in (
+            @each $modifier, $color in (
                 '': $color,
                 '--hover': $color-hover,
                 '--dark': $color-dark,
                 '--active': $color-active
             ) {
-                .#{$color-type}-color#{nth($modifier, 1)}--color {      color: nth($modifier, 2)!important;            }
-                .#{$color-type}-color#{nth($modifier, 1)}--border {     border-color: nth($modifier, 2)!important;     }
-                .#{$color-type}-color#{nth($modifier, 1)}--background { background-color: nth($modifier, 2);           }
-                .#{$color-type}-color#{nth($modifier, 1)}--background--important { background-color: nth($modifier, 2)!important; }
+                .#{$color-type}-color#{$modifier}--color {      color: $color!important;            }
+                .#{$color-type}-color#{$modifier}--border {     border-color: $color!important;     }
+                .#{$color-type}-color#{$modifier}--background { background-color: $color;           }
+                .#{$color-type}-color#{$modifier}--background--important { background-color: $color!important; }
             }
         }
     }

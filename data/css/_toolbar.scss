@@ -68,9 +68,9 @@
 
 
                 // Set colors
-                @each $color in $icons-colors-80-32 {
-                    &.app-icons-32-#{nth($color, 1)} {
-                        background-color: nth($color, 2);
+                @each $name, $color in $icons-colors-80-32 {
+                    &.app-icons-32-#{$name} {
+                        background-color: $color;
                     }
                 }
             }
@@ -152,9 +152,9 @@
                     top: 6px!important;
 
                     // Set colors
-                    @each $color in $icons-colors-80-32 {
-                        &.app-icons-32-#{nth($color, 1)} {
-                            color: nth($color, 2);
+                    @each $name, $color in $icons-colors-80-32 {
+                        &.app-icons-32-#{$name} {
+                            color: $color;
                         }
                     }
                 }

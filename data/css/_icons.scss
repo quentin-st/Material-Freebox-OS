@@ -237,75 +237,75 @@ $icons-16-no-prefix: (
 .desktop-icon {
     @extend .app-icons-80;
 
-    @each $icon in $icons-80 {
-        &.app-icons-80-#{nth($icon, 1)} {
-            @include material-icon(nth($icon, 2));
+    @each $name, $mdi in $icons-80 {
+        &.app-icons-80-#{$name} {
+            @include material-icon($mdi);
         }
     }
 }
 
 // UI icons (32)
-@each $icon in $icons-32 {
-    $selector-suffix: "32-#{nth($icon, 1)}:not(img)";
+@each $name, $mdi in $icons-32 {
+    $selector-suffix: "32-#{$name}:not(img)";
 
     .btn-#{$selector-suffix}, .app-icons-#{$selector-suffix} {
         @extend .app-icons-32;
-        @include material-icon(nth($icon, 2));
+        @include material-icon($mdi);
     }
 }
 
 // Toolbar icons (24)
-@each $icon in $icons-24 {
-    $selector: ".btn-24-#{nth($icon, 1)}:not(img)";
+@each $name, $mdi in $icons-24 {
+    $selector: ".btn-24-#{$name}:not(img)";
 
     #{$selector},
     .x-btn-icon-text-right #{$selector},
     .x-btn-icon-text-left #{$selector} {
         @extend .app-icons-24;
-        @include material-icon(nth($icon, 2));
+        @include material-icon($mdi);
     }
 }
 
 // Toolbar icons (16)
-@each $icon in $icons-16 {
-    $selector: ".btn-#{nth($icon, 1)}:not(img)";
+@each $name, $mdi in $icons-16 {
+    $selector: ".btn-#{$name}:not(img)";
 
     #{$selector},
     .x-btn-icon-text-right #{$selector},
     .x-btn-icon-text-left #{$selector} {
         @extend .app-icons-16;
-        @include material-icon(nth($icon, 2));
+        @include material-icon($mdi);
     }
 }
-@each $icon in $icons-16-no-prefix {
-    $selector: ".#{nth($icon, 1)}:not(img)";
+@each $name, $mdi in $icons-16-no-prefix {
+    $selector: ".#{$name}:not(img)";
 
     #{$selector} {
         @extend .app-icons-16;
-        @include material-icon(nth($icon, 2));
+        @include material-icon($mdi);
     }
 }
 
 // Set colors
 // Toolbar icons (size: 24)
-@each $icon in $icons-colors-24 {
-    $selector: ".btn-24-#{nth($icon, 1)}:not(img)";
+@each $name, $color in $icons-colors-24 {
+    $selector: ".btn-24-#{$name}:not(img)";
 
     #{$selector},
     .x-btn-icon-text-right #{$selector},
     .x-btn-icon-text-left #{$selector} {
-        color: nth($icon, 2);
+        color: $color;
     }
 }
 
 // Toolbar icons (16)
-@each $icon in $icons-colors-16 {
-    $selector: ".btn-#{nth($icon, 1)}:not(img)";
+@each $name, $color in $icons-colors-16 {
+    $selector: ".btn-#{$name}:not(img)";
 
     #{$selector},
     .x-btn-icon-text-right #{$selector},
     .x-btn-icon-text-left #{$selector} {
-        color: nth($icon, 2);
+        color: $color;
     }
 }
 

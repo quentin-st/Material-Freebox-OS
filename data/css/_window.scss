@@ -73,12 +73,12 @@
                     "Aide de l'application": $mdi-help
                 );
 
-                @each $icon in $window-icons {
-                    &[aria-label="#{nth($icon, 1)}"] {
+                @each $name, $mdi in $window-icons {
+                    &[aria-label="#{$name}"] {
                         padding-top: 10px;
                         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
                         text-align: center;
-                        @include material-icon(nth($icon, 2));
+                        @include material-icon($mdi);
                     }
                 }
 

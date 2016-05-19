@@ -112,10 +112,10 @@ $prog-elem-colors: (
             @include border-radius(1px);
 
             // Colors
-            @each $icon in $prog-elem-colors {
-                &.epg-prog-cat-#{nth($icon, 1)} {
+            @each $index, $icon in $prog-elem-colors {
+                &.epg-prog-cat-#{$index} {
                     @include box-shadow(
-                        inset #{nth($icon, 2)} 0 3px 0,
+                        inset $icon 0 3px 0,
                         $elevation-1
                     );
                 }
