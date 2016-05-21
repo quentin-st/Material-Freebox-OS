@@ -108,6 +108,12 @@
         margin-top: 5px;
         color: rgba(#fff, 0.9);
         text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+
+        // Disk full icon
+        &.btn-32-disk-full {
+            margin-top: 4px;
+            color: material-color($color-red);
+        }
     }
 
     // Clock
