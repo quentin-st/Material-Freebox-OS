@@ -72,7 +72,7 @@
                 // Override for specific icons
                 @each $name, $color in $icons-colors-80-32 {
                     &.app-icons-32-#{$name} {
-                        background-color: $color;
+                        background-color: $color!important;
                     }
                 }
             }
