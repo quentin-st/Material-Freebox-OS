@@ -29,7 +29,7 @@ files_generic = [
 
     'data/js/injector.js',
     'data/js/material-freebox-os.js',
-    'data/js/script.js',
+    'data/js/content-script.js',
 
     'manifest.json'
 ]
@@ -48,7 +48,7 @@ def do_release(flavour):
     output_dir_name = 'Material-Freebox-OS-{}-{}'.format(flavour, version)
     output_dir = os.path.join(release_dir, output_dir_name)
 
-    # Expand files list (js/* => [js/script.js, js/injector.js]
+    # Expand files list (js/* => [js/content-script.js, js/injector.js]
     expanded_files = []
     files = files_generic + files_flavours[flavour]
     for file in files:

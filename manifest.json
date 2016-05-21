@@ -54,7 +54,7 @@
     ],
     "web_accessible_resources": [
         "data/js/material-freebox-os.js",
-        "data/js/script.js",
+        "data/js/content-script.js",
 
         "data/img/mdi-check.png",
         "data/img/wallpaper*.jpg",

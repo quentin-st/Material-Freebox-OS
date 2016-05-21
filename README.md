@@ -16,7 +16,7 @@ See [below](#screenshots) for more screenshots.
 
 ## How does it work?
 Quite straight-forward actually: [`injector.js`](data/js/injector.js) file is injected by either Chrome or Firefox inside the tab.
- His aim is to inject the necessary resources - `style.css`, `script.js`, MaterialDesignIcons stylesheet and Roboto font.
+ His aim is to inject the necessary resources - `style.css`, `content-script.js`, MaterialDesignIcons stylesheet and Roboto font.
 
 We use SCSS (compiled CSS) to override Freebox OS's styles alongside with some Javascript when necessary.
 
@@ -30,7 +30,7 @@ This project relies on the following resources:
 
 
 ### How about security?
-That's a legitimate question: you can browse Javascript files ([`injector.js`](data/js/injector.js) and [`script.js`](data/js/script.js))
+That's a legitimate question: you can browse Javascript files ([`injector.js`](data/js/injector.js) and [`content-script.js`](data/js/content-script.js))
  in this repo or directly from Chrome's debugger tools - to see that their sole purpose is to manipulate the DOM to apply
  some styling that couldn't be set in CSS.
 

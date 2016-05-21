@@ -29,7 +29,7 @@
             return {
                 js: [
                     'data/js/material-freebox-os.js',
-                    'data/js/script.js'
+                    'data/js/content-script.js'
                 ],
                 css: [
                     'data/css/style.css',
