@@ -76,27 +76,27 @@
 }
 
 .material-button--flat--primary {
-    @extend .primary-color--background;
+    @extend .accent-color--background;
     @extend .material-button--flat;
 }
 .material-button--elevated--primary {
-    @extend .primary-color--background;
+    @extend .accent-color--background;
     @extend .material-button--elevated;
 }
 
 .material-button--flat--primary,
 .material-button--elevated--primary {
-    @extend .primary-color--background;
+    @extend .accent-color--background;
 
     &:hover {
-        @extend .primary-color--hover--background;
+        @extend .accent-color--hover--background;
     }
 
     .x-btn-inner, .x-btn-icon-el {
         color: #fff;
     }
     &:active, &.x-btn-pressed {
-        @extend .primary-color--active--background--important;
+        @extend .accent-color--active--background--important;
 
         .x-btn-icon-el {
             color: #fff;
