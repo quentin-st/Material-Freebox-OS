@@ -203,7 +203,10 @@ $icons-16-no-prefix: (
     app-icons-16-settings-ports-portredir: $mdi-power-socket,
     app-icons-16-settings-dhcp: $mdi-lan,
     icon-whitelist:     $mdi-playlist-check,
-    icon-blacklist:     $mdi-playlist-remove
+    icon-blacklist:     $mdi-playlist-remove,
+    x-hmenu-sort-asc:   $mdi-sort-ascending,
+    x-hmenu-sort-desc:  $mdi-sort-descending,
+    x-cols-icon:        $mdi-view-column
 );
 
 
