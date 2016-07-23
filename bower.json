@@ -1,0 +1,14 @@
+{
+  "name": "Material-Freebox-OS",
+  "homepage": "https://github.com/chteuchteu/Material-Freebox-OS",
+  "authors": [
+    "Quentin Stoeckel <stoeckel.quentin@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "GPL-2.0",
+  "private": true,
+  "dependencies": {
+    "materialdesignicons-scss-variables": "^1.0.2"
+  }
+}

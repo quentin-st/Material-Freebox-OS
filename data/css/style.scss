@@ -4,8 +4,10 @@
 
 // Import part files
 @import 'mixins';
-@import 'materialdesignicons';
-@import 'materialdesignicons-vars';
+
+// Bower materialdesignicons-scss-variables dependency
+@import '../../bower_components/materialdesignicons-scss-variables/dist/materialdesignicons';
+@import '../../bower_components/materialdesignicons-scss-variables/dist/materialdesignicons-vars';
 
 @import 'material';
 @import 'material-buttons';

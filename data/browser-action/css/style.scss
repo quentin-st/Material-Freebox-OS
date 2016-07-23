@@ -4,8 +4,8 @@
  */
 
 @import '../../css/mixins';
-@import '../../css/materialdesignicons';
-@import '../../css/materialdesignicons-vars';
+@import '../../../bower_components/materialdesignicons-scss-variables/dist/materialdesignicons';
+@import '../../../bower_components/materialdesignicons-scss-variables/dist/materialdesignicons-vars';
 
 @import '../../css/material';
 @import '../../css/material-buttons';
