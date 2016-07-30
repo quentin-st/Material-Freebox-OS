@@ -12,7 +12,7 @@
     border-bottom: 3px solid transparent!important;
     @include transition-duration(150ms);
     @include transition-property(background, border-bottom-color);
-    @include border-radius(0);
+    border-radius: 0;
 
     .x-tab-inner {
         color: #fff!important;
@@ -27,7 +27,7 @@
 
     &.x-tab-top-disabled {
         background: none!important;
-        @include opacity(0.5);
+        opacity: 0.5;
     }
 
     &:hover {
@@ -37,7 +37,7 @@
 
 // Panel header
 .x-panel-header {
-    @include border-radius(2px 2px 0 0);
+    border-radius: 2px 2px 0 0;
 
     .x-panel-header-text-default {
         font-family: $roboto;
@@ -48,7 +48,7 @@
 // Table header
 .x-grid-header-ct {
     background: $color-background-light none;
-    @include box-shadow(0 1px 4px rgba(0, 0, 0, 0.3));
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 
     .x-column-header {
         background: $color-background-light none;
@@ -108,7 +108,7 @@
 // Dropdown, contextual menu
 .x-menu {
     @extend .elevation-low;
-    @include border-radius(2px);
+    border-radius: 2px;
 
     .x-menu-body {
         border: 0;
@@ -125,7 +125,7 @@
             border-color: transparent;
             @include transition-property(background);
             @include transition-duration($timing-short);
-            @include border-radius(0);
+            border-radius: 0;
 
             .x-menu-item-link {
                 cursor: default;
@@ -187,7 +187,7 @@
 .x-tip {
     border: 0;
     background-color: $color-dark;
-    @include border-radius(2px);
+    border-radius: 2px;
     @extend .elevation-lowest;
 
     .x-tip-body {
@@ -230,7 +230,7 @@
 .selectable-item {
     border: 0;
     background-color: $color-background-light;
-    @include border-radius(1px);
+    border-radius: 1px;
     @include transition-property(box-shadow);
     @include transition-duration($timing-short);
     @extend .elevation-lowest;

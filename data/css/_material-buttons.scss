@@ -12,8 +12,8 @@
     margin: 3px 1px;
     @include transition-property(background, box-shadow);
     @include transition-duration($timing-short);
-    @include border-radius(2px!important);
-    @include box-shadow(none);
+    border-radius: 2px!important;
+    box-shadow: none;
 
     .x-btn-inner {
         color: #333;
@@ -62,12 +62,12 @@
 
     &:hover {
         background-color: $color-hover-light;
-        @include box-shadow($elevation-1);
+        box-shadow: $elevation-1;
     }
 
     &:active, &.x-btn-pressed {
         background-color: $color-active-light;
-        @include box-shadow($elevation-negative);
+        box-shadow: $elevation-negative;
 
         .x-btn-icon-el {
             color: #000;

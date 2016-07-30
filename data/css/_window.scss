@@ -4,7 +4,7 @@
  */
 
 .x-css-shadow {
-    @include box-shadow(none!important);
+    box-shadow: none!important;
 }
 
 .x-window {
@@ -12,7 +12,7 @@
     border: 0!important;
     @include transition-property(box-shadow);
     @include transition-duration($timing-short);
-    @include border-radius(2px!important);
+    border-radius: 2px!important;
     @extend .elevation-medium;
     @extend .primary-color--background--important;
 
@@ -21,7 +21,7 @@
         @extend .elevation-low;
 
         .x-window-header .x-window-header-body {
-            @include opacity(0.3);
+            opacity: 0.3;
         }
     }
     &.x-window-focus-focused { }
@@ -32,7 +32,7 @@
 
         padding: 0 0 0 10px;
         border: 0;
-        @include border-radius(2px 2px 0 0);
+        border-radius: 2px 2px 0 0;
         @extend .primary-color--dark--background--important;
 
         .x-window-header-body {
@@ -106,7 +106,7 @@
 
         &, .x-header .x-tab-bar-body, .x-toolbar-docked-top {
             padding: 0;
-            @include box-shadow(0 1px 3px 0 rgba(#000, 0.2));
+            box-shadow: 0 1px 3px 0 rgba(#000, 0.2);
             @extend .primary-color--background--important;
         }
 
@@ -123,7 +123,7 @@
                 cursor: default;
                 border: 0!important;
                 padding: 14px 10px;
-                @include border-radius(0);
+                border-radius: 0;
                 @include transition-property(background);
                 @include transition-duration($timing-short);
 
@@ -208,7 +208,7 @@
         @include transition-property(box-shadow);
 
         &:hover {
-            @include box-shadow(inset 0 0 1px rgba(#000, 0.8));
+            box-shadow: inset 0 0 1px rgba(#000, 0.8);
         }
     }
 }
@@ -220,7 +220,7 @@
     }
 
     .x-window-body {
-        @include box-shadow(none);
+        box-shadow: none;
     }
     .x-toolbar-footer {
         margin-top: 0;

@@ -11,7 +11,7 @@ body {
     margin: 0;
     background-image: url('../img/wallpaper1.jpg');
     background-position: center;
-    @include background-size(cover);
+    background-size: cover;
 }
 
 // Logo
@@ -41,7 +41,7 @@ body {
             font-size: 21px;
             color: rgba(#fff, 0.95);
             text-shadow: 0 0 4px rgba(#000, 0.5);
-            @include opacity(0.6);
+            opacity: 0.6;
         }
     }
 }
@@ -60,7 +60,7 @@ body {
         font-size: 42px!important;
         line-height: 60px;
         text-shadow: 1px 1px 1px rgba(#000, 0.1);
-        @include border-radius(50%);
+        border-radius: 50%;
         @extend .elevation-low;
 
         // Set colors
@@ -85,7 +85,7 @@ body {
         border: 0;
         background-color: $color-active-dark;
         @extend .elevation-medium;
-        @include border-radius(2px!important);
+        border-radius: 2px!important;
         @include transition-duration($timing-short);
     }
 
@@ -102,7 +102,7 @@ body {
 #mobileInfo {
     border: 0;
     background-color: $color-dark;
-    @include border-radius(2px);
+    border-radius: 2px;
     @extend .elevation-low;
 
     h3 {
@@ -127,13 +127,13 @@ body {
     font-size: 12px;
     text-shadow: 1px 1px 0 rgba(#000, 0.3);
     text-decoration: none;
-    @include opacity(0.5);
-    @include rotate(-90deg);
+    opacity: 0.5;
+    @include transform(rotate(-90deg));
     @include transform-origin(right bottom);
     @include transition-duration($timing-short);
     @include transition-property(opacity);
 
     &:hover {
-        @include opacity(0.8);
+        opacity: 0.8;
     }
 }

@@ -12,7 +12,7 @@
 
     &.solid-background {
         background: $color-dark!important;
-        @include box-shadow(0 0 8px -1px rgba(#000, 0.8));
+        box-shadow: 0 0 8px -1px rgba(#000, 0.8);
     }
 
     // Main button
@@ -40,7 +40,7 @@
         background: none!important;
         border: none!important;
         border-bottom: 2px solid transparent!important;
-        @include border-radius(0);
+        border-radius: 0;
         @include transition-duration($timing-short);
 
         // Let shadow go outside the container
@@ -63,7 +63,7 @@
                 line-height: 32px;
                 color: #fff;
                 text-shadow: 1px 1px 1px rgba(#000, 0.3);
-                @include border-radius(50%);
+                border-radius: 50%;
                 @extend .elevation-low;
 
                 // Default background color
@@ -93,7 +93,7 @@
         background-color: transparent!important;
         border-width: 0!important;
         padding: 0;
-        @include box-shadow(none!important);
+        box-shadow: none!important;
 
         .x-btn-icon-el {
             font-size: 28px;
@@ -122,7 +122,7 @@
             cursor: default;
             padding: 4px 1px;
             margin: 14px 6px;
-            @include border-radius(2px);
+            border-radius: 2px;
             background-color: rgba(0, 0, 0, 0.4);
             font-family: $roboto;
             font-size: 14px;
@@ -135,7 +135,7 @@
 // Apps list (start menu)
 .fbx-start-menu {
     border-color: transparent;
-    @include border-radius(2px);
+    border-radius: 2px;
     @extend .elevation-medium;
 
     .x-menu-body {
@@ -144,7 +144,7 @@
         background-image: none!important;
 
         .x-menu-item {
-            @include border-radius(0);
+            border-radius: 0;
 
             .x-menu-item-link {
                 @include transition-property(background);
@@ -196,7 +196,7 @@
             }
 
             &.grayscale {
-                @include opacity(0.5);
+                opacity: 0.5;
 
 
                 a, a .x-menu-item-text {

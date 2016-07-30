@@ -14,7 +14,7 @@
 
     .setting-app {
         cursor: default;
-        @include border-radius(2px);
+        border-radius: 2px;
         @include transition-property(background);
         @include transition-duration($timing-short);
 

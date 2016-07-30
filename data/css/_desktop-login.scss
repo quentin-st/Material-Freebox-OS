@@ -6,7 +6,7 @@
 // Login form, loading & restart splashes
 #formContent, #loadingInfo {
     background-color: #fff;
-    @include border-radius(2px);
+    border-radius: 2px;
     @extend .elevation-medium;
 
     h3 {
@@ -54,7 +54,7 @@
         }
         #loadContent {
             background: material-color($color-green);
-            @include border-radius(2px);
+            border-radius: 2px;
         }
     }
 }

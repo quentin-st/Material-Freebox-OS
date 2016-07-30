@@ -9,6 +9,7 @@
   "license": "GPL-2.0",
   "private": true,
   "dependencies": {
-    "materialdesignicons-scss-variables": "^1.0.2"
+    "materialdesignicons-scss-variables": "^1.0.2",
+    "bourbon": "^4.2.7"
   }
 }

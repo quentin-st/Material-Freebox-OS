@@ -3,7 +3,10 @@
  * Browser action style
  */
 
-@import '../../css/mixins';
+// Bower bourbon dependency
+@import '../../../bower_components/bourbon/app/assets/stylesheets/bourbon';
+
+// Bower materialdesignicons-scss-variables dependency
 @import '../../../bower_components/materialdesignicons-scss-variables/dist/materialdesignicons';
 @import '../../../bower_components/materialdesignicons-scss-variables/dist/materialdesignicons-vars';
 
@@ -24,7 +27,7 @@ body {
     color: $color-text-dark;
 
     cursor: default;
-    @include no-select;
+    @include user-select(none);
 }
 
 * {
@@ -46,7 +49,7 @@ h2 {
         color: $color-text-dark;
         text-decoration: none;
         font-size: 10px;
-        @include opacity(0.4);
+        opacity: 0.4;
     }
 }
 
@@ -70,7 +73,7 @@ h2 {
                 cursor: pointer;
                 display: inline-block;
                 margin: 2px;
-                @include border-radius(2px);
+                border-radius: 2px;
 
                 // Check icon
                 position: relative;
@@ -84,11 +87,11 @@ h2 {
                     text-shadow: 1px 1px 1px rgba(#000, 0.3);
                     @include transition-duration($timing-short);
                     @include material-icon-onbefore($mdi-check-circle);
-                    @include opacity(0);
+                    opacity: 0;
                 }
 
                 &.current:before {
-                    @include opacity(1);
+                    opacity: 1;
                 }
             }
         }
@@ -118,7 +121,7 @@ h2 {
                 height: 75px;
                 background-position: center;
                 background-repeat: no-repeat;
-                @include background-size(cover);
+                background-size: cover;
             }
         }
 
@@ -131,12 +134,12 @@ h2 {
         .credits {
             display: table;
             margin-left: auto;
-            @include opacity(0.4);
+            opacity: 0.4;
             @include transition-duration($timing-short);
             @include transition-property(opacity);
 
             &:hover {
-                @include opacity(0.8);
+                opacity: 0.8;
             }
         }
     }
@@ -160,7 +163,7 @@ h2 {
             a {
                 color: #000;
                 font-size: 10px;
-                @include opacity(0.5);
+                opacity: 0.5;
             }
         }
     }

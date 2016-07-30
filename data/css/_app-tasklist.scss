@@ -23,13 +23,13 @@
                     border: 0;
                     margin: 0;
                     background-color: #fff;
-                    @include border-radius(2px!important);
+                    border-radius: 2px!important;
                     @extend .elevation-low;
 
                     .fstask-title {
                         padding: 10px 40px 10px 10px;
                         height: auto;
-                        @include border-radius(2px 2px 0 0);
+                        border-radius: 2px 2px 0 0;
                     }
 
                     .fstask-content {
@@ -43,7 +43,7 @@
                             background: #ccc;
 
                             .fstask-progress {
-                                @include border-radius(2px);
+                                border-radius: 2px;
 
                                 &.fstask-progress-done {
                                     background-color: material-color($color-green);

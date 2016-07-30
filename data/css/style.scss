@@ -3,7 +3,9 @@
  */
 
 // Import part files
-@import 'mixins';
+
+// Bower bourbon dependency
+@import '../../bower_components/bourbon/app/assets/stylesheets/bourbon';
 
 // Bower materialdesignicons-scss-variables dependency
 @import '../../bower_components/materialdesignicons-scss-variables/dist/materialdesignicons';

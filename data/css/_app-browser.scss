@@ -65,13 +65,13 @@
 
     .x-progress-wrap {
         margin: 3px 0;
-        @include border-radius(1px);
+        border-radius: 1px;
         @extend .accent-color--background;
 
         .x-progress-inner {
             .x-progress-bar {
                 @extend .accent-color--dark--background;
-                @include border-radius(1px);
+                border-radius: 1px;
             }
 
             // Percentage text

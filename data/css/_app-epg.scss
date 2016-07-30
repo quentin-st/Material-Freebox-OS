@@ -69,13 +69,13 @@ $prog-elem-colors: (
         .btn-hour-container {
             .btn-hour {
                 font-family: $roboto;
-                @include border-radius(2px);
+                border-radius: 2px;
             }
         }
     }
 
     .epg-viewport {
-        @include box-shadow(inset $elevation-2);
+        box-shadow: inset $elevation-2;
     }
 
     .epg-timeline {
@@ -93,7 +93,7 @@ $prog-elem-colors: (
         .epg-channel-elem {
             background-color: material-color($color-amber);
             border: 0;
-            @include border-radius(2px);
+            border-radius: 2px;
             @extend .elevation-lowest;
 
             .epg-channel-name {
@@ -109,15 +109,12 @@ $prog-elem-colors: (
             border: 0;
             background-color: #ffffff;
             font-family: $roboto;
-            @include border-radius(1px);
+            border-radius: 1px;
 
             // Colors
             @each $index, $icon in $prog-elem-colors {
                 &.epg-prog-cat-#{$index} {
-                    @include box-shadow(
-                        inset $icon 0 3px 0,
-                        $elevation-1
-                    );
+                    box-shadow: inset $icon 0 3px 0, $elevation-1;
                 }
             }
 
@@ -126,7 +123,7 @@ $prog-elem-colors: (
                     color: $color-text-dark;
                 }
                 .epg-prog-timeinfo {
-                    @include opacity(0.7);
+                    opacity: 0.7;
                 }
             }
         }

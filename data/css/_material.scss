@@ -121,14 +121,14 @@ $elevation-4: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 $elevation-5: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 $elevation-negative: inset 1px 1px 1px rgba(0, 0, 0, 0.1);
 
-.elevation-tiny                  { @include box-shadow($elevation-tiny); }
-.elevation-1, .elevation-lowest  { @include box-shadow($elevation-1); }
-.elevation-2, .elevation-low     { @include box-shadow($elevation-2); }
-.elevation-3, .elevation-medium  { @include box-shadow($elevation-3); }
-.elevation-4, .elevation-high    { @include box-shadow($elevation-4); }
-.elevation-5, .elevation-highest { @include box-shadow($elevation-5); }
-.elevation-negative              { @include box-shadow($elevation-negative); }
-.elevation-none                  { @include box-shadow(none); }
+.elevation-tiny                  { box-shadow: $elevation-tiny; }
+.elevation-1, .elevation-lowest  { box-shadow: $elevation-1; }
+.elevation-2, .elevation-low     { box-shadow: $elevation-2; }
+.elevation-3, .elevation-medium  { box-shadow: $elevation-3; }
+.elevation-4, .elevation-high    { box-shadow: $elevation-4; }
+.elevation-5, .elevation-highest { box-shadow: $elevation-5; }
+.elevation-negative              { box-shadow: $elevation-negative; }
+.elevation-none                  { box-shadow: none; }
 
 
 // Animations duration
@@ -149,7 +149,7 @@ $slight-border-left:    inset 1px 0 0 0px rgba(0, 0, 0, 0.2);
     font-family: $roboto;
     color: #ffffff;
     border: 0;
-    @include border-radius(2px);
+    border-radius: 2px;
 }
 .alert--info {
     @extend .alert;
