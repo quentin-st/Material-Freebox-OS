@@ -8,17 +8,19 @@
 }
 
 .x-window {
+    $shadow-base: 0 0 1px rgba(0, 0, 0, 0.5),
+                  0 3px rgba(0, 0, 0, 0.1);
+
     padding: 0!important;
     border: 0!important;
+    border-radius: 2px!important;
     @include transition-property(box-shadow);
     @include transition-duration($timing-short);
-    border-radius: 2px!important;
-    @extend .elevation-medium;
-    @extend .primary-color--background--important;
+    box-shadow: $shadow-base, $elevation-3;
 
     // Blur / focus states
     &.x-window-focus-blurred {
-        @extend .elevation-low;
+        box-shadow: $shadow-base;
 
         .x-window-header .x-window-header-body {
             opacity: 0.3;
@@ -61,13 +63,13 @@
             .x-box-item.x-tool-after-title {
                 cursor: default;
                 font-size: 18px!important;
-                color: rgba(#fff, 0.8);
+                color: rgba(#fff, 0.95);
                 @include transition-duration($timing-short);
                 @include transition-property(color);
 
                 $window-icons: (
                     "Fermer": $mdi-close,
-                    "Maximiser": $mdi-crop-square,//$mdi-window-maximize,
+                    "Maximiser": $mdi-window-maximize,
                     "restorer": $mdi-window-restore,
                     "Minimiser": $mdi-window-minimize,
                     "Aide de l'application": $mdi-help
@@ -75,8 +77,7 @@
 
                 @each $name, $mdi in $window-icons {
                     &[aria-label="#{$name}"] {
-                        padding-top: 10px;
-                        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+                        padding-top: 8px;
                         text-align: center;
                         @include material-icon($mdi);
                     }
@@ -93,9 +94,11 @@
 
                 &:hover {
                     color: rgba(#fff, 1);
+                    background-color: rgba(0, 0, 0, 0.06);
                 }
                 &:active {
-                    color: rgba(#fff, 0.8);
+                    color: rgba(#fff, 0.95);
+                    background-color: rgba(0, 0, 0, 0.08);
                 }
             }
         }

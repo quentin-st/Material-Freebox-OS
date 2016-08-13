@@ -7,8 +7,7 @@
     if (typeof Ext !== 'undefined') {
         // Override windows buttons size
         // We need to override this ASAP
-        Ext.panel.Tool.prototype.width = 35;
-        Ext.panel.Tool.prototype.height = 35;
+        Ext.panel.Tool.prototype.width = Ext.panel.Tool.prototype.height = 33;
     }
 
 
