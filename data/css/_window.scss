@@ -53,10 +53,13 @@
                 font-family: $roboto;
                 font-weight: 500;
                 font-size: 14px;
-                color: rgba(255, 255, 255, 0.9);
                 text-shadow: none;
                 margin-top: $window-header-padding-top;
                 margin-bottom: $window-header-padding-bottom;
+
+                &, .x-header-text {
+                    color: rgba(255, 255, 255, 0.9);
+                }
             }
 
             // Buttons
