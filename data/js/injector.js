@@ -66,27 +66,18 @@
             });
         },
         applyColors: function() {
-            if (MaterialFreeboxOS.environment.isFirefox()) {
-                // On Firefox, we cannot access chrome.storage.local: apply default colors
-                document.body.setAttribute('data-color-primary', MaterialFreeboxOS.materialColors.defaultPrimary);
-                document.body.setAttribute('data-color-accent', MaterialFreeboxOS.materialColors.defaultAccent);
-            } else {
-                chrome.storage.local.get('color-primary', function (data) {
-                    var primaryColor = data['color-primary'] || MaterialFreeboxOS.materialColors.defaultPrimary;
+            chrome.storage.local.get('color-primary', function (data) {
+                var primaryColor = data['color-primary'] || MaterialFreeboxOS.materialColors.defaultPrimary;
 
-                    document.body.setAttribute('data-color-primary', primaryColor);
-                });
-                chrome.storage.local.get('color-accent', function (data) {
-                    var accentColor = data['color-accent'] || MaterialFreeboxOS.materialColors.defaultAccent;
+                document.body.setAttribute('data-color-primary', primaryColor);
+            });
+            chrome.storage.local.get('color-accent', function (data) {
+                var accentColor = data['color-accent'] || MaterialFreeboxOS.materialColors.defaultAccent;
 
-                    document.body.setAttribute('data-color-accent', accentColor);
-                });
-            }
+                document.body.setAttribute('data-color-accent', accentColor);
+            });
         },
         applyWallpaper: function() {
-            if (MaterialFreeboxOS.environment.isFirefox())
-                return;
-
             // Retrieve setting
             chrome.storage.local.get('wallpaper', function(data) {
                 var wallpaperUri = data['wallpaper'] || MaterialFreeboxOS.wallpaper.defaultWallpaper.image;

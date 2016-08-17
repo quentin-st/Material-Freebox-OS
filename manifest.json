@@ -18,7 +18,7 @@
     "applications": {
         "gecko": {
             "id": "material-freebox-os@s-quent.in",
-            "strict_min_version": "45.0a1"
+            "strict_min_version": "48.0"
         }
     },
 

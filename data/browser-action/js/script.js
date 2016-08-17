@@ -3,6 +3,8 @@
  * Browser action JS
  */
 (function() {
+    var browserHandle = MaterialFreeboxOS.environment.getBrowserHandle();
+
     var BrowserAction = {
         updateColorsAndSave: function(primary, accent) {
             $('body')
@@ -17,27 +19,29 @@
         },
 
         updateColorsInTab: function(primary, accent) {
-            chrome.tabs.getSelected(null, function(tab) {
-                if (MaterialFreeboxOS.matches(tab.title)) {
-                    var updateColors = function(primary, accent) {
-                        document.body.setAttribute('data-color-primary', primary);
-                        document.body.setAttribute('data-color-accent', accent);
-                    };
+            browserHandle.tabs.query({}, function(tabs) {
+                tabs.forEach(function(tab) {
+                    if (MaterialFreeboxOS.matches(tab.title)) {
+                        var updateColors = function(primary, accent) {
+                            document.body.setAttribute('data-color-primary', primary);
+                            document.body.setAttribute('data-color-accent', accent);
+                        };
 
-                    var code =
-                        "var updateColors = " + updateColors.toString() + ";\
+                        var code =
+                            "var updateColors = " + updateColors.toString() + ";\
                         updateColors('" + primary + "', '" + accent + "');";
 
-                    chrome.tabs.executeScript(null, {
-                        code: code
-                    });
-                }
+                        browserHandle.tabs.executeScript(tab.id, {
+                            code: code
+                        });
+                    }
+                });
             });
         },
 
         updateWallpaperAndSave: function(uri) {
             BrowserAction.updateWallpaperInTab(uri, MaterialFreeboxOS.wallpaper.findWallpaperInfos(uri));
-            chrome.storage.local.set({
+            browserHandle.storage.local.set({
                 'wallpaper': uri
             });
         },
@@ -50,32 +54,30 @@
         updateWallpaperInTab: function(projectUri, wallpaperInfos) {
             var uri = MaterialFreeboxOS.getDepURI(projectUri);
 
-            chrome.tabs.getSelected(null, function(tab) {
-                if (MaterialFreeboxOS.matches(tab.title)) {
-                    var updateWallpaper = function(uri, wallpaperInfos) {
-                        document.body.style.backgroundImage = "url(" + uri + ")";
+            browserHandle.tabs.query({}, function(tabs) {
+                tabs.forEach(function(tab) {
+                    if (MaterialFreeboxOS.matches(tab.title)) {
+                        var updateWallpaper = function(uri, wallpaperInfos) {
+                            document.body.style.backgroundImage = "url(" + uri + ")";
 
-                        var element = document.getElementsByClassName('desktop-wallpaper-credits')[0];
-                        MaterialFreeboxOS.wallpaper.updateWallpaperCredits(element, wallpaperInfos);
-                    };
+                            var element = document.getElementsByClassName('desktop-wallpaper-credits')[0];
+                            MaterialFreeboxOS.wallpaper.updateWallpaperCredits(element, wallpaperInfos);
+                        };
 
-                    var code =
-                        "var updateWallpaper = " + updateWallpaper.toString() + ";\
+                        var code =
+                            "var updateWallpaper = " + updateWallpaper.toString() + ";\
                         updateWallpaper('" + uri + "', eval('(" + JSON.stringify(wallpaperInfos) + ")'))";
 
-                    chrome.tabs.executeScript(null, {
-                        code: code
-                    });
-                }
+                        browserHandle.tabs.executeScript(tab.id, {
+                            code: code
+                        });
+                    }
+                });
             });
         }
     };
 
     $(document).ready(function () {
-        if (MaterialFreeboxOS.environment.isFirefox()) {
-            $('.unsupported').show();
-        }
-
         // Colors
         var primaryColorsUl = $('#colors-primary'),
             accentColorsUl = $('#colors-accent');
@@ -92,27 +94,21 @@
         var primaryColor_colors = primaryColorsUl.find('li'),
             accentColor_colors = accentColorsUl.find('li');
 
-        if (MaterialFreeboxOS.environment.isFirefox()) {
-            $('body')
-                .attr('data-color-primary', MaterialFreeboxOS.materialColors.defaultPrimary)
-                .attr('data-color-accent', MaterialFreeboxOS.materialColors.defaultAccent);
-        } else {
-            // Retrieve current settings
-            chrome.storage.local.get('color-primary', function (data) {
-                var defaultPrimaryColor = MaterialFreeboxOS.materialColors.defaultPrimary,
-                    primaryColor = data['color-primary'] || defaultPrimaryColor;
+        // Retrieve current settings
+        browserHandle.storage.local.get('color-primary', function (data) {
+            var defaultPrimaryColor = MaterialFreeboxOS.materialColors.defaultPrimary,
+                primaryColor = data['color-primary'] || defaultPrimaryColor;
 
-                primaryColor_colors.filter('[data-color="' + primaryColor + '"]').addClass('current');
-                $('body').attr('data-color-primary', primaryColor);
-            });
-            chrome.storage.local.get('color-accent', function (data) {
-                var defaultAccentColor = MaterialFreeboxOS.materialColors.defaultAccent,
-                    accentColor = data['color-accent'] || defaultAccentColor;
+            primaryColor_colors.filter('[data-color="' + primaryColor + '"]').addClass('current');
+            $('body').attr('data-color-primary', primaryColor);
+        });
+        browserHandle.storage.local.get('color-accent', function (data) {
+            var defaultAccentColor = MaterialFreeboxOS.materialColors.defaultAccent,
+                accentColor = data['color-accent'] || defaultAccentColor;
 
-                accentColor_colors.filter('[data-color="' + accentColor + '"]').addClass('current');
-                $('body').attr('data-color-accent', accentColor);
-            });
-        }
+            accentColor_colors.filter('[data-color="' + accentColor + '"]').addClass('current');
+            $('body').attr('data-color-accent', accentColor);
+        });
 
         // Update current colors
         $().add(primaryColor_colors).add(accentColor_colors).click(function() {
@@ -142,18 +138,16 @@
         var wallpapers_images = wallpapersUl.find('li'),
             wallpapers_url = $('#wallpapers-url');
 
-        if (!MaterialFreeboxOS.environment.isFirefox()) {
-            // Retrieve current settings
-            chrome.storage.local.get('wallpaper', function (data) {
-                var defaultWallpaper = MaterialFreeboxOS.wallpaper.defaultWallpaper.image,
-                    wallpaper = data['wallpaper'] || defaultWallpaper;
+        // Retrieve current settings
+        browserHandle.storage.local.get('wallpaper', function (data) {
+            var defaultWallpaper = MaterialFreeboxOS.wallpaper.defaultWallpaper.image,
+                wallpaper = data['wallpaper'] || defaultWallpaper;
 
-                if (MaterialFreeboxOS.wallpaper.findWallpaperInfos(wallpaper) != null)
-                    wallpapers_images.filter('[data-uri="' + wallpaper + '"]').addClass('current');
-                else
-                    wallpapers_url.val(wallpaper);
-            });
-        }
+            if (MaterialFreeboxOS.wallpaper.findWallpaperInfos(wallpaper) != null)
+                wallpapers_images.filter('[data-uri="' + wallpaper + '"]').addClass('current');
+            else
+                wallpapers_url.val(wallpaper);
+        });
 
         // Update current wallpaper: image
         wallpapers_images.click(function () {

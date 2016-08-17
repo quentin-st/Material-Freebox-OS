@@ -140,6 +140,10 @@
         environment: {
             isFirefox: function() {
                 return /firefox/i.test(navigator.userAgent);
+            },
+
+            getBrowserHandle: function() {
+                return this.isFirefox() ? browser : chrome;
             }
         }
     };
