@@ -17,21 +17,28 @@
 
     // Main button
     .btn-start {
+        $size: 34px;
+        width: $size!important;
+        height: $size!important;
+        padding: 0;
+        margin: 3px 20px 0 5px!important;
+        font-size: 19px;
         color: rgba(#fff, 0.9);
-        @include transition-property(color);
+        border-radius: 50%;
+        text-align: center;
+        background: rgba(#000, 0.65) none !important;
+        @include transition-property(color, background-color);
         @include transition-duration($timing-short);
-        width: 46px;
-        padding: 8px;
-        font-size: 31px;
         text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
 
-        @include material-icon($mdi-apps);
+        @include material-icon($mdi-checkbox-blank-circle-outline);
 
         &:hover {
             color: #fff;
+            background: rgba(#000, 0.75) none !important;
         }
-        &, &:hover {
-            background: none!important;
+        &:before {
+            line-height: $size;
         }
     }
 
@@ -64,7 +71,7 @@
                 color: #fff;
                 text-shadow: 1px 1px 1px rgba(#000, 0.3);
                 border-radius: 50%;
-                @extend .elevation-low;
+                @extend .elevation-lowest;
 
                 // Default background color
                 @extend .accent-color--background;
