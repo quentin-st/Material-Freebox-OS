@@ -15,30 +15,39 @@
         box-shadow: 0 0 8px -1px rgba(#000, 0.8);
     }
 
-    // Main button
+    // "Start" button
     .btn-start {
-        $size: 34px;
-        width: $size!important;
-        height: $size!important;
-        padding: 0;
-        margin: 3px 20px 0 5px!important;
-        font-size: 19px;
-        color: rgba(#fff, 0.9);
-        border-radius: 50%;
-        text-align: center;
-        background: rgba(#000, 0.65) none !important;
-        @include transition-property(color, background-color);
-        @include transition-duration($timing-short);
-        text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+        padding: 6px 0 0 10px;
+        margin-right: 20px;
+        background: none!important;
+        width: auto!important;
 
-        @include material-icon($mdi-checkbox-blank-circle-outline);
+        .x-btn-button {
+            $size: 34px;
+            width: $size!important;
+            height: $size!important;
+            padding: 0;
+            font-size: 19px;
+            color: rgba(#fff, 0.9);
+            border-radius: 50%;
+            text-align: center;
+            background: rgba(#000, 0.65);
+            @include transition-property(color, background-color);
+            @include transition-duration($timing-short);
+            text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
 
-        &:hover {
-            color: #fff;
-            background: rgba(#000, 0.75) none !important;
+            @include material-icon($mdi-checkbox-blank-circle-outline);
+
+            &:hover {
+                color: #fff;
+                background: rgba(#000, 0.75) none !important;
+            }
+            &:before {
+                line-height: $size;
+            }
         }
-        &:before {
-            line-height: $size;
+        &.x-menu-active .x-btn-button {
+            @extend .primary-color--background--important;
         }
     }
 
@@ -143,7 +152,7 @@
 .fbx-start-menu {
     border-color: transparent;
     border-radius: 2px;
-    @extend .elevation-medium;
+    @extend .elevation-low;
 
     .x-menu-body {
         border: 0;
