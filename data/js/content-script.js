@@ -69,6 +69,26 @@
 
             return result;
         };
+
+
+        // Change default height on some windows
+        [
+            [Fbx.os.app.settings.Switch,            650],
+            [Fbx.os.app.settings.ConnectionConfig,  435],
+            [Fbx.os.app.settings.UpnpAv,            150],
+            [Fbx.os.app.settings.NetworkMode,       385],
+            [Fbx.os.app.settings.AirMedia,          155],
+            [Fbx.os.app.settings.Lcd,               185],
+            [Fbx.os.app.settings.PhoneFxsStatus,    400],
+            [Fbx.os.app.settings.ShareAfp,          250]
+        ].forEach(function(array) {
+            var curDefaultHeight = array[0].prototype.self.defaultHeight,
+                newHeight = array[1];
+
+            // Don't set it lower than it already is (future FB OS updates)
+            if (newHeight > curDefaultHeight)
+                array[0].prototype.self.defaultHeight = newHeight;
+        });
     };
 
     function waitFor(something, onceReady) {
