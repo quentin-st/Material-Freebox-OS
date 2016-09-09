@@ -35,6 +35,12 @@
                 color: #fff;
             }
         }
+
+        @for $i from 1 through length($material-colors) {
+            &:nth-child(#{$i}n) .setting-app-img {
+                color: material-color(nth(map-values($material-colors), $i));
+            }
+        }
     }
 }
 
