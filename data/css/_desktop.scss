@@ -86,7 +86,7 @@ body {
         background-color: $color-active-dark;
         @extend .elevation-medium;
         border-radius: 2px!important;
-        @include transition-duration($timing-short);
+        transition-duration: $timing-short;
     }
 
     span[aria-label] {
@@ -128,10 +128,10 @@ body {
     text-shadow: 1px 1px 0 rgba(#000, 0.3);
     text-decoration: none;
     opacity: 0.5;
-    @include transform(rotate(-90deg));
-    @include transform-origin(right bottom);
-    @include transition-duration($timing-short);
-    @include transition-property(opacity);
+    transition: rotate(-90deg);
+    transform-origin: right bottom;
+    transition-duration: $timing-short;
+    transition-property: opacity;
 
     &:hover {
         opacity: 0.8;

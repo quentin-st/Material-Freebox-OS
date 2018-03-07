@@ -11,8 +11,8 @@
         }
 
         .x-grid-cell {
-            @include transition-property(background-color);
-            @include transition-duration($timing-short);
+            transition-property: background-color;
+            transition-duration: $timing-short;
 
             .x-grid-cell-inner {
                 padding: 5px 6px 6px 0;

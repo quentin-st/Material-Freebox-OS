@@ -7,8 +7,8 @@
     border: 0!important;
     padding: 0;
     background: transparent!important;
-    @include transition-property(background);
-    @include transition-duration($timing-short);
+    transition-property: background;
+    transition-duration: $timing-short;
 
     &.solid-background {
         background: $color-dark!important;
@@ -32,8 +32,8 @@
             border-radius: 50%;
             text-align: center;
             background: rgba(#000, 0.65);
-            @include transition-property(color, background-color);
-            @include transition-duration($timing-short);
+            transition-property: color, background-color;
+            transition-duration: $timing-short;
             text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
 
             @include material-icon($mdi-checkbox-blank-circle-outline);
@@ -57,7 +57,7 @@
         border: none!important;
         border-bottom: 2px solid transparent!important;
         border-radius: 0;
-        @include transition-duration($timing-short);
+        transition-duration: $timing-short;
 
         // Let shadow go outside the container
         .x-btn-button {
@@ -163,8 +163,8 @@
             border-radius: 0;
 
             .x-menu-item-link {
-                @include transition-property(background);
-                @include transition-duration($timing-short);
+                transition-property: background;
+                transition-duration: $timing-short;
 
                 .x-menu-item-text {
                     font-size: 14px;

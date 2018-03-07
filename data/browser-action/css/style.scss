@@ -27,7 +27,7 @@ body {
     color: $color-text-dark;
 
     cursor: default;
-    @include user-select(none);
+    user-select: none;
 }
 
 * {
@@ -85,7 +85,7 @@ h2 {
                     font-size: 20px;
                     color: #fff;
                     text-shadow: 1px 1px 1px rgba(#000, 0.3);
-                    @include transition-duration($timing-short);
+                    transition-duration: $timing-short;
                     @include material-icon-simple($mdi-check-circle);
                     opacity: 0;
                 }
@@ -135,8 +135,8 @@ h2 {
             display: table;
             margin-left: auto;
             opacity: 0.4;
-            @include transition-duration($timing-short);
-            @include transition-property(opacity);
+            transition-duration: $timing-short;
+            transition-property: opacity;
 
             &:hover {
                 opacity: 0.8;
@@ -149,8 +149,8 @@ footer {
     margin-top: 20px;
     text-align: right;
     @extend .primary-color--background;
-    @include transition-duration($timing-medium);
-    @include transition-property(background);
+    transition-duration: $timing-medium;
+    transition-property: background;
 
     a.material-button--flat--primary {
         display: inline-block;

@@ -10,8 +10,8 @@
     background: transparent;
     border: 0!important;
     border-bottom: 3px solid transparent!important;
-    @include transition-duration(150ms);
-    @include transition-property(background, border-bottom-color);
+    transition-duration: 150ms;
+    transition-property: background, border-bottom-color;
     border-radius: 0;
 
     .x-tab-inner {
@@ -123,8 +123,8 @@
             cursor: default;
             padding: 0;
             border-color: transparent;
-            @include transition-property(background);
-            @include transition-duration($timing-short);
+            transition-property: background;
+            transition-duration: $timing-short;
             border-radius: 0;
 
             .x-menu-item-link {
@@ -231,8 +231,8 @@
     border: 0;
     background-color: $color-background-light;
     border-radius: 1px;
-    @include transition-property(box-shadow);
-    @include transition-duration($timing-short);
+    transition-property: box-shadow;
+    transition-duration: $timing-short;
     @extend .elevation-lowest;
 
     &.selected {

@@ -15,8 +15,8 @@
     .setting-app {
         cursor: default;
         border-radius: 2px;
-        @include transition-property(background);
-        @include transition-duration($timing-short);
+        transition-property: background;
+        transition-duration: $timing-short;
 
         &.setting-app-over {
             border-color: transparent;

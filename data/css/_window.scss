@@ -14,8 +14,8 @@
     padding: 0!important;
     border: 0!important;
     border-radius: 2px!important;
-    @include transition-property(box-shadow);
-    @include transition-duration($timing-short);
+    transition-property: box-shadow;
+    transition-duration: $timing-short;
     box-shadow: $shadow-base, $elevation-3;
 
     // Blur / focus states
@@ -40,8 +40,8 @@
         .x-window-header-body {
             cursor: default;
             background: transparent;
-            @include transition-property(opacity);
-            @include transition-duration($timing-short);
+            transition-property: opacity;
+            transition-duration: $timing-short;
 
             // Hide window icon
             .x-window-header-icon {
@@ -67,8 +67,8 @@
                 cursor: default;
                 font-size: 18px!important;
                 color: rgba(#fff, 0.95);
-                @include transition-duration($timing-short);
-                @include transition-property(color);
+                transition-duration: $timing-short;
+                transition-property: color;
 
                 $window-icons: (
                     "Fermer": $mdi-close,
@@ -130,8 +130,8 @@
                 border: 0!important;
                 padding: 14px 10px;
                 border-radius: 0;
-                @include transition-property(background);
-                @include transition-duration($timing-short);
+                transition-property: background;
+                transition-duration: $timing-short;
 
                 .x-btn-arrow {
                     background: none;
@@ -210,8 +210,8 @@
 
     .x-splitter {
         background-color: rgba(#000, 0.2);
-        @include transition-duration($timing-short);
-        @include transition-property(box-shadow);
+        transition-duration: $timing-short;
+        transition-property: box-shadow;
 
         &:hover {
             box-shadow: inset 0 0 1px rgba(#000, 0.8);
