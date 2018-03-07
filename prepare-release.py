@@ -17,7 +17,7 @@ files_generic = [
     'data/browser-action/css/style.css',
     'data/browser-action/js/script.js',
     'data/browser-action/index.html',
-    'data/vendor/jquery-2.2.3.min.js',
+    'data/vendor/jquery-3.3.1.slim.min.js',
 
     'data/css/style.css',
     'data/css/fonts/roboto.css',
