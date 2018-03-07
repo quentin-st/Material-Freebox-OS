@@ -205,7 +205,7 @@
                 position: absolute;
                 left: 0;
                 font-size: 15px;
-                @include material-icon-onbefore($mdi-alert-circle);
+                @include material-icon-simple($mdi-alert-circle);
             }
         }
     }

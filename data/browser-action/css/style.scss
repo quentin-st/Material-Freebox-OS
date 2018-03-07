@@ -86,7 +86,7 @@ h2 {
                     color: #fff;
                     text-shadow: 1px 1px 1px rgba(#000, 0.3);
                     @include transition-duration($timing-short);
-                    @include material-icon-onbefore($mdi-check-circle);
+                    @include material-icon-simple($mdi-check-circle);
                     opacity: 0;
                 }
 
@@ -170,10 +170,10 @@ footer {
         }
 
         &.btn-author .x-btn-inner:before {
-            @include material-icon-onbefore($mdi-account);
+            @include material-icon-simple($mdi-account);
         }
         &.btn-github .x-btn-inner:before {
-            @include material-icon-onbefore($mdi-github-circle);
+            @include material-icon-simple($mdi-github-circle);
         }
     }
 }
