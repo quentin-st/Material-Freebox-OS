@@ -60,6 +60,7 @@ $icons-32: (
     wifi-calendar:  $mdi-clock,
     delete:         $mdi-delete,
     disk-full:      $mdi-harddisk,
+    wps:            $mdi-rotate-3d,
     settings-connectionconfig:         $mdi-settings-box,
     settings-connectionipv6config:     $mdi-web,
     settings-connectiondyndns:         $mdi-dns,
@@ -89,7 +90,8 @@ $icons-32: (
     settings-tnt:           $mdi-radar,
     settings-accounts:      $mdi-lock,
     settings-adblockconfig: $mdi-hexagon,
-    settings-reset:         $mdi-reload
+    settings-reset:         $mdi-reload,
+    settings-wifi-wifiguest: $mdi-account-network
 );
 // Add $icons-80 to $icons-32
 $icons-32: map_merge($icons-32, $icons-80);
